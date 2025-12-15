@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+// import "@/styles/soft-ui-dashboard-tailwind.css";
 import "@/styles/nucleo-icons/nucleo-icons.css";
 import "@/styles/nucleo-icons/nucleo-svg.css";
 import "./globals.css";
@@ -111,7 +112,7 @@ export default function RootLayout({
       </head>
 
       <body
-        className={`${openSans.variable}`}
+        className={`${openSans.variable} m-0 font-sans text-base antialiased font-normal leading-default bg-gray-50 text-slate-500`}
         suppressHydrationWarning={true}
       >
         {children}
