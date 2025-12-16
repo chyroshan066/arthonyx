@@ -1,3 +1,5 @@
+import { IconDefinition } from "@fortawesome/free-solid-svg-icons";
+
 export interface Children {
     children: React.ReactNode;
 }
@@ -47,6 +49,13 @@ interface Href {
 }
 
 export interface NavLink extends Name, Href {}
+
+export interface Stat extends Title {
+    value: string;
+    change: string;
+    iconName: IconDefinition;
+    color?: string;
+}
 
 
 // interface Size used once in NucleoIcon

@@ -1,8 +1,6 @@
 @import "tailwindcss";
 
 @layer base {
-    :root {}
-
     *, 
     ::before, 
     ::after {
@@ -3986,3 +3984,24 @@
     max-width: 1320px;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.bg-gradient-soft-purple-pink {
+        background-image: linear-gradient(
+            to top left, 
+            #7e22ce, /* Purple-700 equivalent */
+            #ec4899  /* Pink-500 equivalent */
+        );
+    }

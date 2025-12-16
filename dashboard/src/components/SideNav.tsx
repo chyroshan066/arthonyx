@@ -62,7 +62,7 @@ export const SideNav = memo(() => {
                 }}
             >
 
-                <div className="sticky top-0 z-20 bg-gray-50">
+                <div className="sticky top-0 z-20 max-xl:bg-white min-[1200px]:bg-gray-50">
                     <div className="h-19.5 px-6 py-6">
                         <FontAwesomeIcon
                             icon={faTimes}
