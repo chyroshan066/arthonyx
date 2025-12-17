@@ -2,27 +2,12 @@
 
 import { faBell, faClock, faCog, faSearch, faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Image from "next/image";
 import Link from "next/link";
 import { memo, useEffect, useState } from "react";
 
 export const NavBar = memo(() => {
-    const [isSticky, setIsSticky] = useState(false);
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-
-    // Sticky navbar on scroll effect
-    useEffect(() => {
-        const handleScroll = () => {
-            if (window.scrollY >= 5) {
-                setIsSticky(true);
-            } else {
-                setIsSticky(false);
-            }
-        };
-
-        window.addEventListener('scroll', handleScroll);
-
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
 
     // Handle sidenav burger click
     const handleSidenavToggle = () => {
@@ -155,8 +140,11 @@ export const NavBar = memo(() => {
                                     >
                                         <div className="flex py-1">
                                             <div className="my-auto">
-                                                <img
+                                                <Image
                                                     src="/images/random/team-2.jpg"
+                                                    width={36}
+                                                    height={36}
+                                                    alt="Notification 1"
                                                     className="inline-flex items-center justify-center mr-4 text-sm text-white h-9 w-9 max-w-none rounded-xl"
                                                 />
                                             </div>
@@ -184,9 +172,11 @@ export const NavBar = memo(() => {
                                     >
                                         <div className="flex py-1">
                                             <div className="my-auto">
-                                                <img
+                                                <Image
                                                     src="/images/random/small-logos/logo-spotify.svg"
-                                                    className="inline-flex items-center justify-center mr-4 text-sm text-white bg-gradient-to-tl from-gray-900 to-slate-800 h-9 w-9 max-w-none rounded-xl"
+                                                    width={36}
+                                                    height={36}
+                                                    className="inline-flex items-center justify-center mr-4 text-sm text-white bg-gradient-soft-gray900-slate800 h-9 w-9 max-w-none rounded-xl"
                                                     alt="spotify logo"
                                                 />
                                             </div>
@@ -214,7 +204,7 @@ export const NavBar = memo(() => {
                                     >
                                         <div className="flex py-1">
                                             <div
-                                                className="inline-flex items-center justify-center my-auto mr-4 text-sm text-white transition-all duration-200 ease-nav-brand bg-gradient-to-tl from-slate-600 to-slate-300 h-9 w-9 rounded-xl">
+                                                className="inline-flex items-center justify-center my-auto mr-4 text-sm text-white transition-all duration-200 ease-nav-brand bg-gradient-soft-slate600-slate300 h-9 w-9 rounded-xl">
                                                 <svg
                                                     width="12px"
                                                     height="12px"
@@ -225,13 +215,13 @@ export const NavBar = memo(() => {
                                                     <title>credit-card</title>
                                                     <g
                                                         stroke="none"
-                                                        stroke-width="1"
+                                                        strokeWidth="1"
                                                         fill="none"
-                                                        fill-rule="evenodd">
+                                                        fillRule="evenodd">
                                                         <g
                                                             transform="translate(-2169.000000, -745.000000)"
                                                             fill="#FFFFFF"
-                                                            fill-rule="nonzero">
+                                                            fillRule="nonzero">
                                                             <g
                                                                 transform="translate(1716.000000, 291.000000)">
                                                                 <g

@@ -16,4 +16,6 @@ export const ReadMore = memo(({
             className="ease-bounce text-sm group-hover:translate-x-1.25 ml-1 leading-normal transition-all duration-200"
         />
     </a>
-))
+));
+
+ReadMore.displayName = "ReadMore";

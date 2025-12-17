@@ -1,4 +1,5 @@
 import { ReadMore } from "@/components/utility/ReadMore";
+import Image from "next/image";
 import { memo } from "react";
 
 export const InformationCard = memo(() => (
@@ -19,10 +20,13 @@ export const InformationCard = memo(() => (
                         <div className="max-w-full px-3 mt-12 ml-auto text-center lg:mt-0 lg:w-5/12 lg:flex-none">
                             <div className="h-full bg-gradient-soft-purple-pink rounded-xl">
                                 <div className="relative flex items-center justify-center h-full">
-                                    <img
+                                    <Image
                                         className="relative z-20 w-full pt-6"
                                         src="/images/rocket-white.png"
                                         alt="rocket"
+                                        width={500}
+                                        height={500}
+                                        style={{ width: '100%', height: 'auto' }}
                                     />
                                 </div>
                             </div>
@@ -39,7 +43,7 @@ export const InformationCard = memo(() => (
                     className="relative h-full overflow-hidden bg-cover rounded-xl"
                     style={{ backgroundImage: "url('/images/random/ivancik.jpg')" }}
                 >
-                    <span className="absolute top-0 left-0 w-full h-full bg-center bg-cover bg-gradient-soft-gray-slate opacity-80" />
+                    <span className="absolute top-0 left-0 w-full h-full bg-center bg-cover bg-gradient-soft-gray900-slate800 opacity-80" />
                     <div className="relative z-10 flex flex-col flex-auto h-full p-4">
                         <h5 className="pt-2 mb-6 font-bold text-white"> Work with the rockets</h5>
                         <p className="text-white"> Wealth creation is an evolutionarily recent positive-sum game. It is all about who take the opportunity first.</p>

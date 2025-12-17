@@ -99,3 +99,5 @@ export const PerfectScrollbarComponent = memo(({
     </div>
   );
 });
+
+PerfectScrollbarComponent.displayName = "PerfectScrollbarComponent";
