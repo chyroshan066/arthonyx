@@ -1,7 +1,7 @@
+import { ArrowUp } from "@/components/utility/ArrowUp";
 import { CardHeaderWrapper } from "@/components/utility/CardHeaderWrapper";
 import { CardWrapper } from "@/components/utility/CardWrapper";
 import { CHART_METRICS } from "@/constants";
-import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { memo } from "react";
 
@@ -63,13 +63,10 @@ export const ChartCard = memo(() => (
         >
             <CardHeaderWrapper>
                 <h6>Sales overview</h6>
-                <p className="text-sm leading-normal">
-                    <FontAwesomeIcon
-                        icon={faArrowUp}
-                        className="text-lime-500"
-                    />
-                    <span className="font-semibold">4% more</span> in 2021
-                </p>
+                <ArrowUp
+                    percentage="4% more"
+                    timeframe="in 2021"
+                />
             </CardHeaderWrapper>
             <div className="flex-auto p-4">
                 <div>

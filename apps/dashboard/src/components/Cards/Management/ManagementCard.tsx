@@ -5,6 +5,7 @@ import { memo } from "react";
 import * as Tooltip from '@radix-ui/react-tooltip';
 import { CardWrapper } from "@/components/utility/CardWrapper";
 import { CardHeaderWrapper } from "@/components/utility/CardHeaderWrapper";
+import { ArrowUp } from "@/components/utility/ArrowUp";
 
 export const ManagementCard = memo(() => (
     <>
@@ -89,7 +90,7 @@ export const ManagementCard = memo(() => (
                         <tbody>
                             {PROJECTS_DATA.map((data, index) => (
                                 <tr key={index}>
-                                    <td className="p-2 align-middle bg-transparent border-b whitespace-nowrap">
+                                    <td className={`p-2 align-middle bg-transparent ${index !== PROJECTS_DATA.length - 1 ? 'border-b' : ''} whitespace-nowrap`}>
                                         <div className="flex px-2 py-1">
                                             <div>
                                                 <img
@@ -103,7 +104,7 @@ export const ManagementCard = memo(() => (
                                             </div>
                                         </div>
                                     </td>
-                                    <td className="p-2 align-middle bg-transparent border-b whitespace-nowrap">
+                                    <td className={`p-2 align-middle bg-transparent ${index !== PROJECTS_DATA.length - 1 ? 'border-b' : ''} whitespace-nowrap`}>
                                         <Tooltip.Provider
                                             delayDuration={100}  // It determines how long the mouse must rest on an element before the tooltip reveals itself. Radix usually defaults this to 700ms.
                                             skipDelayDuration={500}  // It controls how much time can pass between leaving one tooltip and entering another before the delayDuration is applied again.
@@ -144,10 +145,10 @@ export const ManagementCard = memo(() => (
                                             </div>
                                         </Tooltip.Provider>
                                     </td>
-                                    <td className="p-2 text-sm leading-normal text-center align-middle bg-transparent border-b whitespace-nowrap">
+                                    <td className={`p-2 text-sm leading-normal text-center align-middle bg-transparent ${index !== PROJECTS_DATA.length - 1 ? 'border-b' : ''} whitespace-nowrap`}>
                                         <span className="text-xs font-semibold leading-tight">{data.budget}</span>
                                     </td>
-                                    <td className="p-2 align-middle bg-transparent border-b whitespace-nowrap">
+                                    <td className={`p-2 align-middle bg-transparent ${index !== PROJECTS_DATA.length - 1 ? 'border-b' : ''} whitespace-nowrap`}>
                                         <div className="w-3/4 mx-auto">
                                             <div>
                                                 <div>
@@ -181,10 +182,10 @@ export const ManagementCard = memo(() => (
         >
             <CardHeaderWrapper>
                 <h6>Orders overview</h6>
-                <p className="text-sm leading-normal">
-                    <i className="fa fa-arrow-up text-lime-500"></i>
-                    <span className="font-semibold">24%</span> this month
-                </p>
+                <ArrowUp
+                    percentage="24%"
+                    timeframe="this month"
+                />
             </CardHeaderWrapper>
             <div className="flex-auto p-4">
                 <div
