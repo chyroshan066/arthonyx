@@ -2,18 +2,19 @@ import { NavBar } from "@/components/NavBar";
 import { SideNav } from "@/components/SideNav";
 import { DataTable } from "@/components/DataTable";
 import { Footer } from "@/components/Footer";
+import { Main } from "@/components/utility/Main";
 
 export default function Tables() {
   return (
     <>
       <SideNav />
-      <main className="ease-soft-in-out xl:ml-68.5 relative h-full max-h-screen rounded-xl transition-all duration-200">
+      <Main>
         <NavBar />
         <div className="w-full px-6 py-6 mx-auto">
           <DataTable />
           <Footer />
         </div>
-      </main>
+      </Main>
     </>
   );
 }
