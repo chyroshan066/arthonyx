@@ -10,3 +10,4 @@ export * from "./notifications";
 export * from "./authors";
 export * from "./payment-stats";
 export * from "./payment-method";
+export * from "./invoices";

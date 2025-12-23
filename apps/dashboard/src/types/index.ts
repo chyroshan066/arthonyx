@@ -37,7 +37,7 @@ export interface Email {
 }
 
 interface Id {
-  id: number;
+  id: number | string;
 }
 
 interface Text {
@@ -66,6 +66,14 @@ interface Icon {
 
 interface Completion {
   completion: number;
+}
+
+interface Date {
+  date: string;
+}
+
+interface Amount {
+  amount: string;
 }
 
 export interface Time {
@@ -119,8 +127,7 @@ export interface ProjectData extends Id, Completion, Name, Logo {
   budget: string;
 }
 
-export interface TimelineData extends Id, Title, Icon {
-  date: string;
+export interface TimelineData extends Id, Title, Icon, Date {
   iconColor: string;
 }
 
@@ -138,13 +145,19 @@ export interface AuthorData extends Id {
   employedDate: string;
 }
 
-export interface PaymentStat extends Id, Title, Description, Icon, ClassName {
-  amount: string;
-}
+export interface PaymentStat
+  extends Id,
+    Title,
+    Description,
+    Icon,
+    ClassName,
+    Amount {}
 
 export interface PaymentMethod extends Id, Logo, Alt, ClassName {
   cardNumber: string;
 }
+
+export interface Invoice extends Id, Date, Amount, ClassName {}
 
 // interface Size used once in NucleoIcon
 // interface isLastRow used once in Table
