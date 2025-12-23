@@ -22,7 +22,7 @@ export const DataTable = memo(() => (
     <div className="flex flex-wrap -mx-3">
       <CardWrapper
         outerDivClassName="flex-none"
-        innerDivClassName="mb-6 border-transparent"
+        innerDivClassName="mb-6 border-transparent shadow-soft-xl bg-white"
       >
         <CardHeaderWrapper className="border-b-solid border-b-transparent">
           <h6>Authors table</h6>
@@ -125,7 +125,7 @@ export const DataTable = memo(() => (
     <div className="flex flex-wrap -mx-3">
       <CardWrapper
         outerDivClassName="flex-none"
-        innerDivClassName="mb-6 border-transparent"
+        innerDivClassName="mb-6 border-transparent shadow-soft-xl bg-white"
       >
         <CardHeaderWrapper className="border-b-solid border-b-transparent">
           <h6>Projects table</h6>

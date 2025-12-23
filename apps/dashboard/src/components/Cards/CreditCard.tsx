@@ -1,46 +1,48 @@
 import { faWifi } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { CardWrapper } from "../utility/CardWrapper";
 
 export const CreditCard = () => (
-  <div className="w-full max-w-full px-3 mb-4 xl:mb-0 xl:w-1/2 xl:flex-none">
-    <div className="relative flex flex-col min-w-0 break-words bg-transparent border-0 border-transparent border-solid shadow-xl rounded-2xl bg-clip-border">
-      <div
-        className="relative overflow-hidden rounded-2xl"
-        style={{
-          backgroundImage: "url('/images/curved-images/curved14.jpg')",
-        }}
-      >
-        <span className="absolute top-0 left-0 w-full h-full bg-center bg-cover bg-gradient-soft-gray900-slate800 opacity-80" />
-        <div className="relative z-10 flex-auto p-4">
-          <FontAwesomeIcon icon={faWifi} className="p-2 text-white" />
-          <h5 className="pb-2 mt-6 mb-12 text-white">
-            4562&nbsp;&nbsp;&nbsp;1122&nbsp;&nbsp;&nbsp;4594&nbsp;&nbsp;&nbsp;7852
-          </h5>
+  <CardWrapper
+    outerDivClassName="mb-4 xl:mb-0 xl:w-1/2 xl:flex-none"
+    innerDivClassName="bg-transparent border-transparent rounded-2xl shadow-xl"
+  >
+    <div
+      className="relative overflow-hidden rounded-2xl"
+      style={{
+        backgroundImage: "url('/images/curved-images/curved14.jpg')",
+      }}
+    >
+      <span className="absolute top-0 left-0 w-full h-full bg-center bg-cover bg-gradient-soft-gray900-slate800 opacity-80" />
+      <div className="relative z-10 flex-auto p-4">
+        <FontAwesomeIcon icon={faWifi} className="p-2 text-white" />
+        <h5 className="pb-2 mt-6 mb-12 text-white">
+          4562&nbsp;&nbsp;&nbsp;1122&nbsp;&nbsp;&nbsp;4594&nbsp;&nbsp;&nbsp;7852
+        </h5>
+        <div className="flex">
           <div className="flex">
-            <div className="flex">
-              <div className="mr-6">
-                <p className="mb-0 leading-normal text-white text-sm opacity-80">
-                  Card Holder
-                </p>
-                <h6 className="mb-0 text-white">Jack Peterson</h6>
-              </div>
-              <div>
-                <p className="mb-0 leading-normal text-white text-sm opacity-80">
-                  Expires
-                </p>
-                <h6 className="mb-0 text-white">11/22</h6>
-              </div>
+            <div className="mr-6">
+              <p className="mb-0 leading-normal text-white text-sm opacity-80">
+                Card Holder
+              </p>
+              <h6 className="mb-0 text-white">Jack Peterson</h6>
             </div>
-            <div className="flex items-end justify-end w-1/5 ml-auto">
-              <img
-                className="w-3/5 mt-2"
-                src="/images/logos/mastercard.png"
-                alt="logo"
-              />
+            <div>
+              <p className="mb-0 leading-normal text-white text-sm opacity-80">
+                Expires
+              </p>
+              <h6 className="mb-0 text-white">11/22</h6>
             </div>
+          </div>
+          <div className="flex items-end justify-end w-1/5 ml-auto">
+            <img
+              className="w-3/5 mt-2"
+              src="/images/logos/mastercard.png"
+              alt="logo"
+            />
           </div>
         </div>
       </div>
     </div>
-  </div>
+  </CardWrapper>
 );

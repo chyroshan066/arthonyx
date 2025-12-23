@@ -9,6 +9,7 @@ import { PerfectScrollbarComponent } from "./utility/PerfectScrollbarComponent";
 import { usePathname } from "next/navigation";
 import { ACCOUNT_PAGES, NAVLINKS } from "@/constants";
 import { useDisclosure } from "@/hooks/useDisclosure";
+import { Separator } from "./utility/Separator";
 
 export const SideNav = memo(() => {
   const { isOpen, toggle, close, contentRef } = useDisclosure(false);
@@ -65,7 +66,7 @@ export const SideNav = memo(() => {
             </Link>
           </div>
 
-          <hr className="h-px mt-0 bg-transparent bg-gradient-to-r from-transparent via-black/40 to-transparent" />
+          <Separator className="mt-0" />
         </div>
 
         {/* SCROLLABLE LIST - This section is the primary scrollable content */}
@@ -84,7 +85,7 @@ export const SideNav = memo(() => {
                 >
                   <div
                     className={`shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5 ${
-                      isActive && "bg-gradient-soft-purple-pink"
+                      isActive && "bg-gradient-soft-purple700-pink500"
                     }`}
                   >
                     <FontAwesomeIcon

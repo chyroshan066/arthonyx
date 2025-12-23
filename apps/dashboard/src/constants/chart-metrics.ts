@@ -13,7 +13,7 @@ export const CHART_METRICS: ChartMetic[] = [
     value: "36K",
     completion: 60,
     icon: faFileLines,
-    color: "bg-gradient-soft-purple-pink",
+    color: "bg-gradient-soft-purple700-pink500",
     width: "w-3/5",
   },
   {

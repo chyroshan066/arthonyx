@@ -25,7 +25,7 @@ export const StatCard = ({ stat }: { stat: Stat }) => {
               </div>
             </div>
             <div className="px-3 text-right basis-1/3">
-              <div className="inline-block w-12 h-12 text-center rounded-lg bg-gradient-soft-purple-pink">
+              <div className="inline-block w-12 h-12 text-center rounded-lg bg-gradient-soft-purple700-pink500">
                 <FontAwesomeIcon
                   icon={icon}
                   className="leading-none text-lg relative top-3.5 text-white"

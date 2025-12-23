@@ -9,7 +9,7 @@ export const ChartCard = memo(() => (
   <>
     <CardWrapper
       outerDivClassName="mb-6 lg:mb-0 lg:w-5/12 mt-0 lg:flex-none"
-      innerDivClassName="z-20 border-black/12.5"
+      innerDivClassName="z-20 border-black/12.5 shadow-soft-xl bg-white"
     >
       <div className="flex-auto p-4">
         <div className="py-4 pr-1 mb-4 bg-gradient-soft-gray900-slate800 rounded-xl">
@@ -60,7 +60,7 @@ export const ChartCard = memo(() => (
 
     <CardWrapper
       outerDivClassName="lg:w-7/12 mt-0 lg:flex-none"
-      innerDivClassName="z-20 border-black/12.5"
+      innerDivClassName="z-20 border-black/12.5 shadow-soft-xl bg-white"
     >
       <CardHeaderWrapper className="border-black/12.5 border-solid">
         <h6>Sales overview</h6>

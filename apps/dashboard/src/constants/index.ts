@@ -8,3 +8,4 @@ export * from "./nav-links";
 export * from "./account-page-links";
 export * from "./notifications";
 export * from "./authors";
+export * from "./payment-stats";

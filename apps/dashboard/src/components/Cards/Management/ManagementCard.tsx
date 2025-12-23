@@ -42,7 +42,7 @@ export const ManagementCard = memo(() => {
       {/* Card 1 */}
       <CardWrapper
         outerDivClassName="mb-6 md:mb-0 md:w-1/2 md:flex-none lg:w-2/3 mt-0 lg:flex-none"
-        innerDivClassName="border-black/12.5"
+        innerDivClassName="border-black/12.5 shadow-soft-xl bg-white"
       >
         <CardHeaderWrapper className="border-black/12.5 border-solid mb-4">
           <div className="flex flex-wrap mt-0 -mx-3">
@@ -203,7 +203,7 @@ export const ManagementCard = memo(() => {
       {/* Card 2 */}
       <CardWrapper
         outerDivClassName="md:w-1/2 md:flex-none lg:w-1/3 lg:flex-none"
-        innerDivClassName="h-full border-black/12.5"
+        innerDivClassName="h-full border-black/12.5 shadow-soft-xl bg-white"
       >
         <CardHeaderWrapper className="border-black/12.5 border-solid">
           <h6>Orders overview</h6>

@@ -131,6 +131,10 @@ export interface AuthorData extends Id {
   employedDate: string;
 }
 
+export interface PaymentStat extends Id, Title, Description, Icon, ClassName {
+  amount: string;
+}
+
 // interface Size used once in NucleoIcon
 // interface isLastRow used once in Table
 // interface SubTitle used once in Tale

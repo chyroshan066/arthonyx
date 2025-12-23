@@ -1,4 +1,5 @@
 import { CreditCard } from "./Cards/CreditCard";
+import { StatMiniCard } from "./Cards/StatMiniCard";
 
 export const Billing = () => (
   <>
@@ -6,6 +7,7 @@ export const Billing = () => (
       <div className="max-w-full px-3 lg:w-2/3 lg:flex-none">
         <div className="flex flex-wrap -mx-3">
           <CreditCard />
+          <StatMiniCard />
         </div>
       </div>
       {/* Right side of first row below this */}
