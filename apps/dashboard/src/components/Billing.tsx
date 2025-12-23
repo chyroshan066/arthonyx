@@ -1,4 +1,5 @@
 import { CreditCard } from "./Cards/CreditCard";
+import { InvoiceCard } from "./Cards/InvoiceCard";
 import { PaymentMethodCard } from "./Cards/PaymentMethodCard";
 import { StatMiniCard } from "./Cards/StatMiniCard";
 
@@ -12,7 +13,7 @@ export const Billing = () => (
           <PaymentMethodCard />
         </div>
       </div>
-      {/* Right side of first row below this */}
+      <InvoiceCard />
     </div>
   </>
 );
