@@ -1,6 +1,4 @@
-import Link from "next/link";
 import { CardWrapper } from "../utility/CardWrapper";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPencilAlt, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 import { BILLING_DETAILS } from "@/constants";
 import { IconButton } from "../utility/Button/IconButton";
@@ -35,23 +33,14 @@ export const BillingInfoCard = () => (
               ))}
             </div>
             <div className="ml-auto text-right">
-              <a
-                className="relative z-10 inline-block px-4 py-3 mb-0 font-bold text-center text-transparent uppercase align-middle transition-all border-0 rounded-lg shadow-none cursor-pointer leading-normal text-xs ease-soft-in bg-150 bg-gradient-soft-red600-rose400 hover:scale-102 active:opacity-85 bg-x-25 bg-clip-text"
-                href="javascript:;"
-              >
-                <FontAwesomeIcon
-                  icon={faTrashAlt}
-                  className="mr-1 text-red-500"
-                />
-                Delete
-              </a>
               <IconButton
-                paddingSize={4}
-                textSize="xs"
-                icon={faPencilAlt}
-                label="Edit"
-                iconClassName="text-slate-700"
+                className="relative z-10 text-transparent bg-clip-text"
+                backgroundColor="gradient-soft-red600-rose400"
+                textColor="text-red-500"
+                icon={faTrashAlt}
+                label="Delete"
               />
+              <IconButton icon={faPencilAlt} label="Edit" />
             </div>
           </li>
         ))}

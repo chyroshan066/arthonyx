@@ -168,3 +168,5 @@ export interface Invoice extends Id, Date, Amount {}
 // interface paddingSize used once in IconButton
 // interface textSize used once in IconButton
 // interface IconClassName used once in IconButton
+// interface backgroundColor used once in IconButton
+// interface textColor used once in IconButton
