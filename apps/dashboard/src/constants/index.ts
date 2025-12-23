@@ -9,3 +9,4 @@ export * from "./account-page-links";
 export * from "./notifications";
 export * from "./authors";
 export * from "./payment-stats";
+export * from "./payment-method";

@@ -44,6 +44,14 @@ interface Text {
   text: string;
 }
 
+interface Logo {
+  logo: string;
+}
+
+interface Alt {
+  alt: string;
+}
+
 export interface Img {
   img: string;
 }
@@ -102,8 +110,7 @@ export interface TableHeader extends Id, ClassName {
   textAlign?: string;
 }
 
-export interface ProjectData extends Id, Completion, Name {
-  logo: string;
+export interface ProjectData extends Id, Completion, Name, Logo {
   members: {
     id: number;
     name: string;
@@ -133,6 +140,10 @@ export interface AuthorData extends Id {
 
 export interface PaymentStat extends Id, Title, Description, Icon, ClassName {
   amount: string;
+}
+
+export interface PaymentMethod extends Id, Logo, Alt, ClassName {
+  cardNumber: string;
 }
 
 // interface Size used once in NucleoIcon
