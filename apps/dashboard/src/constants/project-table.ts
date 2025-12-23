@@ -16,7 +16,7 @@ export const PROJECT_TABLE_HEADERS: TableHeader[] = [
     id: 3,
     header: "Budget",
     textAlign: "left",
-    className: "ps-2",
+    className: "pl-2",
   },
   {
     id: 4,

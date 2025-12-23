@@ -1,3 +1,4 @@
+import { BillingInfoCard } from "./Cards/BillingInfoCard";
 import { CreditCard } from "./Cards/CreditCard";
 import { InvoiceCard } from "./Cards/InvoiceCard";
 import { PaymentMethodCard } from "./Cards/PaymentMethodCard";
@@ -14,6 +15,9 @@ export const Billing = () => (
         </div>
       </div>
       <InvoiceCard />
+    </div>
+    <div className="flex flex-wrap -mx-3">
+      <BillingInfoCard />
     </div>
   </>
 );

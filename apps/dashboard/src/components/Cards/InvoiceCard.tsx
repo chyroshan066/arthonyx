@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { CardWrapper } from "../utility/CardWrapper";
 import { faFilePdf } from "@fortawesome/free-solid-svg-icons";
 import { INVOCIES } from "@/constants";
+import { IconButton } from "../utility/Button/IconButton";
 
 export const InvoiceCard = () => (
   <CardWrapper
@@ -22,12 +23,10 @@ export const InvoiceCard = () => (
     </div>
     <div className="flex-auto p-4 pb-0">
       <ul className="flex flex-col pl-0 mb-0 rounded-lg">
-        {INVOCIES.map((invoice, index) => (
+        {INVOCIES.map((invoice) => (
           <li
             key={invoice.id}
-            className={`relative flex justify-between px-4 py-2 pl-0 ${
-              index !== INVOCIES.length - 1 && "mb-2"
-            } bg-white border-0 ${invoice.className} text-inherit rounded-xl`}
+            className="relative flex justify-between px-4 py-2 pl-0 mb-2 last:mb-0 first:rounded-t-inherit last:rounded-b-inherit bg-white border-0 text-inherit rounded-xl"
           >
             <div className="flex flex-col">
               <h6 className="mb-1 font-semibold leading-normal text-sm text-slate-700">
@@ -37,10 +36,14 @@ export const InvoiceCard = () => (
             </div>
             <div className="flex items-center leading-normal text-sm">
               {invoice.amount}
-              <button className="inline-block px-0 py-3 mb-0 ml-6 font-bold leading-normal text-center uppercase align-middle transition-all bg-transparent border-0 rounded-lg shadow-none cursor-pointer ease-soft-in bg-150 text-sm active:opacity-85 hover:scale-102 tracking-tight-soft bg-x-25 text-slate-700">
-                <FontAwesomeIcon icon={faFilePdf} className="mr-1 text-lg" />{" "}
-                PDF
-              </button>
+              <IconButton
+                paddingSize={0}
+                className="ml-6 tracking-tight-soft"
+                textSize="sm"
+                icon={faFilePdf}
+                label="PDF"
+                iconClassName="text-lg"
+              />
             </div>
           </li>
         ))}

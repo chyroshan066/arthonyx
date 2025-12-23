@@ -60,7 +60,7 @@ interface Href {
   href: string;
 }
 
-interface Icon {
+export interface Icon {
   icon: IconDefinition;
 }
 
@@ -91,6 +91,10 @@ export interface Stat extends Id, Title, Color, Icon {
   change: string;
 }
 
+export interface Label {
+  label: string;
+}
+
 interface BaseNotification extends Id, Href, Title, Message, Time {}
 
 interface ImageNotification extends BaseNotification {
@@ -107,8 +111,7 @@ export type Notification = ImageNotification | IconNotification;
 export interface BaseLink extends Id, Name, Href {}
 export interface Link extends BaseLink, Icon {}
 
-export interface ChartMetic extends Id, Icon, Color, Completion {
-  label: string;
+export interface ChartMetic extends Id, Icon, Color, Completion, Label {
   value: string;
   width: string;
 }
@@ -157,8 +160,11 @@ export interface PaymentMethod extends Id, Logo, Alt, ClassName {
   cardNumber: string;
 }
 
-export interface Invoice extends Id, Date, Amount, ClassName {}
+export interface Invoice extends Id, Date, Amount {}
 
 // interface Size used once in NucleoIcon
 // interface isLastRow used once in Table
 // interface SubTitle used once in Tale
+// interface paddingSize used once in IconButton
+// interface textSize used once in IconButton
+// interface IconClassName used once in IconButton

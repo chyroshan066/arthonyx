@@ -5,7 +5,6 @@ export const INVOCIES: Invoice[] = [
     id: "MS-415646",
     date: "March, 01, 2020",
     amount: "$180",
-    className: "rounded-t-inherit",
   },
   {
     id: "#RV-126749",
@@ -26,6 +25,5 @@ export const INVOCIES: Invoice[] = [
     id: "#AR-803481",
     date: "March, 01, 2019",
     amount: "$300",
-    className: "rounded-b-inherit",
   },
 ];
