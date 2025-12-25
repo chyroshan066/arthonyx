@@ -3,8 +3,7 @@ import type { Metadata, Viewport } from "next";
 import "@/styles/nucleo-icons/nucleo-icons.css";
 import "@/styles/nucleo-icons/nucleo-svg.css";
 import "./globals.css";
-import AnalyticsWrapper from "@/utils/AnalyticsWrapper";
-import { openSans } from "./fonts";
+import { Children } from "@/types";
 
 export const metadata: Metadata = {
   title: "<website_title>",
@@ -94,11 +93,7 @@ export const viewport: Viewport = {
   maximumScale: 1,
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: Readonly<Children>) {
   return (
     <html lang="en">
       <head>
@@ -110,13 +105,7 @@ export default function RootLayout({
         />
       </head>
 
-      <body
-        className={`${openSans.variable} m-0 font-sans text-base antialiased font-normal leading-default bg-gray-50 text-slate-500`}
-        suppressHydrationWarning={true}
-      >
-        {children}
-        <AnalyticsWrapper />
-      </body>
+      {children}
     </html>
   );
 }

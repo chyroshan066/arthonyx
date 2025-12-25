@@ -9,7 +9,7 @@ export const NAVLINKS: Link[] = [
   {
     id: 1,
     name: "Dashboard",
-    href: "/",
+    href: "/dashboard",
     icon: faShop,
   },
   {

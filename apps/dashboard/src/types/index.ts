@@ -36,7 +36,7 @@ export interface Email {
   email: string;
 }
 
-interface Id {
+export interface Id {
   id: number | string;
 }
 
@@ -102,6 +102,14 @@ export interface Label {
 
 export interface PaddingSize {
   paddingSize?: number;
+}
+
+export interface BackgroundColor {
+  backgroundColor?: string;
+}
+
+export interface DefaultChecked {
+  defaultChecked: boolean;
 }
 
 interface BaseNotification extends Id, Href, Title, Message, Time {}
@@ -175,9 +183,8 @@ export interface Transaction extends Invoice, Name {
 
 export interface ProfileTab extends Label, Icon, Value {}
 
-export interface Setting extends Label {
+export interface Setting extends Label, DefaultChecked {
   id: string;
-  defaultChecked: boolean;
 }
 
 export interface ProfileDetail extends Id, Label, Value {}
@@ -194,7 +201,6 @@ export interface Project extends Id, Img, Title, Description {
 // interface SubTitle used once in Tale
 // interface textSize used once in IconButton
 // interface IconClassName used once in IconButton
-// interface backgroundColor used once in IconButton
 // interface textColor used once in IconButton
 // interface leading used once in IconButton
 // interface btnText used once in Button

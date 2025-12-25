@@ -15,13 +15,13 @@ export const ACCOUNT_PAGES: Link[] = [
   {
     id: 2,
     name: "Sign In",
-    href: "/signin",
+    href: "/login",
     icon: faFileLines,
   },
   {
     id: 3,
     name: "Sign Up",
-    href: "/signup",
+    href: "/register",
     icon: faRocket,
   },
 ];

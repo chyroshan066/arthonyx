@@ -1,5 +1,6 @@
 import { Participant } from "@/types";
 import * as Tooltip from "@radix-ui/react-tooltip";
+import Image from "next/image";
 import Link from "next/link";
 
 export const AvatarGroup = ({
@@ -21,10 +22,12 @@ export const AvatarGroup = ({
               data-target="tooltip_trigger"
               data-placement="bottom"
             >
-              <img
-                className="w-full rounded-full"
-                alt="Image placeholder"
+              <Image
                 src={participant.img}
+                width={24}
+                height={24}
+                alt="Image placeholder"
+                className="w-full rounded-full object-cover"
               />
             </Link>
           </Tooltip.Trigger>

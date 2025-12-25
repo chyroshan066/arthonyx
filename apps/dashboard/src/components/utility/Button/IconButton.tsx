@@ -1,12 +1,15 @@
-import { ClassName, Icon, Label, PaddingSize } from "@/types";
+import { BackgroundColor, ClassName, Icon, Label, PaddingSize } from "@/types";
 import { IconDefinition } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-interface IconButtonProps extends ClassName, Label, PaddingSize {
+interface IconButtonProps
+  extends ClassName,
+    Label,
+    PaddingSize,
+    BackgroundColor {
   icon?: IconDefinition;
   textSize?: "xs" | "sm";
   iconClassName?: string;
-  backgroundColor?: string;
   textColor?: string;
   leading?: string;
 }

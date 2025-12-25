@@ -3,6 +3,7 @@ import { CardHeaderWrapper } from "../utility/CardHeaderWrapper";
 import { CardWrapper } from "../utility/CardWrapper";
 import React from "react";
 import { Setting } from "@/types";
+import { Checkbox } from "../utility/Checkbox";
 
 interface MergedSetting {
   category: string;
@@ -41,10 +42,8 @@ export const SettingsToggleCard = () => (
                 className="relative block px-0 py-2 bg-white border-0 last:pb-0 first:rounded-t-lg last:rounded-b-lg text-inherit"
               >
                 <div className="min-h-6 mb-0.5 block pl-0">
-                  <input
+                  <Checkbox
                     id={setting.id}
-                    className="mt-0.54 peer appearance-none cursor-pointer transition-all duration-250 ease-soft-in-out w-10 h-5 rounded-10 bg-slate-800/10 relative border border-gray-200 border-solid bg-none bg-contain bg-left ml-auto bg-no-repeat align-top after:content-[''] after:absolute after:top-px after:left-px after:bg-white after:rounded-circle after:shadow-soft-2xl after:duration-250 after:h-4 after:w-4 checked:bg-slate-800/95 checked:border-slate-800/95 checked:after:translate-x-[20px] shrink-0"
-                    type="checkbox"
                     defaultChecked={setting.defaultChecked}
                   />
                   <label
