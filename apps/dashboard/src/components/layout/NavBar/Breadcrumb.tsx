@@ -1,0 +1,40 @@
+import Link from "next/link";
+
+interface BreadcrumbProps {
+  pageName: string;
+  isProfile: boolean;
+}
+
+export const Breadcrumb = ({ pageName, isProfile }: BreadcrumbProps) => (
+  <nav>
+    <ol
+      className={`flex flex-wrap pt-1 mr-12 bg-transparent rounded-lg sm:mr-16 ${
+        isProfile && "pl-2 pr-4"
+      }`}
+    >
+      <li className="text-sm leading-normal">
+        <Link
+          className={`opacity-50 ${!isProfile && "text-slate-700"}`}
+          href="#"
+        >
+          Pages
+        </Link>
+      </li>
+      <li
+        className={`text-sm pl-2 capitalize leading-normal before:float-left before:pr-2 before:content-['/'] ${
+          !isProfile && "text-slate-700 before:text-gray-600"
+        }`}
+        aria-current="page"
+      >
+        {pageName}
+      </li>
+    </ol>
+    <h6
+      className={`font-bold capitalize ${
+        isProfile ? "mb-2 ml-2 text-white" : "mb-0"
+      }`}
+    >
+      {pageName}
+    </h6>
+  </nav>
+);

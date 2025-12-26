@@ -1,4 +1,4 @@
-import { NavBar } from "@/components/NavBar";
+import { NavBar } from "@/components/layout/NavBar/NavBar";
 import { DataTable } from "@/components/DataTable";
 import { Footer } from "@/components/layout/Footer";
 import { Main } from "@/components/layout/Main";

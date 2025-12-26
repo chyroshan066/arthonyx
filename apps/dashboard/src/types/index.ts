@@ -211,3 +211,5 @@ export interface Project extends Id, Img, Title, Description {
 // interface isActive used once in NavItem
 // interface isOpen used once in SideNavHeader
 // interface close used once in SideNavHeader
+// interface pageName used once in Breadcrumb
+// interface isProfile used once in Breadcrumb
