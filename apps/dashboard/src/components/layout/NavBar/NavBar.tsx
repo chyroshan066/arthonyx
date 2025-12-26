@@ -10,6 +10,7 @@ import { Breadcrumb } from "./Breadcrumb";
 import { SearchBar } from "./SearchBar";
 import { NotificationDropdown } from "./NotificationDropdown";
 import { MobileMenuToggle } from "./MobileMenuToggle";
+import { SignInLink } from "./SignInLink";
 
 const MERGED_LINKS = [...NAVLINKS, ...ACCOUNT_PAGES];
 
@@ -44,19 +45,7 @@ export const NavBar = memo(() => {
         <div className="flex items-center mt-2 grow sm:mt-0 sm:mr-6 md:mr-0 lg:flex lg:basis-auto">
           <SearchBar />
           <ul className="flex flex-row justify-end pl-0 mb-0 list-none md-max:w-full">
-            <li className="flex items-center">
-              <Link
-                href="./pages/sign-in.html"
-                className={`block px-0 py-2 text-sm font-semibold transition-all ${
-                  isProfile
-                    ? "text-white ease-soft-in-out"
-                    : "text-slate-500 ease-nav-brand"
-                }`}
-              >
-                <FontAwesomeIcon icon={faUser} className="sm:mr-1" />
-                <span className="hidden sm:inline">Sign In</span>
-              </Link>
-            </li>
+            <SignInLink isProfile={isProfile} />
             <MobileMenuToggle
               isProfile={isProfile}
               onToggle={handleSidenavToggle}
