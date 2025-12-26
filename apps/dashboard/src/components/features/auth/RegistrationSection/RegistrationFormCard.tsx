@@ -1,11 +1,10 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faApple, faFacebookF } from "@fortawesome/free-brands-svg-icons";
 import Link from "next/link";
-import { Children, ClassName, Icon, IconClass, Id } from "@/types";
-import { Button } from "./ui/Button";
-import { Card } from "./ui/card/Card";
-
-interface SocialLoginButtonProps extends Children, ClassName {}
+import { Icon, IconClass, Id } from "@/types";
+import { Card } from "@/components/ui/card/Card";
+import { Button } from "@/components/ui/Button";
+import { SocialLoginButtons } from "./SocialLoginButtons";
 
 interface SocialProvider extends Id, Icon, IconClass {
   containerClass?: string;
@@ -25,17 +24,6 @@ const SOCIAL_PROVIDERS: SocialProvider[] = [
   },
 ];
 
-const SocialLoginButton = ({ children, className }: SocialLoginButtonProps) => (
-  <div className={`w-3/12 max-w-full px-1 flex-0 ${className}`}>
-    <Link
-      className="inline-block w-full px-6 py-3 mb-4 font-bold text-center text-gray-200 uppercase align-middle transition-all bg-transparent border border-gray-200 border-solid rounded-lg shadow-none cursor-pointer hover:scale-102 leading-pro text-xs ease-soft-in tracking-tight-soft bg-150 bg-x-25 hover:bg-transparent hover:opacity-75"
-      href="javascript:;"
-    >
-      {children}
-    </Link>
-  </div>
-);
-
 export const RegistrationFormCard = () => (
   <div className="container">
     <div className="flex flex-wrap -mx-3 -mt-48 md:-mt-56 lg:-mt-48">
@@ -48,7 +36,7 @@ export const RegistrationFormCard = () => (
         </div>
         <div className="flex flex-wrap px-3 -mx-3 sm:px-6 xl:px-12">
           {SOCIAL_PROVIDERS.map((provider) => (
-            <SocialLoginButton key={provider.id} className="first:ml-auto">
+            <SocialLoginButtons key={provider.id} className="first:ml-auto">
               <div
                 className={`mx-auto flex items-center justify-center w-[24px] h-[32px] ${provider.containerClass}`}
               >
@@ -57,9 +45,9 @@ export const RegistrationFormCard = () => (
                   className={provider.iconClass}
                 />
               </div>
-            </SocialLoginButton>
+            </SocialLoginButtons>
           ))}
-          <SocialLoginButton className="mr-auto">
+          <SocialLoginButtons className="mr-auto">
             <svg
               width="24px"
               height="32px"
@@ -89,7 +77,7 @@ export const RegistrationFormCard = () => (
                 </g>
               </g>
             </svg>
-          </SocialLoginButton>
+          </SocialLoginButtons>
           <div className="relative w-full max-w-full px-3 mt-2 text-center shrink-0">
             <p className="z-20 inline px-4 mb-2 font-semibold leading-normal bg-white text-sm text-slate-400">
               or

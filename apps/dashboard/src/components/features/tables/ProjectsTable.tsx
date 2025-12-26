@@ -1,4 +1,4 @@
-import { DataTableWrapper } from "@/components/ui/table/DataTableWrapper";
+import { DataTableWrapper } from "@/components/ui/table";
 import {
   Caption,
   Table,
