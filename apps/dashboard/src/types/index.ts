@@ -209,3 +209,5 @@ export interface Project extends Id, Img, Title, Description {
 // interface btnText used once in Button
 // interface containerClass used once in RegistrationFormCard
 // interface isActive used once in NavItem
+// interface isOpen used once in SideNavHeader
+// interface close used once in SideNavHeader
