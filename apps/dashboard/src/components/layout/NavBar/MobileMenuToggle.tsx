@@ -1,8 +1,6 @@
-import { IsProfile } from "@/types";
+import { IsProfile, OnToggle } from "@/types";
 
-interface MobileMenuToggleProps extends IsProfile {
-  onToggle: (e: React.MouseEvent) => void;
-}
+interface MobileMenuToggleProps extends IsProfile, OnToggle {}
 
 export const MobileMenuToggle = ({
   isProfile,

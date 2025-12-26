@@ -1,16 +1,11 @@
 "use client";
 
 import { ACCOUNT_PAGES, NAVLINKS } from "@/lib/constants";
-import { faCog, faUser } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { memo } from "react";
 import { Breadcrumb } from "./Breadcrumb";
 import { SearchBar } from "./SearchBar";
-import { NotificationDropdown } from "./NotificationDropdown";
-import { MobileMenuToggle } from "./MobileMenuToggle";
-import { SignInLink } from "./SignInLink";
+import { NavActions } from "./NavActions";
 
 const MERGED_LINKS = [...NAVLINKS, ...ACCOUNT_PAGES];
 
@@ -41,30 +36,9 @@ export const NavBar = memo(() => {
         }`}
       >
         <Breadcrumb pageName={pageName} isProfile={isProfile} />
-
         <div className="flex items-center mt-2 grow sm:mt-0 sm:mr-6 md:mr-0 lg:flex lg:basis-auto">
           <SearchBar />
-          <ul className="flex flex-row justify-end pl-0 mb-0 list-none md-max:w-full">
-            <SignInLink isProfile={isProfile} />
-            <MobileMenuToggle
-              isProfile={isProfile}
-              onToggle={handleSidenavToggle}
-            />
-            <li className="flex items-center px-4">
-              <Link
-                href="#"
-                className={`p-0 text-sm transition-all ${
-                  isProfile
-                    ? "text-white ease-soft-in-out"
-                    : "text-slate-500 ease-nav-brand"
-                }`}
-              >
-                <FontAwesomeIcon icon={faCog} className="cursor-pointer" />
-              </Link>
-            </li>
-
-            <NotificationDropdown isProfile={isProfile} />
-          </ul>
+          <NavActions isProfile={isProfile} onToggle={handleSidenavToggle} />
         </div>
       </div>
     </nav>
