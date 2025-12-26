@@ -216,3 +216,4 @@ export interface Project extends Id, Img, Title, Description {
 // interface isOpen used once in SideNavHeader
 // interface close used once in SideNavHeader
 // interface pageName used once in Breadcrumb
+// interface onToggle used once in MobileMenuToggle
