@@ -116,6 +116,10 @@ export interface IconClass {
   iconClass?: string;
 }
 
+export interface IsProfile {
+  isProfile: boolean;
+}
+
 interface BaseNotification extends Id, Href, Title, Message, Time {}
 
 interface ImageNotification extends BaseNotification {
@@ -212,4 +216,3 @@ export interface Project extends Id, Img, Title, Description {
 // interface isOpen used once in SideNavHeader
 // interface close used once in SideNavHeader
 // interface pageName used once in Breadcrumb
-// interface isProfile used once in Breadcrumb

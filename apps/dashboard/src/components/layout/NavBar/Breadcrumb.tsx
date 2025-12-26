@@ -1,8 +1,8 @@
+import { IsProfile } from "@/types";
 import Link from "next/link";
 
-interface BreadcrumbProps {
+interface BreadcrumbProps extends IsProfile {
   pageName: string;
-  isProfile: boolean;
 }
 
 export const Breadcrumb = ({ pageName, isProfile }: BreadcrumbProps) => (
