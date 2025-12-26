@@ -1,4 +1,5 @@
 import { openSans } from "@/app/fonts";
+import { Configurator } from "@/components/Configurator";
 import { SideNav } from "@/components/layout/SideNav/SideNav";
 import { Children } from "@/types";
 import AnalyticsWrapper from "@/utils/AnalyticsWrapper";
@@ -52,6 +53,7 @@ export default function DashboardLayout({ children }: Readonly<Children>) {
     >
       <SideNav />
       {children}
+      <Configurator />
       <AnalyticsWrapper />
     </body>
   );
