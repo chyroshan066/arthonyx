@@ -1,14 +1,14 @@
 import { PAYMENT_STATS } from "@/lib/constants";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { CardWrapper } from "../ui/card/Card";
 import { Separator } from "../ui/Separator";
+import { Card } from "../ui/card/Card";
 
 export const StatMiniCard = () => (
   <>
     <div className="w-full max-w-full px-3 xl:w-1/2 xl:flex-none">
       <div className="flex flex-wrap -mx-3">
         {PAYMENT_STATS.map((method) => (
-          <CardWrapper
+          <Card
             key={method.id}
             outerDivClassName={`${method.className} md:w-1/2 md:flex-none`}
             innerDivClassName="bg-white border-transparent shadow-soft-xl"
@@ -29,7 +29,7 @@ export const StatMiniCard = () => (
               <Separator className="my-4" />
               <h5 className="mb-0">{method.amount}</h5>
             </div>
-          </CardWrapper>
+          </Card>
         ))}
       </div>
     </div>

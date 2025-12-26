@@ -1,7 +1,7 @@
-import { StatCard } from "./StatCard";
+import { StatCard } from "../../cards/StatCard";
 import { STATS } from "@/lib/constants";
 
-export const StatsRow = () => (
+export const StatsSection = () => (
   <div className="flex flex-wrap -mx-3">
     {STATS.map((stat, index) => (
       <StatCard key={index} stat={stat} />

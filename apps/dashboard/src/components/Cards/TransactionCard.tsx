@@ -6,11 +6,11 @@ import {
   IconDefinition,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { CardWrapper } from "../ui/card/Card";
 import { TRANSACTION_GROUPS } from "@/lib/constants";
 import { TransactionType } from "@/types";
 import React from "react";
-import { CardHeaderWrapper } from "../ui/card/CardHeader";
+import { Card } from "../ui/card/Card";
+import { CardHeader } from "../ui/card/CardHeader";
 
 const transactionConfigs: Record<
   TransactionType,
@@ -38,11 +38,11 @@ const transactionConfigs: Record<
 };
 
 export const TransactionCard = () => (
-  <CardWrapper
+  <Card
     outerDivClassName="mt-6 md:w-5/12 md:flex-none"
     innerDivClassName="h-full mb-6 shadow-soft-xl bg-white"
   >
-    <CardHeaderWrapper className="px-4">
+    <CardHeader className="px-4">
       <div className="flex flex-wrap -mx-3">
         <div className="max-w-full px-3 md:w-1/2 md:flex-none">
           <h6 className="mb-0">Your Transactions</h6>
@@ -52,7 +52,7 @@ export const TransactionCard = () => (
           <small>23 - 30 March 2020</small>
         </div>
       </div>
-    </CardHeaderWrapper>
+    </CardHeader>
     <div className="flex-auto p-4 pt-6">
       {TRANSACTION_GROUPS.map((group) => (
         <React.Fragment key={group.title}>
@@ -106,5 +106,5 @@ export const TransactionCard = () => (
         </React.Fragment>
       ))}
     </div>
-  </CardWrapper>
+  </Card>
 );

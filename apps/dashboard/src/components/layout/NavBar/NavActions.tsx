@@ -1,8 +1,8 @@
 import { IsProfile, OnToggle } from "@/types";
+import { SignInLink } from "./actions/SignInLink";
 import { MobileMenuToggle } from "./MobileMenuToggle";
+import { SettingsLink } from "./actions/SettingsLink";
 import { NotificationDropdown } from "./NotificationDropdown";
-import { SettingsLink } from "./SettingsLink";
-import { SignInLink } from "./SignInLink";
 
 interface NavActionsProps extends IsProfile, OnToggle {}
 

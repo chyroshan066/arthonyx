@@ -1,17 +1,17 @@
-import { CardWrapper } from "../ui/card/Card";
 import { faPencilAlt, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 import { BILLING_DETAILS } from "@/lib/constants";
 import { IconButton } from "../ui/Button";
-import { CardHeaderWrapper } from "../ui/card/CardHeader";
+import { Card } from "../ui/card/Card";
+import { CardHeader } from "../ui/card/CardHeader";
 
 export const BillingInfoCard = () => (
-  <CardWrapper
+  <Card
     outerDivClassName="mt-6 md:w-7/12 md:flex-none"
     innerDivClassName="bg-white shadow-soft-xl"
   >
-    <CardHeaderWrapper className="px-4">
+    <CardHeader className="px-4">
       <h6 className="mb-0">Billing Information</h6>
-    </CardHeaderWrapper>
+    </CardHeader>
     <div className="flex-auto p-4 pt-6">
       <ul className="flex flex-col pl-0 mb-0 rounded-lg">
         {BILLING_DETAILS.map((profile) => (
@@ -47,5 +47,5 @@ export const BillingInfoCard = () => (
         ))}
       </ul>
     </div>
-  </CardWrapper>
+  </Card>
 );

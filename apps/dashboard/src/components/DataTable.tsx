@@ -5,12 +5,12 @@ import {
   PROJECTS_DATA_2,
 } from "@/lib/constants";
 import { memo } from "react";
-import { CardWrapper } from "./ui/card/Card";
-import { CardHeaderWrapper } from "./ui/card/CardHeader";
-import { PerfectScrollbarComponent } from "./ui/ScrollArea";
 import { Caption, Table, TableAvatarCell, TData, THead } from "./utility/Table";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEllipsisV } from "@fortawesome/free-solid-svg-icons";
+import { Card } from "./ui/card/Card";
+import { CardHeader } from "./ui/card/CardHeader";
+import { ScrollArea } from "./ui/ScrollArea";
 
 const statusStyles: { [key: string]: string } = {
   Online: "bg-gradient-soft-green600-lime400",
@@ -20,15 +20,15 @@ const statusStyles: { [key: string]: string } = {
 export const DataTable = memo(() => (
   <>
     <div className="flex flex-wrap -mx-3">
-      <CardWrapper
+      <Card
         outerDivClassName="flex-none"
         innerDivClassName="mb-6 border-transparent shadow-soft-xl bg-white"
       >
-        <CardHeaderWrapper className="border-b-solid border-b-transparent">
+        <CardHeader className="border-b-solid border-b-transparent">
           <h6>Authors table</h6>
-        </CardHeaderWrapper>
+        </CardHeader>
         <div className="flex-auto px-0 pt-0 pb-2">
-          <PerfectScrollbarComponent
+          <ScrollArea
             className="management-table-ps relative overflow-hidden touch-pan-y"
             options={{
               suppressScrollY: true, // Only horizontal for the table
@@ -117,21 +117,21 @@ export const DataTable = memo(() => (
                 </tbody>
               </Table>
             </div>
-          </PerfectScrollbarComponent>
+          </ScrollArea>
         </div>
-      </CardWrapper>
+      </Card>
     </div>
 
     <div className="flex flex-wrap -mx-3">
-      <CardWrapper
+      <Card
         outerDivClassName="flex-none"
         innerDivClassName="mb-6 border-transparent shadow-soft-xl bg-white"
       >
-        <CardHeaderWrapper className="border-b-solid border-b-transparent">
+        <CardHeader className="border-b-solid border-b-transparent">
           <h6>Projects table</h6>
-        </CardHeaderWrapper>
+        </CardHeader>
         <div className="flex-auto px-0 pt-0 pb-2">
-          <PerfectScrollbarComponent
+          <ScrollArea
             className="management-table-ps relative overflow-hidden touch-pan-y" // "touch-pan-y" allows the PAGE to scroll vertically when we drag our finger on the table.
             options={{
               suppressScrollY: true, // Only horizontal for the table
@@ -229,9 +229,9 @@ export const DataTable = memo(() => (
                 </tbody>
               </Table>
             </div>
-          </PerfectScrollbarComponent>
+          </ScrollArea>
         </div>
-      </CardWrapper>
+      </Card>
     </div>
   </>
 ));

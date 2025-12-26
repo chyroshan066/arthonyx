@@ -1,21 +1,17 @@
 import { faPencilAlt, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { CardWrapper } from "../ui/card/Card";
-import Link from "next/link";
 import { PAYMENT_METHODS } from "@/lib/constants";
-import { CardHeaderWrapper } from "../ui/card/CardHeader";
 import { Button } from "../ui/Button";
+import { Card } from "../ui/card/Card";
+import { CardHeader } from "../ui/card/CardHeader";
 
 export const PaymentMethodCard = () => (
-  <CardWrapper
+  <Card
     outerDivClassName="mb-4 lg:mb-0 lg:w-full lg:flex-none"
     innerDivClassName="mt-6 bg-white border-transparent shadow-soft-xl"
     isWidthFull={false}
   >
-    <CardHeaderWrapper
-      className="border-b-solid border-b-transparent"
-      paddingSize={4}
-    >
+    <CardHeader className="border-b-solid border-b-transparent" paddingSize={4}>
       <div className="flex flex-wrap -mx-3">
         <div className="flex items-center flex-none w-1/2 max-w-full px-3">
           <h6 className="mb-0">Payment Method</h6>
@@ -29,7 +25,7 @@ export const PaymentMethodCard = () => (
           />
         </div>
       </div>
-    </CardHeaderWrapper>
+    </CardHeader>
     <div className="flex-auto p-4">
       <div className="flex flex-wrap -mx-3">
         {PAYMENT_METHODS.map((method) => (
@@ -65,5 +61,5 @@ export const PaymentMethodCard = () => (
         ))}
       </div>
     </div>
-  </CardWrapper>
+  </Card>
 );

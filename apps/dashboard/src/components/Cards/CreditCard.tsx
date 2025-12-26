@@ -1,9 +1,9 @@
 import { faWifi } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { CardWrapper } from "../ui/card/Card";
+import { Card } from "../ui/card/Card";
 
 export const CreditCard = () => (
-  <CardWrapper
+  <Card
     outerDivClassName="mb-4 xl:mb-0 xl:w-1/2 xl:flex-none"
     innerDivClassName="bg-transparent border-transparent rounded-2xl shadow-xl"
   >
@@ -44,5 +44,5 @@ export const CreditCard = () => (
         </div>
       </div>
     </div>
-  </CardWrapper>
+  </Card>
 );

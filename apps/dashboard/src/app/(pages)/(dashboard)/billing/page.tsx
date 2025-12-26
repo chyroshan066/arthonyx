@@ -1,7 +1,7 @@
-import { Billing } from "@/components/Billing";
 import { Footer } from "@/components/layout/Footer";
-import { NavBar } from "@/components/layout/NavBar/NavBar";
 import { Main } from "@/components/layout/Main";
+import { Billing } from "@/components/features/billing/Billing";
+import { NavBar } from "@/components/layout/NavBar";
 
 export default function BillingPage() {
   return (
