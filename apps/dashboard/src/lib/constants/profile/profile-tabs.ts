@@ -1,11 +1,11 @@
-import { ProfileTab } from "@/types";
+import { IconTab } from "@/types/tabs";
 import {
   faCube,
   faFileLines,
   faWrench,
 } from "@fortawesome/free-solid-svg-icons";
 
-export const PROFILE_TABS: ProfileTab[] = [
+export const PROFILE_TABS: IconTab[] = [
   {
     label: "App",
     icon: faCube,

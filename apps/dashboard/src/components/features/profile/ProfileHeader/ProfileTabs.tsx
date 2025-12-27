@@ -1,41 +1,13 @@
+import { useTabs } from "@/hooks/useTabs";
 import { PROFILE_TABS } from "@/lib/constants";
+import { IconTab } from "@/types/tabs";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useEffect, useRef, useState } from "react";
 
 export const ProfileTabs = () => {
-  const [activeTab, setActiveTab] = useState(PROFILE_TABS[0].value);
-  const [tabStyle, setTabStyle] = useState({
-    left: 0,
-    width: 0,
-    height: 0, // We track height to ensure it matches exactly
+  const { tabStyle, tabsRef, setActiveTab, activeTab } = useTabs<IconTab>({
+    initialTab: PROFILE_TABS[0].value,
+    tabs: PROFILE_TABS,
   });
-  const tabsRef = useRef<(HTMLLIElement | null)[]>([]);
-
-  useEffect(() => {
-    // Function to calculate and update the pill's position
-    const updateTabPosition = () => {
-      const activeIndex = PROFILE_TABS.findIndex(
-        (tab) => tab.value === activeTab
-      );
-      const currentTab = tabsRef.current[activeIndex];
-
-      if (currentTab) {
-        setTabStyle({
-          left: currentTab.offsetLeft,
-          width: currentTab.offsetWidth,
-          height: currentTab.offsetHeight,
-        });
-      }
-    };
-
-    // Run initially
-    updateTabPosition();
-
-    // Recalculate on window resize (responsive behavior)
-    window.addEventListener("resize", updateTabPosition);
-
-    return () => window.removeEventListener("resize", updateTabPosition);
-  }, [activeTab]);
 
   return (
     <div className="w-full max-w-full px-3 mx-auto mt-4 sm:my-auto sm:mr-0 md:w-1/2 md:flex-none lg:w-4/12">
