@@ -1,6 +1,6 @@
 import { openSans } from "@/app/fonts";
 import { Configurator } from "@/components/Configurator";
-import { SideNav } from "@/components/layout/SideNav/SideNav";
+import { SideNav } from "@/components/layout/SideNav";
 import { Children } from "@/types";
 import AnalyticsWrapper from "@/utils/AnalyticsWrapper";
 import type { Metadata } from "next";

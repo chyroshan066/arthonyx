@@ -1,12 +1,12 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
-import { PROJECTS } from "@/lib/constants";
-import { AvatarGroup } from "../ui/AvatarGroup";
 import Image from "next/image";
-import { Button } from "../ui/Button";
 import Link from "next/link";
 import { Children, ClassName } from "@/types";
-import { Card } from "../ui/card/Card";
+import { Card } from "../ui/card";
+import { GALLERY_PROJECTS } from "@/lib/constants";
+import { Button } from "../ui/Button";
+import { AvatarGroup } from "../ui/AvatarGroup";
 
 interface ProjectCardColumnProps extends Children, ClassName {}
 
@@ -31,7 +31,7 @@ export const ProjectGalleryCard = () => (
     </div>
     <div className="flex-auto p-4">
       <div className="flex flex-wrap -mx-3">
-        {PROJECTS.map((project) => (
+        {GALLERY_PROJECTS.map((project) => (
           <ProjectCardColumn key={project.id} className="border-0 h-full">
             <div className="relative">
               <Link href="#" className="block shadow-xl rounded-2xl">

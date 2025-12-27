@@ -3715,6 +3715,10 @@
   .xl-max\:opacity-65 {
     opacity: 0.65;
   }
+
+  .xl-max\:bg-gradient-soft-purple700-pink500 {
+    background-image: linear-gradient(to top left, #7928ca, #ff0080);
+  }
 }
 
 @media (min-width: 576px) {

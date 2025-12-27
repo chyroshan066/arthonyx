@@ -1,8 +1,7 @@
 import { faPencilAlt, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
+import { Card, CardHeader } from "../ui/card";
 import { BILLING_DETAILS } from "@/lib/constants";
 import { IconButton } from "../ui/Button";
-import { Card } from "../ui/card/Card";
-import { CardHeader } from "../ui/card/CardHeader";
 
 export const BillingInfoCard = () => (
   <Card

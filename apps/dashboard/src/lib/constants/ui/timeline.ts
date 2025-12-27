@@ -8,7 +8,7 @@ import {
   faKey,
 } from "@fortawesome/free-solid-svg-icons";
 
-export const TIMELINE_DATA: TimelineData[] = [
+export const TIMELINE_ITEMS: TimelineData[] = [
   {
     id: 1,
     title: "$2400, Design changes",

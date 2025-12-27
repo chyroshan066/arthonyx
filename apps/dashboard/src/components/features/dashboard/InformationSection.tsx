@@ -1,4 +1,4 @@
-import { InformationCard } from "../../cards/InformationCard";
+import { InformationCard } from "@/components/cards/InformationCard";
 
 export const InformationSection = () => (
   <div className="flex flex-wrap -mx-3">

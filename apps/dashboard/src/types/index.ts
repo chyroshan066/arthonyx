@@ -80,6 +80,10 @@ interface Value {
   value: string;
 }
 
+interface Budget {
+  budget: string;
+}
+
 export interface Participant extends Id, Name, Img {}
 
 export interface Time {
@@ -150,9 +154,8 @@ export interface TableHeader extends Id, ClassName {
   textAlign?: string;
 }
 
-export interface ProjectData extends Id, Completion, Name, Logo {
+export interface ProjectData extends Id, Completion, Name, Logo, Budget {
   members: Participant[];
-  budget: string;
 }
 
 export interface TimelineData extends Id, Title, Icon, Date {
@@ -200,12 +203,24 @@ export interface Setting extends Label, DefaultChecked {
 }
 
 export interface ProfileDetail extends Id, Label, Value {}
+export interface FooterSocialLink extends Id, Icon, Href {}
 export interface SocialLink extends Id, Icon, Color {}
 export interface Chat extends Id, Name, Message, Img {}
 
 export interface Project extends Id, Img, Title, Description {
   category: string;
   participants: Participant[];
+}
+
+export interface ProjectData2 extends Id, Logo, Name, Budget, Completion {
+  status: "working" | "done" | "canceled";
+}
+
+export interface BillingDetail extends Id, Name {
+  details: {
+    label: string;
+    value: string;
+  }[];
 }
 
 // interface Size used once in NucleoIcon

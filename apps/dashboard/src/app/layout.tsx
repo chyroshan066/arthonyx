@@ -4,6 +4,7 @@ import type { Metadata, Viewport } from "next";
 // import "@/styles/nucleo-icons/nucleo-svg.css";
 import "@/styles/globals.css";
 import { Children } from "@/types";
+import { Providers } from "@/redux/provider";
 
 export const metadata: Metadata = {
   title: "<website_title>",
@@ -104,8 +105,7 @@ export default function RootLayout({ children }: Readonly<Children>) {
           }}
         />
       </head>
-
-      {children}
+      <Providers>{children}</Providers>
     </html>
   );
 }

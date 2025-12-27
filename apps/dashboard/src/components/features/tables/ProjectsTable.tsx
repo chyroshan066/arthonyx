@@ -6,7 +6,10 @@ import {
   TableCell,
   TableHead,
 } from "@/components/ui/table";
-import { PROJECT_TABLE_HEADERS_2, PROJECTS_DATA_2 } from "@/lib/constants";
+import {
+  PROJECT_TABLE_HEADERS_ALT,
+  PROJECTS_TABLE_DATA_ALT,
+} from "@/lib/constants";
 import { faEllipsisV } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -15,11 +18,11 @@ export const ProjectsTable = () => (
     <Table className="justify-center">
       <TableHead>
         <tr>
-          {PROJECT_TABLE_HEADERS_2.map((header) => (
+          {PROJECT_TABLE_HEADERS_ALT.map((header) => (
             <th
               key={header.id}
               className={`table-header ${
-                header.id !== PROJECT_TABLE_HEADERS_2.length
+                header.id !== PROJECT_TABLE_HEADERS_ALT.length
                   ? `font-bold text-${header.textAlign} uppercase text-xxs border-b-solid text-slate-400 opacity-70`
                   : "font-semibold capitalize border-solid"
               } border-gray-200 shadow-none tracking-none ${header.className}`}
@@ -30,10 +33,10 @@ export const ProjectsTable = () => (
         </tr>
       </TableHead>
       <tbody>
-        {PROJECTS_DATA_2.map((project, index) => (
+        {PROJECTS_TABLE_DATA_ALT.map((project, index) => (
           <tr key={project.id}>
             <TableCell
-              isLastRow={index === PROJECTS_DATA_2.length - 1}
+              isLastRow={index === PROJECTS_TABLE_DATA_ALT.length - 1}
               className="shadow-transparent"
             >
               <TableAvatarCell
@@ -43,7 +46,7 @@ export const ProjectsTable = () => (
               />
             </TableCell>
             <TableCell
-              isLastRow={index === PROJECTS_DATA_2.length - 1}
+              isLastRow={index === PROJECTS_TABLE_DATA_ALT.length - 1}
               className="shadow-transparent"
             >
               <p className="mb-0 text-sm font-semibold leading-normal">
@@ -51,13 +54,13 @@ export const ProjectsTable = () => (
               </p>
             </TableCell>
             <TableCell
-              isLastRow={index === PROJECTS_DATA_2.length - 1}
+              isLastRow={index === PROJECTS_TABLE_DATA_ALT.length - 1}
               className="shadow-transparent"
             >
               <Caption>{project.status}</Caption>
             </TableCell>
             <TableCell
-              isLastRow={index === PROJECTS_DATA_2.length - 1}
+              isLastRow={index === PROJECTS_TABLE_DATA_ALT.length - 1}
               className="shadow-transparent text-center"
             >
               <div className="flex items-center justify-center">
@@ -79,7 +82,7 @@ export const ProjectsTable = () => (
               </div>
             </TableCell>
             <TableCell
-              isLastRow={index === PROJECTS_DATA_2.length - 1}
+              isLastRow={index === PROJECTS_TABLE_DATA_ALT.length - 1}
               className="shadow-transparent"
             >
               <button

@@ -6,7 +6,7 @@ import {
   TableCell,
   TableHead,
 } from "@/components/ui/table";
-import { AUTHOR_TABLE_HEADER, AUTHORS_DATA } from "@/lib/constants";
+import { AUTHORS_TABLE_DATA, AUTHORS_TABLE_HEADERS } from "@/lib/constants";
 
 const statusStyles: { [key: string]: string } = {
   Online: "bg-gradient-soft-green600-lime400",
@@ -18,11 +18,11 @@ export const AuthorsTable = () => (
     <Table>
       <TableHead>
         <tr>
-          {AUTHOR_TABLE_HEADER.map((header) => (
+          {AUTHORS_TABLE_HEADERS.map((header) => (
             <th
               key={header.id}
               className={`table-header text-slate-400 opacity-70 ${
-                header.id !== AUTHOR_TABLE_HEADER.length
+                header.id !== AUTHORS_TABLE_HEADERS.length
                   ? `text-${header.textAlign} uppercase text-xxs border-b-solid font-bold`
                   : "font-semibold capitalize border-solid"
               } border-gray-200 shadow-none tracking-none ${header.className}`}
@@ -34,10 +34,10 @@ export const AuthorsTable = () => (
       </TableHead>
 
       <tbody>
-        {AUTHORS_DATA.map((author, index) => (
+        {AUTHORS_TABLE_DATA.map((author, index) => (
           <tr key={author.id}>
             <TableCell
-              isLastRow={index === AUTHORS_DATA.length - 1}
+              isLastRow={index === AUTHORS_TABLE_DATA.length - 1}
               className="shadow-transparent"
             >
               <TableAvatarCell
@@ -47,7 +47,7 @@ export const AuthorsTable = () => (
               />
             </TableCell>
             <TableCell
-              isLastRow={index === AUTHORS_DATA.length - 1}
+              isLastRow={index === AUTHORS_TABLE_DATA.length - 1}
               className="shadow-transparent"
             >
               <p className="mb-0 caption font-semibold">
@@ -58,7 +58,7 @@ export const AuthorsTable = () => (
               </p>
             </TableCell>
             <TableCell
-              isLastRow={index === AUTHORS_DATA.length - 1}
+              isLastRow={index === AUTHORS_TABLE_DATA.length - 1}
               className="text-sm leading-normal text-center shadow-transparent"
             >
               <span
@@ -70,7 +70,7 @@ export const AuthorsTable = () => (
               </span>
             </TableCell>
             <TableCell
-              isLastRow={index === AUTHORS_DATA.length - 1}
+              isLastRow={index === AUTHORS_TABLE_DATA.length - 1}
               className="text-center shadow-transparent"
             >
               <Caption className="text-slate-400">
@@ -78,7 +78,7 @@ export const AuthorsTable = () => (
               </Caption>
             </TableCell>
             <TableCell
-              isLastRow={index === AUTHORS_DATA.length - 1}
+              isLastRow={index === AUTHORS_TABLE_DATA.length - 1}
               className="shadow-transparent"
             >
               <a

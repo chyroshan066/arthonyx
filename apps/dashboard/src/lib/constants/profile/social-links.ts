@@ -5,7 +5,7 @@ import {
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 
-export const SOCIAL_LINKS: SocialLink[] = [
+export const PROFILE_SOCIAL_LINKS: SocialLink[] = [
   {
     id: 1,
     icon: faFacebook,

@@ -1,6 +1,6 @@
 import { Project } from "@/types";
 
-export const PROJECTS: Project[] = [
+export const GALLERY_PROJECTS: Project[] = [
   {
     id: 1,
     img: "/images/random/home-decor-1.jpg",

@@ -2,9 +2,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faApple, faFacebookF } from "@fortawesome/free-brands-svg-icons";
 import Link from "next/link";
 import { Icon, IconClass, Id } from "@/types";
-import { Card } from "@/components/ui/card/Card";
-import { Button } from "@/components/ui/Button";
+import { Card } from "@/components/ui/card";
 import { SocialLoginButtons } from "./SocialLoginButtons";
+import { Button } from "@/components/ui/Button";
 
 interface SocialProvider extends Id, Icon, IconClass {
   containerClass?: string;

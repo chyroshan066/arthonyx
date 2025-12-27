@@ -1,6 +1,6 @@
 import { AuthorData, TableHeader } from "@/types";
 
-export const AUTHOR_TABLE_HEADER: TableHeader[] = [
+export const AUTHORS_TABLE_HEADERS: TableHeader[] = [
   {
     id: 1,
     header: "Author",
@@ -28,7 +28,7 @@ export const AUTHOR_TABLE_HEADER: TableHeader[] = [
   },
 ];
 
-export const AUTHORS_DATA: AuthorData[] = [
+export const AUTHORS_TABLE_DATA: AuthorData[] = [
   {
     id: 1,
     user: {

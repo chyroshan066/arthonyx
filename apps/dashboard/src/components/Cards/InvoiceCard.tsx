@@ -1,8 +1,7 @@
 import { faFilePdf } from "@fortawesome/free-solid-svg-icons";
-import { INVOCIES } from "@/lib/constants";
+import { Card, CardHeader } from "../ui/card";
 import { Button, IconButton } from "../ui/Button";
-import { Card } from "../ui/card/Card";
-import { CardHeader } from "../ui/card/CardHeader";
+import { INVOCIES } from "@/lib/constants";
 
 export const InvoiceCard = () => (
   <Card

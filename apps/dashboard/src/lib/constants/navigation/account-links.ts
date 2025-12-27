@@ -5,7 +5,7 @@ import {
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
 
-export const ACCOUNT_PAGES: Link[] = [
+export const ACCOUNT_LINKS: Link[] = [
   {
     id: 1,
     name: "Profile",

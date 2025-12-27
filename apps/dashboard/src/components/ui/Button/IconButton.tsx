@@ -1,7 +1,6 @@
 import {
   BackgroundColor,
   ClassName,
-  Icon,
   IconClass,
   Label,
   PaddingSize,

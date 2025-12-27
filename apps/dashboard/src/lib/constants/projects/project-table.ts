@@ -1,4 +1,4 @@
-import { ProjectData, TableHeader } from "@/types";
+import { ProjectData, ProjectData2, TableHeader } from "@/types";
 
 export const PROJECT_TABLE_HEADERS: TableHeader[] = [
   {
@@ -25,7 +25,7 @@ export const PROJECT_TABLE_HEADERS: TableHeader[] = [
   },
 ];
 
-export const PROJECTS_DATA: ProjectData[] = [
+export const PROJECTS_TABLE_DATA: ProjectData[] = [
   {
     id: 1,
     logo: "/images/random/logo-xd.svg",
@@ -97,7 +97,7 @@ export const PROJECTS_DATA: ProjectData[] = [
   },
 ];
 
-export const PROJECT_TABLE_HEADERS_2: TableHeader[] = [
+export const PROJECT_TABLE_HEADERS_ALT: TableHeader[] = [
   {
     id: 1,
     header: "Project",
@@ -127,7 +127,7 @@ export const PROJECT_TABLE_HEADERS_2: TableHeader[] = [
   },
 ];
 
-export const PROJECTS_DATA_2 = [
+export const PROJECTS_TABLE_DATA_ALT: ProjectData2[] = [
   {
     id: 1,
     logo: "images/random/logo-spotify.svg",

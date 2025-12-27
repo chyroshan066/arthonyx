@@ -1,6 +1,5 @@
 import { AvatarGroup } from "@/components/ui/AvatarGroup";
-import { Card } from "@/components/ui/card/Card";
-import { CardHeader } from "@/components/ui/card/CardHeader";
+import { Card, CardHeader } from "@/components/ui/card";
 import { ScrollArea } from "@/components/ui/ScrollArea";
 import {
   Caption,
@@ -10,7 +9,7 @@ import {
   TableHead,
 } from "@/components/ui/table";
 import { useDisclosure } from "@/hooks/useDisclosure";
-import { PROJECT_TABLE_HEADERS, PROJECTS_DATA } from "@/lib/constants";
+import { PROJECT_TABLE_HEADERS, PROJECTS_TABLE_DATA } from "@/lib/constants";
 import { faCheck, faEllipsisV } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
@@ -109,21 +108,27 @@ export const ProjectsTable = () => {
               </TableHead>
 
               <tbody>
-                {PROJECTS_DATA.map((data, index) => (
+                {PROJECTS_TABLE_DATA.map((data, index) => (
                   <tr key={data.id}>
-                    <TableCell isLastRow={index === PROJECTS_DATA.length - 1}>
+                    <TableCell
+                      isLastRow={index === PROJECTS_TABLE_DATA.length - 1}
+                    >
                       <TableAvatarCell img={data.logo} name={data.name} />
                     </TableCell>
-                    <TableCell isLastRow={index === PROJECTS_DATA.length - 1}>
+                    <TableCell
+                      isLastRow={index === PROJECTS_TABLE_DATA.length - 1}
+                    >
                       <AvatarGroup participants={data.members} />
                     </TableCell>
                     <TableCell
-                      isLastRow={index === PROJECTS_DATA.length - 1}
+                      isLastRow={index === PROJECTS_TABLE_DATA.length - 1}
                       className="text-left ps-2 text-sm leading-normal"
                     >
                       <Caption>{data.budget}</Caption>
                     </TableCell>
-                    <TableCell isLastRow={index === PROJECTS_DATA.length - 1}>
+                    <TableCell
+                      isLastRow={index === PROJECTS_TABLE_DATA.length - 1}
+                    >
                       <div className="w-3/4 mx-auto">
                         <Caption>{data.completion}%</Caption>
                         <div className="text-xs h-0.75 w-30 m-0 flex overflow-visible rounded-lg bg-gray-200">

@@ -1,9 +1,8 @@
-import { ArrowUp } from "@/components/ui/ArrowUp";
-import { Card } from "@/components/ui/card/Card";
-import { CardHeader } from "@/components/ui/card/CardHeader";
-import { CHART_METRICS } from "@/lib/constants";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { memo } from "react";
+import { Card, CardHeader } from "../ui/card";
+import { CHART_METRICS } from "@/lib/constants";
+import { ArrowUp } from "../ui/ArrowUp";
 
 export const ChartCard = memo(() => (
   <>

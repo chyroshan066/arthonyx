@@ -1,8 +1,7 @@
-import { CHATS } from "@/lib/constants";
 import Image from "next/image";
-import { IconButton } from "../ui/Button/IconButton";
-import { Card } from "../ui/card/Card";
-import { CardHeader } from "../ui/card/CardHeader";
+import { Card, CardHeader } from "../ui/card";
+import { CHATS } from "@/lib/constants";
+import { IconButton } from "../ui/Button";
 
 export const RecentChatsCard = () => (
   <Card

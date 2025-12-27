@@ -1,6 +1,5 @@
 import { Children, Title } from "@/types";
-import { Card } from "../card/Card";
-import { CardHeader } from "../card/CardHeader";
+import { Card, CardHeader } from "../card";
 import { ScrollArea } from "../ScrollArea";
 
 interface DataTableWrapperProps extends Title, Children {}

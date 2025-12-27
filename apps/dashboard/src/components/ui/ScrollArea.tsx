@@ -1,14 +1,13 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import PerfectScrollbarLib from "perfect-scrollbar";
+import { useScrollbar } from "@/hooks/useScrollbar";
+import { useEffect } from "react";
 import "perfect-scrollbar/css/perfect-scrollbar.css";
 
 interface ScrollAreaProps {
   children: React.ReactNode;
   className?: string;
   options?: Partial<{
-    handlers?: string[];
     wheelSpeed?: number;
     wheelPropagation?: boolean;
     swipeEasing?: boolean;
@@ -24,65 +23,17 @@ interface ScrollAreaProps {
   style?: React.CSSProperties;
 }
 
-// 1. Define the correct Instance Type by intersecting the base type with a fix
-// We use Omit/Pick or interface merging techniques to correct the destroy signature.
-// Here we use Omit to remove the existing destroy, and add a new one without arguments.
-type ScrollAreaInstance = Omit<PerfectScrollbar, "destroy"> & {
-  destroy: () => void; // CORRECTED: destroy takes no arguments at runtime
-  // Ensure the update method is also included, though it's likely fine
-  update: () => void;
-};
-
-// 2. The Constructor Interface remains correct from the previous fix
-interface ScrollAreaConstructor {
-  new (
-    element: HTMLElement,
-    options?: ScrollAreaProps["options"]
-  ): ScrollAreaInstance; // Use the corrected instance type here
-}
-
 export const ScrollArea = ({
   children,
   className = "",
   options = {},
   style = {},
 }: ScrollAreaProps) => {
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  // Use the corrected instance type
-  const psRef = useRef<ScrollAreaInstance | null>(null);
+  const { containerRef, updateScrollbar } = useScrollbar(options);
 
   useEffect(() => {
-    if (containerRef.current) {
-      // Cast the imported value to the explicit constructor interface
-      const PsConstructor =
-        PerfectScrollbarLib as unknown as ScrollAreaConstructor;
-
-      // Initialize Perfect Scrollbar
-      psRef.current = new PsConstructor(containerRef.current, {
-        wheelSpeed: 2,
-        wheelPropagation: false,
-        minScrollbarLength: 20,
-        ...options,
-      });
-
-      // Cleanup on unmount
-      return () => {
-        if (psRef.current) {
-          // 3. The error is fixed here! TypeScript now knows destroy() takes no args.
-          psRef.current.destroy();
-          psRef.current = null;
-        }
-      };
-    }
-  }, [options]);
-
-  // Update scrollbar when children change
-  useEffect(() => {
-    if (psRef.current) {
-      psRef.current.update();
-    }
-  }, [children]);
+    updateScrollbar();
+  }, [children, updateScrollbar]);
 
   return (
     <div

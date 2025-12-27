@@ -1,7 +1,7 @@
 import { Footer } from "@/components/layout/Footer";
 import { NavBar } from "@/components/layout/NavBar/NavBar";
-import { ProfileHeader } from "@/components/features/profile/ProfileHeader/ProfileHeader";
 import { Main } from "@/components/layout/Main";
+import { ProfileHeader } from "@/components/features/profile/ProfileHeader/ProfileHeader";
 import { ProfileSettingsSection } from "@/components/features/profile/ProfileSettingsSection";
 
 export default function Profile() {

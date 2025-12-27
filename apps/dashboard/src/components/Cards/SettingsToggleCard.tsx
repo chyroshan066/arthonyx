@@ -1,9 +1,8 @@
-import { ACCOUNT_SETTINGS, APPLICATION_SETTINGS } from "@/lib/constants";
 import React from "react";
 import { Setting } from "@/types";
+import { ACCOUNT_SETTINGS, APPLICATION_SETTINGS } from "@/lib/constants";
+import { Card, CardHeader } from "../ui/card";
 import { Checkbox } from "../ui/form/Checkbox";
-import { Card } from "../ui/card/Card";
-import { CardHeader } from "../ui/card/CardHeader";
 
 interface MergedSetting {
   category: string;

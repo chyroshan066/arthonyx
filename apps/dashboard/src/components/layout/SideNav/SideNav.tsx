@@ -2,16 +2,21 @@
 
 import { memo, useEffect } from "react";
 import { usePathname } from "next/navigation";
-import { ACCOUNT_PAGES, NAVLINKS } from "@/lib/constants";
 import { useDisclosure } from "@/hooks/useDisclosure";
-import { ScrollArea } from "@/components/ui/ScrollArea";
 import { NavItem } from "./NavItem";
 import { HelpCard } from "./HelpCard";
 import { SideNavHeader } from "./SideNavHeader";
+import { ScrollArea } from "@/components/ui/ScrollArea";
+import { ACCOUNT_LINKS, NAV_LINKS } from "@/lib/constants";
+import { useAppDispatch, useAppSelector } from "@/redux/store";
 
 export const SideNav = memo(() => {
   const { isOpen, toggle, close, contentRef } = useDisclosure(false);
   const pathname = usePathname();
+  const dispatch = useAppDispatch();
+  const { sidenavType, sidebarColor } = useAppSelector(
+    (state) => state.configurator
+  );
 
   useEffect(() => {
     window.addEventListener("toggle-sidenav", toggle);
@@ -19,12 +24,21 @@ export const SideNav = memo(() => {
     return () => window.removeEventListener("toggle-sidenav", toggle);
   }, [toggle]);
 
+  const sideNavBackgroundClass =
+    sidenavType === "transparent"
+      ? "xl:bg-transparent shadow-none"
+      : "xl:bg-white shadow-soft-xl";
+
   return (
     <aside
       ref={contentRef as React.RefObject<HTMLElement>}
-      className={`max-w-62.5 ease-nav-brand z-990 fixed inset-y-0 my-4 ml-4 block w-full flex-wrap items-center justify-between rounded-2xl border-0 bg-white p-0 antialiased shadow-none transition-transform duration-200 xl:left-0 xl:translate-x-0 xl:bg-transparent ${
+      // className={`max-w-62.5 ease-nav-brand z-990 fixed inset-y-0 my-4 ml-4 block w-full flex-wrap items-center justify-between rounded-2xl border-0 bg-white p-0 antialiased shadow-none transition-transform duration-200 xl:left-0 xl:translate-x-0 xl:bg-transparent ${
+      //   isOpen ? "translate-x-0 shadow-soft-xl" : "-translate-x-full"
+      // }`}
+      className={`max-w-62.5 ease-nav-brand z-990 fixed inset-y-0 my-4 ml-4 block w-full flex-wrap items-center justify-between rounded-2xl border-0 p-0 antialiased transition-transform duration-200 xl:left-0 xl:translate-x-0 bg-white ${sideNavBackgroundClass} ${
         isOpen ? "translate-x-0 shadow-soft-xl" : "-translate-x-full"
       }`}
+      // data-color={sidebarColor}
     >
       <ScrollArea
         className="h-full w-full relative flex flex-col overflow-hidden rounded-2xl z-40"
@@ -33,7 +47,6 @@ export const SideNav = memo(() => {
           wheelPropagation: false,
           minScrollbarLength: 20,
           suppressScrollX: true,
-
           maxScrollbarLength: 50,
         }}
       >
@@ -41,7 +54,7 @@ export const SideNav = memo(() => {
 
         {/* Navigation Links */}
         <ul className="flex flex-col pl-0 mb-auto pb-4">
-          {NAVLINKS.map((link) => {
+          {NAV_LINKS.map((link) => {
             const isActive = pathname === link.href;
 
             return (
@@ -61,7 +74,7 @@ export const SideNav = memo(() => {
             </h6>
           </li>
 
-          {ACCOUNT_PAGES.map((page) => {
+          {ACCOUNT_LINKS.map((page) => {
             const isActive = pathname === page.href;
 
             return (

@@ -1,6 +1,6 @@
 import { Transaction } from "@/types";
 
-const NEW_TRANSACTIONS: Transaction[] = [
+const NEWEST_TRANSACTIONS: Transaction[] = [
   {
     id: 1,
     name: "Netflix",
@@ -51,7 +51,7 @@ const YESTERDAY_TRANSACTIONS: Transaction[] = [
 export const TRANSACTION_GROUPS = [
   {
     title: "Newest",
-    data: NEW_TRANSACTIONS,
+    data: NEWEST_TRANSACTIONS,
   },
   {
     title: "Yesterday",

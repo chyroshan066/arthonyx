@@ -1,4 +1,6 @@
-export const BILLING_DETAILS = [
+import { BillingDetail } from "@/types";
+
+export const BILLING_DETAILS: BillingDetail[] = [
   {
     id: 1,
     name: "Oliver Liam",

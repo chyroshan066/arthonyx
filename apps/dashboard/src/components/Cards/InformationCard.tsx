@@ -1,5 +1,5 @@
-import { ReadMore } from "@/components/ui/ReadMore";
 import Image from "next/image";
+import { ReadMore } from "../ui/ReadMore";
 
 export const InformationCard = () => (
   <>

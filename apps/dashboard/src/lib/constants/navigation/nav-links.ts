@@ -5,7 +5,7 @@ import {
   faShop,
 } from "@fortawesome/free-solid-svg-icons";
 
-export const NAVLINKS: Link[] = [
+export const NAV_LINKS: Link[] = [
   {
     id: 1,
     name: "Dashboard",

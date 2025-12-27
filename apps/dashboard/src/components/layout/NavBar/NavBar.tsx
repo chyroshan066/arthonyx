@@ -1,16 +1,18 @@
 "use client";
 
-import { ACCOUNT_PAGES, NAVLINKS } from "@/lib/constants";
 import { usePathname } from "next/navigation";
 import { memo } from "react";
 import { Breadcrumb } from "./Breadcrumb";
 import { SearchBar } from "./SearchBar";
 import { NavActions } from "./NavActions";
+import { ACCOUNT_LINKS, NAV_LINKS } from "@/lib/constants";
+import { useAppSelector } from "@/redux/store";
 
-const MERGED_LINKS = [...NAVLINKS, ...ACCOUNT_PAGES];
+const MERGED_LINKS = [...NAV_LINKS, ...ACCOUNT_LINKS];
 
 export const NavBar = memo(() => {
   const pathname = usePathname();
+  const { fixedNavbar } = useAppSelector((state) => state.configurator);
 
   // Handle sidenav burger click
   const handleSidenavToggle = (e: React.MouseEvent) => {
@@ -22,13 +24,23 @@ export const NavBar = memo(() => {
   const pageName = activePage ? activePage.name : "Dashboard";
   const isProfile = pathname === "/profile";
 
+  const navbarClasses = fixedNavbar
+    ? "sticky top-[1%] backdrop-saturate-[200%] backdrop-blur-[30px] bg-[hsla(0,0%,100%,0.8)] shadow-blur z-110"
+    : "relative shadow-none";
+
   return (
     <nav
+      // className={`flex flex-wrap items-center justify-between py-2 transition-all shadow-none duration-250 ease-soft-in lg:flex-nowrap lg:justify-start ${
+      //   isProfile
+      //     ? "absolute z-20 px-6 text-white w-full"
+      //     : "relative px-0 mx-6 rounded-2xl"
+      // }`}
       className={`flex flex-wrap items-center justify-between py-2 transition-all shadow-none duration-250 ease-soft-in lg:flex-nowrap lg:justify-start ${
         isProfile
           ? "absolute z-20 px-6 text-white w-full"
-          : "relative px-0 mx-6 rounded-2xl"
+          : `px-0 mx-6 rounded-2xl ${navbarClasses}`
       }`}
+      // navbar-scroll={fixedNavbar.toString()}
     >
       <div
         className={`flex items-center justify-between w-full py-1 mx-auto flex-wrap-inherit ${

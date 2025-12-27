@@ -1,9 +1,8 @@
 import { faPencilAlt, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { PAYMENT_METHODS } from "@/lib/constants";
+import { Card, CardHeader } from "../ui/card";
 import { Button } from "../ui/Button";
-import { Card } from "../ui/card/Card";
-import { CardHeader } from "../ui/card/CardHeader";
+import { PAYMENT_METHODS } from "@/lib/constants";
 
 export const PaymentMethodCard = () => (
   <Card

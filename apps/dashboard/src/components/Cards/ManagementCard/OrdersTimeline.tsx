@@ -1,7 +1,6 @@
 import { ArrowUp } from "@/components/ui/ArrowUp";
-import { Card } from "@/components/ui/card/Card";
-import { CardHeader } from "@/components/ui/card/CardHeader";
-import { TIMELINE_DATA } from "@/lib/constants";
+import { Card, CardHeader } from "@/components/ui/card";
+import { TIMELINE_ITEMS } from "@/lib/constants";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export const OrdersTimeline = () => (
@@ -15,7 +14,7 @@ export const OrdersTimeline = () => (
     </CardHeader>
     <div className="flex-auto p-4">
       <div className="before:border-r-solid relative before:absolute before:top-0 before:left-4 before:h-full before:border-r-2 before:border-r-slate-300 before:content-[''] before:lg:-ml-px">
-        {TIMELINE_DATA.map((data) => (
+        {TIMELINE_ITEMS.map((data) => (
           <div
             key={data.id}
             className="relative mb-4 mt-0 after:clear-both after:table after:content-['']"

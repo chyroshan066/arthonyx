@@ -1,7 +1,7 @@
+import { Button } from "@/components/ui/Button";
+import { CardHeader } from "@/components/ui/card";
+import { Checkbox } from "@/components/ui/form/Checkbox";
 import Link from "next/link";
-import { Checkbox } from "../../ui/form/Checkbox";
-import { Button } from "../../ui/Button";
-import { CardHeader } from "../../ui/card/CardHeader";
 
 export const LoginFormSection = () => (
   <section>

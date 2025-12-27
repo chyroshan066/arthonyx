@@ -1,11 +1,9 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserEdit } from "@fortawesome/free-solid-svg-icons";
 import * as Tooltip from "@radix-ui/react-tooltip";
+import { Card, CardHeader } from "../ui/card";
 import { Separator } from "../ui/Separator";
-import { PROFILE_DETAILS } from "@/lib/constants";
-import { SOCIAL_LINKS } from "@/lib/constants";
-import { Card } from "../ui/card/Card";
-import { CardHeader } from "../ui/card/CardHeader";
+import { PROFILE_DETAILS, PROFILE_SOCIAL_LINKS } from "@/lib/constants";
 
 export const ProfileDetailCard = () => (
   <Card
@@ -69,7 +67,7 @@ export const ProfileDetailCard = () => (
             Social:
           </strong>
           &nbsp;
-          {SOCIAL_LINKS.map((link) => (
+          {PROFILE_SOCIAL_LINKS.map((link) => (
             <a
               key={link.id}
               className={`inline-block py-0 pl-1 pr-2 mb-0 font-bold text-center text-${link.color} align-middle transition-all bg-transparent border-0 rounded-lg shadow-none cursor-pointer leading-pro text-xs ease-soft-in bg-none`}

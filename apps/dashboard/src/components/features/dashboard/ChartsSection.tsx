@@ -1,4 +1,4 @@
-import { ChartCard } from "../../cards/ChartCard";
+import { ChartCard } from "@/components/cards/ChartCard";
 
 export const ChartsSection = () => (
   <div className="flex flex-wrap mt-6 -mx-3">
