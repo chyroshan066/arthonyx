@@ -4,7 +4,6 @@ interface TDataProps extends Children, ClassName {
   isLastRow: boolean;
 }
 
-interface CaptionProps extends Children, ClassName {}
 interface TableProps extends Children, ClassName {}
 
 export const Table = ({ children, className }: TableProps) => (
@@ -23,10 +22,4 @@ export const TData = ({ children, className, isLastRow }: TDataProps) => (
   >
     {children}
   </td>
-);
-
-export const Caption = ({ children, className }: CaptionProps) => (
-  <span className={`text-xs font-semibold leading-tight ${className}`}>
-    {children}
-  </span>
 );
