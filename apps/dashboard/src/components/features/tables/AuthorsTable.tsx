@@ -1,11 +1,11 @@
-import { DataTableWrapper } from "@/components/ui/table";
 import {
   Caption,
+  DataTableWrapper,
   Table,
   TableAvatarCell,
-  TData,
-  THead,
-} from "@/components/ui/table/Table";
+  TableCell,
+  TableHead,
+} from "@/components/ui/table";
 import { AUTHOR_TABLE_HEADER, AUTHORS_DATA } from "@/lib/constants";
 
 const statusStyles: { [key: string]: string } = {
@@ -16,7 +16,7 @@ const statusStyles: { [key: string]: string } = {
 export const AuthorsTable = () => (
   <DataTableWrapper title="Authors table">
     <Table>
-      <THead>
+      <TableHead>
         <tr>
           {AUTHOR_TABLE_HEADER.map((header) => (
             <th
@@ -31,12 +31,12 @@ export const AuthorsTable = () => (
             </th>
           ))}
         </tr>
-      </THead>
+      </TableHead>
 
       <tbody>
         {AUTHORS_DATA.map((author, index) => (
           <tr key={author.id}>
-            <TData
+            <TableCell
               isLastRow={index === AUTHORS_DATA.length - 1}
               className="shadow-transparent"
             >
@@ -45,8 +45,8 @@ export const AuthorsTable = () => (
                 name={author.user.name}
                 subTitle={author.user.email}
               />
-            </TData>
-            <TData
+            </TableCell>
+            <TableCell
               isLastRow={index === AUTHORS_DATA.length - 1}
               className="shadow-transparent"
             >
@@ -56,8 +56,8 @@ export const AuthorsTable = () => (
               <p className="mb-0 caption text-slate-400">
                 {author.function.department}
               </p>
-            </TData>
-            <TData
+            </TableCell>
+            <TableCell
               isLastRow={index === AUTHORS_DATA.length - 1}
               className="text-sm leading-normal text-center shadow-transparent"
             >
@@ -68,16 +68,16 @@ export const AuthorsTable = () => (
               >
                 {author.status}
               </span>
-            </TData>
-            <TData
+            </TableCell>
+            <TableCell
               isLastRow={index === AUTHORS_DATA.length - 1}
               className="text-center shadow-transparent"
             >
               <Caption className="text-slate-400">
                 {author.employedDate}
               </Caption>
-            </TData>
-            <TData
+            </TableCell>
+            <TableCell
               isLastRow={index === AUTHORS_DATA.length - 1}
               className="shadow-transparent"
             >
@@ -88,7 +88,7 @@ export const AuthorsTable = () => (
                 {" "}
                 Edit{" "}
               </a>
-            </TData>
+            </TableCell>
           </tr>
         ))}
       </tbody>

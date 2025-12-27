@@ -1,11 +1,11 @@
-import { DataTableWrapper } from "@/components/ui/table";
 import {
   Caption,
+  DataTableWrapper,
   Table,
   TableAvatarCell,
-  TData,
-  THead,
-} from "@/components/ui/table/Table";
+  TableCell,
+  TableHead,
+} from "@/components/ui/table";
 import { PROJECT_TABLE_HEADERS_2, PROJECTS_DATA_2 } from "@/lib/constants";
 import { faEllipsisV } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -13,7 +13,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export const ProjectsTable = () => (
   <DataTableWrapper title="Projects table">
     <Table className="justify-center">
-      <THead>
+      <TableHead>
         <tr>
           {PROJECT_TABLE_HEADERS_2.map((header) => (
             <th
@@ -28,11 +28,11 @@ export const ProjectsTable = () => (
             </th>
           ))}
         </tr>
-      </THead>
+      </TableHead>
       <tbody>
         {PROJECTS_DATA_2.map((project, index) => (
           <tr key={project.id}>
-            <TData
+            <TableCell
               isLastRow={index === PROJECTS_DATA_2.length - 1}
               className="shadow-transparent"
             >
@@ -41,22 +41,22 @@ export const ProjectsTable = () => (
                 name={project.name}
                 marginRight={2}
               />
-            </TData>
-            <TData
+            </TableCell>
+            <TableCell
               isLastRow={index === PROJECTS_DATA_2.length - 1}
               className="shadow-transparent"
             >
               <p className="mb-0 text-sm font-semibold leading-normal">
                 {project.budget}
               </p>
-            </TData>
-            <TData
+            </TableCell>
+            <TableCell
               isLastRow={index === PROJECTS_DATA_2.length - 1}
               className="shadow-transparent"
             >
               <Caption>{project.status}</Caption>
-            </TData>
-            <TData
+            </TableCell>
+            <TableCell
               isLastRow={index === PROJECTS_DATA_2.length - 1}
               className="shadow-transparent text-center"
             >
@@ -77,8 +77,8 @@ export const ProjectsTable = () => (
                   />
                 </div>
               </div>
-            </TData>
-            <TData
+            </TableCell>
+            <TableCell
               isLastRow={index === PROJECTS_DATA_2.length - 1}
               className="shadow-transparent"
             >
@@ -92,7 +92,7 @@ export const ProjectsTable = () => (
                   className="text-xs leading-tight"
                 />
               </button>
-            </TData>
+            </TableCell>
           </tr>
         ))}
       </tbody>

@@ -6,9 +6,9 @@ import {
   Caption,
   Table,
   TableAvatarCell,
-  TData,
-  THead,
-} from "@/components/ui/table/Table";
+  TableCell,
+  TableHead,
+} from "@/components/ui/table";
 import { useDisclosure } from "@/hooks/useDisclosure";
 import { PROJECT_TABLE_HEADERS, PROJECTS_DATA } from "@/lib/constants";
 import { faCheck, faEllipsisV } from "@fortawesome/free-solid-svg-icons";
@@ -95,7 +95,7 @@ export const ProjectsTable = () => {
         >
           <div className="p-0">
             <Table>
-              <THead>
+              <TableHead>
                 <tr>
                   {PROJECT_TABLE_HEADERS.map((header) => (
                     <th
@@ -106,24 +106,24 @@ export const ProjectsTable = () => {
                     </th>
                   ))}
                 </tr>
-              </THead>
+              </TableHead>
 
               <tbody>
                 {PROJECTS_DATA.map((data, index) => (
                   <tr key={data.id}>
-                    <TData isLastRow={index === PROJECTS_DATA.length - 1}>
+                    <TableCell isLastRow={index === PROJECTS_DATA.length - 1}>
                       <TableAvatarCell img={data.logo} name={data.name} />
-                    </TData>
-                    <TData isLastRow={index === PROJECTS_DATA.length - 1}>
+                    </TableCell>
+                    <TableCell isLastRow={index === PROJECTS_DATA.length - 1}>
                       <AvatarGroup participants={data.members} />
-                    </TData>
-                    <TData
+                    </TableCell>
+                    <TableCell
                       isLastRow={index === PROJECTS_DATA.length - 1}
                       className="text-left ps-2 text-sm leading-normal"
                     >
                       <Caption>{data.budget}</Caption>
-                    </TData>
-                    <TData isLastRow={index === PROJECTS_DATA.length - 1}>
+                    </TableCell>
+                    <TableCell isLastRow={index === PROJECTS_DATA.length - 1}>
                       <div className="w-3/4 mx-auto">
                         <Caption>{data.completion}%</Caption>
                         <div className="text-xs h-0.75 w-30 m-0 flex overflow-visible rounded-lg bg-gray-200">
@@ -141,7 +141,7 @@ export const ProjectsTable = () => {
                           />
                         </div>
                       </div>
-                    </TData>
+                    </TableCell>
                   </tr>
                 ))}
               </tbody>
