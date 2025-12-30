@@ -1,7 +1,7 @@
 import { openSans } from "@/app/fonts";
 import { Footer } from "@/components/layout/Footer";
+import AnalyticsWrapper from "@/lib/analytics/vercel-analytics";
 import { Children } from "@/types";
-import AnalyticsWrapper from "@/utils/AnalyticsWrapper";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {

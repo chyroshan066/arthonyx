@@ -4,14 +4,12 @@ interface ConfiguratorState {
   isOpen: boolean;
   fixedNavbar: boolean;
   sidenavType: "transparent" | "white";
-  sidebarColor: "purple" | "blue" | "green" | "orange" | "red" | "pink";
 }
 
 const initialState: ConfiguratorState = {
   isOpen: false,
   fixedNavbar: false, // Default to fixed
   sidenavType: "transparent",
-  sidebarColor: "purple", // Default color
 };
 
 export const configuratorSlice = createSlice({
@@ -27,14 +25,11 @@ export const configuratorSlice = createSlice({
     setFixedNavbar: (state, action: PayloadAction<boolean>) => {
       state.fixedNavbar = action.payload;
     },
-    setSidenavType: (state, action: PayloadAction<"transparent" | "white">) => {
-      state.sidenavType = action.payload;
-    },
-    setSidebarColor: (
+    setSidenavType: (
       state,
-      action: PayloadAction<ConfiguratorState["sidebarColor"]>
+      action: PayloadAction<ConfiguratorState["sidenavType"]>
     ) => {
-      state.sidebarColor = action.payload;
+      state.sidenavType = action.payload;
     },
   },
 });
@@ -44,6 +39,5 @@ export const {
   setConfiguratorOpen,
   setFixedNavbar,
   setSidenavType,
-  setSidebarColor,
 } = configuratorSlice.actions;
 export const configuratorReducer = configuratorSlice.reducer;

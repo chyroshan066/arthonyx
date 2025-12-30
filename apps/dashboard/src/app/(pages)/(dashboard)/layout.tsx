@@ -1,8 +1,9 @@
 import { openSans } from "@/app/fonts";
-import { Configurator } from "@/components/Configurator";
+import { Configurator } from "@/components/layout/Configurator";
 import { SideNav } from "@/components/layout/SideNav";
+import AnalyticsWrapper from "@/lib/analytics/vercel-analytics";
+import { Providers } from "@/redux/provider";
 import { Children } from "@/types";
-import AnalyticsWrapper from "@/utils/AnalyticsWrapper";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -51,10 +52,12 @@ export default function DashboardLayout({ children }: Readonly<Children>) {
       className={`${openSans.variable} m-0 font-sans text-base antialiased font-normal leading-default bg-gray-50 text-slate-500`}
       suppressHydrationWarning={true}
     >
-      <SideNav />
-      {children}
-      <Configurator />
-      <AnalyticsWrapper />
+      <Providers>
+        <SideNav />
+        {children}
+        <Configurator />
+        <AnalyticsWrapper />
+      </Providers>
     </body>
   );
 }

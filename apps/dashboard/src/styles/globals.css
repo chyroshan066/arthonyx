@@ -4200,8 +4200,26 @@
   background-image: linear-gradient(to top left, #7e28ca, #ff0080);
 }
 
+.after\:bg-gradient-soft-purple700-pink500::after {
+  content: var(--tw-content);
+  background-image: linear-gradient(to top left, #7e28ca, #ff0080);
+}
+
 .bg-gradient-soft-gray900-slate800 {
   background-image: linear-gradient(to top left, #141727, #3a416f);
+}
+
+.checked\:bg-gradient-soft-gray900-slate800:checked {
+  background-image: linear-gradient(to top left, #141727, #3a416f);
+}
+
+.after\:bg-gradient-soft-gray900-slate800::after {
+  content: var(--tw-content);
+  background-image: linear-gradient(to top left, #141727, #3a416f);
+}
+
+.bg-gradient-soft-slate600-slate300 {
+  background-image: linear-gradient(to top left, #627594, #a8b8d8);
 }
 
 .after\:bg-gradient-soft-slate600-slate300::after {
@@ -4209,11 +4227,12 @@
   background-image: linear-gradient(to top left, #627594, #a8b8d8);
 }
 
-.bg-gradient-soft-slate600-slate300 {
-  background-image: linear-gradient(to top left, #627594, #a8b8d8);
+.bg-gradient-soft-blue600-cyan400 {
+  background-image: linear-gradient(to top left, #2152ff, #21d4fd);
 }
 
-.bg-gradient-soft-blue600-cyan400 {
+.after\:bg-gradient-soft-blue600-cyan400::after {
+  content: var(--tw-content);
   background-image: linear-gradient(to top left, #2152ff, #21d4fd);
 }
 
@@ -4221,7 +4240,17 @@
   background-image: linear-gradient(to top left, #f53939, #fbcf33);
 }
 
+.after\:bg-gradient-soft-red500-yellow400::after {
+  content: var(--tw-content);
+  background-image: linear-gradient(to top left, #f53939, #fbcf33);
+}
+
 .bg-gradient-soft-red600-rose400 {
+  background-image: linear-gradient(to top left, #ea0606, #ff667c);
+}
+
+.after\:bg-gradient-soft-red600-rose400::after {
+  content: var(--tw-content);
   background-image: linear-gradient(to top left, #ea0606, #ff667c);
 }
 
@@ -4229,6 +4258,7 @@
   background-image: linear-gradient(to top left, #17ad37, #98ec2d);
 }
 
-.checked\:bg-gradient-soft-gray900-slate800:checked {
-  background-image: linear-gradient(to top left, #141727, #3a416f);
+.after\:bg-gradient-soft-green600-lime400::after {
+  content: var(--tw-content);
+  background-image: linear-gradient(to top left, #17ad37, #98ec2d);
 }

@@ -4,7 +4,7 @@ interface MainProps extends Children, ClassName {}
 
 export const Main = ({ children, className }: MainProps) => (
   <main
-    className={`ease-soft-in-out xl:ml-68.5 relative h-full max-h-screen transition-all duration-200 ${className}`}
+    className={`ease-soft-in-out xl:ml-68.5 relative min-h-screen transition-all duration-200 ${className}`}
   >
     {children}
   </main>

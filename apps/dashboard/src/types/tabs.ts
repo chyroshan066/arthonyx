@@ -11,3 +11,8 @@ export interface SimpleTab extends BaseTab {
 export interface IconTab extends SimpleTab {
   icon: IconDefinition;
 }
+
+export interface MetadataTab extends IconTab {
+  disabled?: boolean;
+  badge?: number;
+}

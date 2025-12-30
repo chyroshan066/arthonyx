@@ -6,13 +6,14 @@ import { Breadcrumb } from "./Breadcrumb";
 import { SearchBar } from "./SearchBar";
 import { NavActions } from "./NavActions";
 import { ACCOUNT_LINKS, NAV_LINKS } from "@/lib/constants";
-import { useAppSelector } from "@/redux/store";
+import { useAppSelector } from "@/redux/hooks";
+import { selectSidebarSettings } from "@/redux/features/configurator";
 
 const MERGED_LINKS = [...NAV_LINKS, ...ACCOUNT_LINKS];
 
 export const NavBar = memo(() => {
   const pathname = usePathname();
-  const { fixedNavbar } = useAppSelector((state) => state.configurator);
+  const { fixedNavbar } = useAppSelector(selectSidebarSettings);
 
   // Handle sidenav burger click
   const handleSidenavToggle = (e: React.MouseEvent) => {
@@ -30,17 +31,11 @@ export const NavBar = memo(() => {
 
   return (
     <nav
-      // className={`flex flex-wrap items-center justify-between py-2 transition-all shadow-none duration-250 ease-soft-in lg:flex-nowrap lg:justify-start ${
-      //   isProfile
-      //     ? "absolute z-20 px-6 text-white w-full"
-      //     : "relative px-0 mx-6 rounded-2xl"
-      // }`}
       className={`flex flex-wrap items-center justify-between py-2 transition-all shadow-none duration-250 ease-soft-in lg:flex-nowrap lg:justify-start ${
         isProfile
           ? "absolute z-20 px-6 text-white w-full"
           : `px-0 mx-6 rounded-2xl ${navbarClasses}`
       }`}
-      // navbar-scroll={fixedNavbar.toString()}
     >
       <div
         className={`flex items-center justify-between w-full py-1 mx-auto flex-wrap-inherit ${
