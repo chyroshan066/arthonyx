@@ -6,14 +6,13 @@ import { Breadcrumb } from "./Breadcrumb";
 import { SearchBar } from "./SearchBar";
 import { NavActions } from "./NavActions";
 import { ACCOUNT_LINKS, NAV_LINKS } from "@/lib/constants";
-import { useAppSelector } from "@/redux/hooks";
-import { selectSidebarSettings } from "@/redux/features/configurator";
+import { useLayoutConfig } from "@/hooks/useLayoutConfig";
 
 const MERGED_LINKS = [...NAV_LINKS, ...ACCOUNT_LINKS];
 
 export const NavBar = memo(() => {
   const pathname = usePathname();
-  const { fixedNavbar } = useAppSelector(selectSidebarSettings);
+  const { fixedNavbar } = useLayoutConfig();
 
   // Handle sidenav burger click
   const handleSidenavToggle = (e: React.MouseEvent) => {

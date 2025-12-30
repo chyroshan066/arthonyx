@@ -1,5 +1,4 @@
-import { selectSidebarSettings } from "@/redux/features/configurator";
-import { useAppSelector } from "@/redux/hooks";
+import { useLayoutConfig } from "@/hooks/useLayoutConfig";
 import { Href, Icon, Name } from "@/types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
@@ -18,7 +17,7 @@ interface NavItemProps extends Href, Name, Icon {
 // ] as const;
 
 export const NavItem = ({ isActive, href, name, icon }: NavItemProps) => {
-  const { sidenavType } = useAppSelector(selectSidebarSettings);
+  const { sidenavType } = useLayoutConfig();
 
   return (
     <li className="mt-0.5 w-full">

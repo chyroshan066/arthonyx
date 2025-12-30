@@ -2,43 +2,38 @@
 
 import { Separator } from "../../ui/Separator";
 import { useEffect, useRef } from "react";
-import {
-  selectIsConfiguratorOpen,
-  toggleConfigurator,
-} from "@/redux/features/configurator";
 import { Button } from "../../ui/Button";
-import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { ConfiguratorPanelHeader } from "./ConfiguratorPanelHeader";
 import { SidenavTypeSelector } from "./SidenavTypeSelector";
 import { NavbarFixedToggle } from "./NavbarFixedToggle";
 import { SocialShareSection } from "./SocialShareSection";
+import { useLayoutConfig } from "@/hooks/useLayoutConfig";
 
 export const Configurator = () => {
-  const dispatch = useAppDispatch();
-  const isOpen = useAppSelector(selectIsConfiguratorOpen);
+  const { isConfiguratorOpen, toggleConfigurator } = useLayoutConfig();
   const contentRef = useRef<HTMLDivElement>(null);
 
   // Close when clicking outside
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (
-        isOpen &&
+        isConfiguratorOpen &&
         contentRef.current &&
         !contentRef.current.contains(event.target as Node)
       ) {
-        dispatch(toggleConfigurator());
+        toggleConfigurator();
       }
     }
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [isOpen, dispatch]);
+  }, [isConfiguratorOpen]);
 
   return (
     <div className="fixed-plugin">
       <div
         ref={contentRef}
         className={`z-sticky shadow-soft-3xl w-90 ease-soft fixed top-0 left-auto flex h-full min-w-0 flex-col break-words rounded-none border-0 bg-white bg-clip-border px-2.5 duration-200 ${
-          isOpen ? "right-0" : "-right-90"
+          isConfiguratorOpen ? "right-0" : "-right-90"
         }`}
       >
         <ConfiguratorPanelHeader />

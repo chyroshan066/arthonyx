@@ -1,6 +1,5 @@
 import { Separator } from "@/components/ui/Separator";
-import { selectSidebarSettings } from "@/redux/features/configurator";
-import { useAppSelector } from "@/redux/hooks";
+import { useLayoutConfig } from "@/hooks/useLayoutConfig";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
@@ -12,7 +11,7 @@ interface SideNavHeaderProps {
 }
 
 export const SideNavHeader = ({ isOpen, close }: SideNavHeaderProps) => {
-  const { sidenavType } = useAppSelector(selectSidebarSettings);
+  const { sidenavType } = useLayoutConfig();
 
   const sideNavHeaderBackgroundClass =
     sidenavType === "transparent"

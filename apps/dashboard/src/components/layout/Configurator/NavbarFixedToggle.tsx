@@ -1,13 +1,8 @@
 import { Checkbox } from "@/components/ui/form/Checkbox";
-import {
-  selectSidebarSettings,
-  setFixedNavbar,
-} from "@/redux/features/configurator";
-import { useAppDispatch, useAppSelector } from "@/redux/hooks";
+import { useLayoutConfig } from "@/hooks/useLayoutConfig";
 
 export const NavbarFixedToggle = () => {
-  const dispatch = useAppDispatch();
-  const { fixedNavbar } = useAppSelector(selectSidebarSettings);
+  const { fixedNavbar, setFixedNavbar } = useLayoutConfig();
 
   return (
     <>
@@ -19,7 +14,7 @@ export const NavbarFixedToggle = () => {
           id="fixedNav"
           defaultChecked={fixedNavbar}
           marginTop="1"
-          onChange={(e) => dispatch(setFixedNavbar(e.target.checked))}
+          onChange={(e) => setFixedNavbar(e.target.checked)}
         />
       </div>
     </>

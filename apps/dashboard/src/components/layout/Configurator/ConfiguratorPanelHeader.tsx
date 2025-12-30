@@ -1,9 +1,8 @@
 import { CloseButton } from "@/components/ui/Button";
-import { toggleConfigurator } from "@/redux/features/configurator";
-import { useAppDispatch } from "@/redux/hooks";
+import { useLayoutConfig } from "@/hooks/useLayoutConfig";
 
 export const ConfiguratorPanelHeader = () => {
-  const dispatch = useAppDispatch();
+  const { toggleConfigurator } = useLayoutConfig();
 
   return (
     <div className="px-6 pt-4 pb-0 mb-0 bg-white border-b-0 rounded-t-2xl">
@@ -13,7 +12,7 @@ export const ConfiguratorPanelHeader = () => {
       </div>
       <div className="float-right mt-6">
         <CloseButton
-          onClick={() => dispatch(toggleConfigurator())}
+          onClick={toggleConfigurator}
           ariaLabel="Close configurator panel"
         />
       </div>

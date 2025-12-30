@@ -8,13 +8,12 @@ import { HelpCard } from "./HelpCard";
 import { SideNavHeader } from "./SideNavHeader";
 import { ScrollArea } from "@/components/ui/ScrollArea";
 import { ACCOUNT_LINKS, NAV_LINKS } from "@/lib/constants";
-import { useAppSelector } from "@/redux/hooks";
-import { selectSidebarSettings } from "@/redux/features/configurator";
+import { useLayoutConfig } from "@/hooks/useLayoutConfig";
 
 export const SideNav = memo(() => {
   const { isOpen, toggle, close, contentRef } = useDisclosure(false);
   const pathname = usePathname();
-  const { sidenavType } = useAppSelector(selectSidebarSettings);
+  const { sidenavType } = useLayoutConfig();
 
   useEffect(() => {
     window.addEventListener("toggle-sidenav", toggle);

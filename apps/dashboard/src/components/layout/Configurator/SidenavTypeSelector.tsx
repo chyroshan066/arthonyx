@@ -1,13 +1,8 @@
 import { Button } from "@/components/ui/Button";
-import {
-  selectSidebarSettings,
-  setSidenavType,
-} from "@/redux/features/configurator";
-import { useAppDispatch, useAppSelector } from "@/redux/hooks";
+import { useLayoutConfig } from "@/hooks/useLayoutConfig";
 
 export const SidenavTypeSelector = () => {
-  const dispatch = useAppDispatch();
-  const { sidenavType } = useAppSelector(selectSidebarSettings);
+  const { sidenavType, setSidenavType } = useLayoutConfig();
 
   return (
     <>
@@ -22,7 +17,7 @@ export const SidenavTypeSelector = () => {
           variant={sidenavType === "transparent" ? "gradient" : "outline"}
           paddingX="4"
           paddingY="3"
-          onClick={() => dispatch(setSidenavType("transparent"))}
+          onClick={() => setSidenavType("transparent")}
           className="w-full mb-2"
           // className="w-full mb-2 border xl-max:cursor-not-allowed xl-max:opacity-65 xl-max:pointer-events-none xl-max:bg-gradient-soft-purple700-pink500 xl-max:text-white xl-max:border-0"
           backgroundColor={
@@ -36,7 +31,7 @@ export const SidenavTypeSelector = () => {
           variant={sidenavType === "white" ? "gradient" : "outline"}
           paddingX="4"
           paddingY="3"
-          onClick={() => dispatch(setSidenavType("white"))}
+          onClick={() => setSidenavType("white")}
           className="w-full mb-2 ml-2"
           // className="w-full mb-2 ml-2 xl-max:cursor-not-allowed xl-max:opacity-65 xl-max:pointer-events-none xl-max:bg-gradient-soft-purple700-pink500 xl-max:text-white xl-max:border-0
           backgroundColor={
