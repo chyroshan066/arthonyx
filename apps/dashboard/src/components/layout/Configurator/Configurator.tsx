@@ -7,11 +7,11 @@ import {
   toggleConfigurator,
 } from "@/redux/features/configurator";
 import { Button } from "../../ui/Button";
-import { SOCIAL_SHARE_BUTTONS } from "@/lib/constants";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { ConfiguratorPanelHeader } from "./ConfiguratorPanelHeader";
 import { SidenavTypeSelector } from "./SidenavTypeSelector";
 import { NavbarFixedToggle } from "./NavbarFixedToggle";
+import { SocialShareSection } from "./SocialShareSection";
 
 export const Configurator = () => {
   const dispatch = useAppDispatch();
@@ -55,19 +55,7 @@ export const Configurator = () => {
             borderColor="slate-700"
             btnText="View documentation"
           />
-          <div className="w-full text-center">
-            <h6 className="mt-4">Thank you for sharing!</h6>
-            {SOCIAL_SHARE_BUTTONS.map((btn) => (
-              <Button
-                key={btn.id}
-                variant="gradient"
-                className="mb-0 mr-2 border-0 me-2 border-slate-700"
-                backgroundColor="bg-slate-700"
-                icon={btn.icon}
-                btnText={btn.btnText}
-              />
-            ))}
-          </div>
+          <SocialShareSection />
         </div>
       </div>
     </div>
