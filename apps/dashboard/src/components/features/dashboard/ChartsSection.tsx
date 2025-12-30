@@ -1,7 +1,10 @@
-import { ChartCard } from "@/components/cards/ChartCard";
+import { ActiveUsersChart } from "@/components/cards/ActiveUsersChart";
+import { SalesOverviewChart } from "@/components/cards/SalesOverviewChart";
+import { memo } from "react";
 
-export const ChartsSection = () => (
+export const ChartsSection = memo(() => (
   <div className="flex flex-wrap mt-6 -mx-3">
-    <ChartCard />
+    <ActiveUsersChart />
+    <SalesOverviewChart />
   </div>
-);
+));
