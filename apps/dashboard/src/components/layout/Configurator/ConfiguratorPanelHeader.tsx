@@ -1,7 +1,6 @@
+import { CloseButton } from "@/components/ui/Button";
 import { toggleConfigurator } from "@/redux/features/configurator";
 import { useAppDispatch } from "@/redux/hooks";
-import { faClose } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export const ConfiguratorPanelHeader = () => {
   const dispatch = useAppDispatch();
@@ -13,12 +12,10 @@ export const ConfiguratorPanelHeader = () => {
         <p>See our dashboard options.</p>
       </div>
       <div className="float-right mt-6">
-        <button
+        <CloseButton
           onClick={() => dispatch(toggleConfigurator())}
-          className="inline-block p-0 mb-4 font-bold text-center uppercase align-middle transition-all bg-transparent border-0 rounded-lg shadow-none cursor-pointer hover:scale-102 leading-pro text-xs ease-soft-in tracking-tight-soft bg-150 bg-x-25 active:opacity-85 text-slate-700"
-        >
-          <FontAwesomeIcon icon={faClose} />
-        </button>
+          ariaLabel="Close configurator panel"
+        />
       </div>
     </div>
   );

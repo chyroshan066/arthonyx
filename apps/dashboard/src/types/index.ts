@@ -20,7 +20,8 @@ export * from "./ui";
 // interface pageName used once in Breadcrumb
 // interface marginTop used once in Checkbox
 // interface paddingSide used once in Checkbox
-// interface onClick used once in Configurator
+// interface onClick used once in CloseButton
 // interface paddingX used once in Configurator
 // interface paddingY used once in Configurator
 // interface borderColor used once in Configurator
+// interface ariaLabel used once in CloseButton
