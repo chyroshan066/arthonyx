@@ -4,21 +4,17 @@ import { Separator } from "../../ui/Separator";
 import { useEffect, useRef } from "react";
 import {
   selectIsConfiguratorOpen,
-  selectSidebarSettings,
-  setFixedNavbar,
-  setSidenavType,
   toggleConfigurator,
 } from "@/redux/features/configurator";
-import { Checkbox } from "../../ui/form/Checkbox";
 import { Button } from "../../ui/Button";
 import { SOCIAL_SHARE_BUTTONS } from "@/lib/constants";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { ConfiguratorPanelHeader } from "./ConfiguratorPanelHeader";
 import { SidenavTypeSelector } from "./SidenavTypeSelector";
+import { NavbarFixedToggle } from "./NavbarFixedToggle";
 
 export const Configurator = () => {
   const dispatch = useAppDispatch();
-  const { fixedNavbar, sidenavType } = useAppSelector(selectSidebarSettings);
   const isOpen = useAppSelector(selectIsConfiguratorOpen);
   const contentRef = useRef<HTMLDivElement>(null);
 
@@ -49,17 +45,7 @@ export const Configurator = () => {
         <Separator className="mx-0 my-1" />
         <div className="flex-auto p-6 pt-0 sm:pt-4">
           <SidenavTypeSelector />
-          <div className="mt-4">
-            <h6 className="mb-0">Navbar Fixed</h6>
-          </div>
-          <div className="min-h-6 mb-0.5 block pl-0">
-            <Checkbox
-              id="fixedNav"
-              defaultChecked={fixedNavbar}
-              marginTop="1"
-              onChange={(e) => dispatch(setFixedNavbar(e.target.checked))}
-            />
-          </div>
+          <NavbarFixedToggle />
           <Separator className="sm:my-6" />
           <Button
             variant="outline"
