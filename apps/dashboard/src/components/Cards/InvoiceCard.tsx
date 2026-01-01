@@ -43,6 +43,7 @@ export const InvoiceCard = () => (
                 icon={faFilePdf}
                 label="PDF"
                 iconClass="text-lg"
+                focusRingColor="red-400/50"
               />
             </div>
           </li>

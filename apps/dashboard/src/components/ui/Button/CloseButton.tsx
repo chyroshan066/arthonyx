@@ -1,9 +1,9 @@
+import { AriaLabel } from "@/types";
 import { faClose } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-interface CloseButtonProps {
+interface CloseButtonProps extends AriaLabel {
   onClick: () => void;
-  ariaLabel: string;
 }
 
 export const CloseButton = ({

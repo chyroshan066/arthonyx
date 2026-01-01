@@ -1,4 +1,4 @@
-import { BackgroundColor, BtnText, ClassName } from "@/types";
+import { BackgroundColor, BtnText, ClassName, FocusRingColor } from "@/types";
 import { IconDefinition } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -19,7 +19,11 @@ const defaultPaddingY = {
   gradient: "3",
 };
 
-interface ButtonProps extends ClassName, BackgroundColor, BtnText {
+interface ButtonProps
+  extends ClassName,
+    BackgroundColor,
+    BtnText,
+    FocusRingColor {
   icon?: IconDefinition;
   variant?: keyof typeof variants;
   paddingX?: string;
@@ -37,6 +41,7 @@ export const Button = ({
   paddingX,
   paddingY,
   borderColor = "fuchsia-500",
+  focusRingColor = "focus-visible:ring-fuchsia-400/50",
   onClick,
 }: ButtonProps) => {
   const pxValue = paddingX || defaultPaddingX[variant];
@@ -48,7 +53,7 @@ export const Button = ({
       onClick={onClick}
       className={`inline-block px-${pxValue} py-${pyValue} ${
         variant === "outline" && `border-${borderColor} text-${borderColor}`
-      } font-bold text-center uppercase align-middle transition-all rounded-lg cursor-pointer leading-pro text-xs ease-soft-in hover:scale-102 tracking-tight-soft ${
+      } font-bold text-center uppercase align-middle transition-all rounded-lg cursor-pointer leading-pro text-xs ease-soft-in hover:scale-102 active:opacity-85 tracking-tight-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:scale-102 ${focusRingColor} ${
         variants[variant]
       } ${backgroundColor} ${className}`}
     >

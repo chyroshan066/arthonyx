@@ -1,6 +1,7 @@
 import {
   BackgroundColor,
   ClassName,
+  FocusRingColor,
   IconClass,
   Label,
   PaddingSize,
@@ -13,7 +14,8 @@ interface IconButtonProps
     Label,
     PaddingSize,
     BackgroundColor,
-    IconClass {
+    IconClass,
+    FocusRingColor {
   icon?: IconDefinition;
   textSize?: "xs" | "sm";
   textColor?: string;
@@ -30,9 +32,10 @@ export const IconButton = ({
   backgroundColor = "transparent",
   textColor = "text-slate-700",
   leading = "normal",
+  focusRingColor = "slate-300",
 }: IconButtonProps) => (
   <button
-    className={`inline-block px-${paddingSize} py-3 mb-0 font-bold leading-${leading} text-center uppercase align-middle transition-all bg-${backgroundColor} border-0 rounded-lg shadow-none cursor-pointer ease-soft-in text-${textSize} active:opacity-85 hover:scale-102 ${textColor} ${className}`}
+    className={`inline-block px-${paddingSize} py-3 mb-0 font-bold leading-${leading} text-center uppercase align-middle transition-all bg-${backgroundColor} border-0 rounded-lg shadow-none cursor-pointer ease-soft-in text-${textSize} active:opacity-85 hover:scale-102 focus-visible:ring-2 focus-visible:ring-${focusRingColor} focus-visible:ring-offset-2 focus-visible:scale-102 outline-none ${textColor} ${className}`}
   >
     {icon && (
       <FontAwesomeIcon

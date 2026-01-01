@@ -49,7 +49,7 @@ export const ProjectsTable = () => {
                 ref={triggerRef as React.RefObject<HTMLButtonElement>}
                 onClick={toggleDropdown}
                 data-dropdown-trigger
-                className="cursor-pointer"
+                className="cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/50 focus-visible:ring-offset-2 rounded-lg transition-all"
                 aria-expanded={isDropdownOpen}
                 type="button"
               >
@@ -72,7 +72,7 @@ export const ProjectsTable = () => {
                 {DROPDOWN_ACTIONS.map((action, index) => (
                   <li key={index} className="relative">
                     <Link
-                      className="py-1.2 lg:ease-soft clear-both block w-full whitespace-nowrap rounded-lg border-0 bg-transparent px-4 text-left font-normal text-slate-500 lg:transition-colors lg:duration-300"
+                      className="py-1.2 lg:ease-soft clear-both block w-full whitespace-nowrap rounded-lg border-0 bg-transparent px-4 text-left font-normal text-slate-500 lg:transition-colors lg:duration-300 outline-none focus-visible:bg-slate-100 focus-visible:text-slate-700 transition-colors"
                       href="#;"
                     >
                       {action}

@@ -39,6 +39,7 @@ export const BillingInfoCard = () => (
                 textColor="text-red-500"
                 icon={faTrashAlt}
                 label="Delete"
+                focusRingColor="red-400/50"
               />
               <IconButton icon={faPencilAlt} label="Edit" />
             </div>

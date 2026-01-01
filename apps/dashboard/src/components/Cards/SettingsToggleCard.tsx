@@ -47,7 +47,7 @@ export const SettingsToggleCard = () => (
                   />
                   <label
                     htmlFor={setting.id}
-                    className="w-4/5 mb-0 ml-4 overflow-hidden font-normal cursor-pointer select-none text-sm text-ellipsis whitespace-nowrap text-slate-500"
+                    className="w-4/5 mb-0 ml-4 overflow-hidden font-normal cursor-pointer select-none text-sm text-ellipsis whitespace-nowrap text-slate-500transition-colors duration-250 peer-focus-visible:text-slate-800"
                   >
                     {setting.label}
                   </label>

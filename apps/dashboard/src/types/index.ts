@@ -24,4 +24,6 @@ export * from "./ui";
 // interface paddingX used once in Configurator
 // interface paddingY used once in Configurator
 // interface borderColor used once in Configurator
-// interface ariaLabel used once in CloseButton
+// interface focusRingColor used once in IconButton
+// interface type used once in Input
+// interface placeholder used once in Input

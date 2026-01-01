@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/Button";
 import { CardHeader } from "@/components/ui/card";
 import { Checkbox } from "@/components/ui/form/Checkbox";
+import { Input } from "@/components/ui/form/Input";
+import { LOGIN_FIELDS } from "@/lib/constants";
 import Link from "next/link";
 
 export const LoginFormSection = () => (
@@ -18,34 +20,24 @@ export const LoginFormSection = () => (
               </CardHeader>
               <div className="flex-auto p-6">
                 <form role="form">
-                  <label className="mb-2 ml-1 font-bold text-xs text-slate-700">
-                    Email
-                  </label>
-                  <div className="mb-4">
-                    <input
-                      type="email"
-                      className="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:outline-none focus:transition-shadow"
-                      placeholder="Email"
-                      aria-label="Email"
-                      aria-describedby="email-addon"
-                    />
-                  </div>
-                  <label className="mb-2 ml-1 font-bold text-xs text-slate-700">
-                    Password
-                  </label>
-                  <div className="mb-4">
-                    <input
-                      type="password"
-                      className="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:outline-none focus:transition-shadow"
-                      placeholder="Password"
-                      aria-label="Password"
-                      aria-describedby="password-addon"
-                    />
-                  </div>
+                  {LOGIN_FIELDS.map((field) => (
+                    <div key={field.id} className="group flex flex-col my-1">
+                      <label className="mb-2 ml-1 font-bold text-xs text-slate-700 transition-all duration-200 group-focus-within:text-fuchsia-500 capitalize">
+                        {field.id}
+                      </label>
+                      <div className="mb-4">
+                        <Input
+                          placeholder={field.placeholder}
+                          ariaLabel={field.id}
+                          type={field.type}
+                        />
+                      </div>
+                    </div>
+                  ))}
                   <div className="min-h-6 mb-0.5 block">
                     <Checkbox id="rememberMe" defaultChecked={false} />
                     <label
-                      className="mb-2 ml-1 font-normal cursor-pointer select-none text-sm text-slate-700"
+                      className="mb-2 ml-2 font-normal cursor-pointer select-none text-sm text-slate-700transition-colors duration-250 peer-focus-visible:text-fuchsia-500"
                       htmlFor="rememberMe"
                     >
                       Remember me

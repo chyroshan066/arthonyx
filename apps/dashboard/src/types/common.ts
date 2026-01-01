@@ -115,3 +115,11 @@ export interface Time {
 export interface BtnText {
   btnText: string;
 }
+
+export interface FocusRingColor {
+  focusRingColor?: string;
+}
+
+export interface AriaLabel {
+  ariaLabel: string;
+}

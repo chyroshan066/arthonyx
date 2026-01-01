@@ -35,6 +35,7 @@ export const RecentChatsCard = () => (
               className="pl-0 pr-4 ml-auto hover:active:scale-102 hover:shadow-none active:scale-100"
               leading="pro"
               backgroundColor="transparent"
+              focusRingColor="fuchsia-400/50"
               textColor="text-fuchsia-500 hover:text-fuchsia-800"
               label="Reply"
             />

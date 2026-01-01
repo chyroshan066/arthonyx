@@ -34,7 +34,10 @@ export const ProjectGalleryCard = () => (
         {GALLERY_PROJECTS.map((project) => (
           <ProjectCardColumn key={project.id} className="border-0 h-full">
             <div className="relative">
-              <Link href="#" className="block shadow-xl rounded-2xl">
+              <Link
+                href="#"
+                className="block shadow-xl rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fuchsia-400/50 focus-visible:ring-offset-2"
+              >
                 <Image
                   src={project.img}
                   alt={project.category}
@@ -52,7 +55,10 @@ export const ProjectGalleryCard = () => (
               <p className="relative z-10 mb-2 leading-normal text-transparent bg-gradient-soft-gray900-slate800 text-sm bg-clip-text">
                 {project.category}
               </p>
-              <Link href="#">
+              <Link
+                href="#"
+                className="rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fuchsia-400/50 focus-visible:ring-offset-2"
+              >
                 <h5>{project.title}</h5>
               </Link>
               <p className="mb-6 leading-normal text-sm">
@@ -69,12 +75,18 @@ export const ProjectGalleryCard = () => (
           </ProjectCardColumn>
         ))}
         <ProjectCardColumn className="h-full border border-solid border-slate-100">
-          <div className="flex flex-col justify-center flex-auto p-6 text-center">
-            <Link href="#">
-              <FontAwesomeIcon icon={faPlus} className="mb-4 text-slate-400" />
-              <h5 className="text-slate-400">New project</h5>
-            </Link>
-          </div>
+          <Link
+            href="#"
+            className="flex flex-col items-center justify-center w-full h-full min-h-[225px] p-6 text-center rounded-2xl transition-all outline-none focus-visible:ring-2 focus-visible:ring-fuchsia-400/50 focus-visible:ring-offset-2 group"
+          >
+            <FontAwesomeIcon
+              icon={faPlus}
+              className="mb-4 text-slate-400 transition-colors group-hover:text-fuchsia-500 group-focus-visible:text-fuchsia-500"
+            />
+            <h5 className="text-slate-400 transition-colors group-hover:text-fuchsia-500 group-focus-visible:text-fuchsia-500">
+              New project
+            </h5>
+          </Link>
         </ProjectCardColumn>
       </div>
     </div>

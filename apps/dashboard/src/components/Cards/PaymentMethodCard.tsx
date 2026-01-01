@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Card, CardHeader } from "../ui/card";
 import { Button } from "../ui/Button";
 import { PAYMENT_METHODS } from "@/lib/constants";
+import * as Tooltip from "@radix-ui/react-tooltip";
 
 export const PaymentMethodCard = () => (
   <Card
@@ -21,43 +22,55 @@ export const PaymentMethodCard = () => (
             backgroundColor="bg-gradient-soft-gray900-slate800"
             icon={faPlus}
             btnText="Add New Card"
+            focusRingColor="focus-visible:ring-slate-400/50"
           />
         </div>
       </div>
     </CardHeader>
     <div className="flex-auto p-4">
       <div className="flex flex-wrap -mx-3">
-        {PAYMENT_METHODS.map((method) => (
-          <div
-            key={method.id}
-            className={`max-w-full px-3 ${method.className} md:w-1/2 md:flex-none`}
-          >
-            <div className="relative flex flex-row items-center flex-auto min-w-0 p-6 break-words bg-transparent border border-solid shadow-none rounded-xl border-slate-100 bg-clip-border">
-              <img
-                className="mb-0 mr-4 w-1/10"
-                src={method.logo}
-                alt={method.alt}
-              />
-              <h6 className="mb-0">{method.cardNumber}</h6>
-              <FontAwesomeIcon
-                icon={faPencilAlt}
-                className="ml-auto cursor-pointer text-slate-700"
-                data-target="tooltip_trigger"
-                data-placement="top"
-              />
-              <div
-                data-target="tooltip"
-                className="hidden px-2 py-1 text-white bg-black rounded-lg text-sm"
-              >
-                Edit Card
-                <div
-                  className="invisible absolute h-2 w-2 bg-inherit before:visible before:absolute before:h-2 before:w-2 before:rotate-45 before:bg-inherit before:content-['']"
-                  data-popper-arrow
+        <Tooltip.Provider
+          delayDuration={100} // It determines how long the mouse must rest on an element before the tooltip reveals itself. Radix usually defaults this to 700ms.
+          skipDelayDuration={500} // It controls how much time can pass between leaving one tooltip and entering another before the delayDuration is applied again.
+        >
+          {PAYMENT_METHODS.map((method) => (
+            <div
+              key={method.id}
+              className={`max-w-full px-3 ${method.className} md:w-1/2 md:flex-none`}
+            >
+              <div className="relative flex flex-row items-center flex-auto min-w-0 p-6 break-words bg-transparent border border-solid shadow-none rounded-xl border-slate-100 bg-clip-border">
+                <img
+                  className="mb-0 mr-4 w-1/10"
+                  src={method.logo}
+                  alt={method.alt}
                 />
+                <h6 className="mb-0">{method.cardNumber}</h6>
+                <Tooltip.Root>
+                  <Tooltip.Trigger
+                    type="button"
+                    aria-label={`Edit card ending in ${method.cardNumber}`}
+                    className="ml-auto flex items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-slate-400/50 rounded-full transition-all"
+                  >
+                    <FontAwesomeIcon
+                      icon={faPencilAlt}
+                      className="cursor-pointer text-slate-700"
+                    />
+                  </Tooltip.Trigger>
+                  <Tooltip.Portal>
+                    <Tooltip.Content
+                      sideOffset={5}
+                      side="top"
+                      className="z-50 px-2 py-1 text-white bg-black rounded-lg text-sm"
+                    >
+                      Edit Card
+                      <Tooltip.Arrow className="fill-black" />
+                    </Tooltip.Content>
+                  </Tooltip.Portal>
+                </Tooltip.Root>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </Tooltip.Provider>
       </div>
     </div>
   </Card>

@@ -5,6 +5,8 @@ import { Icon, IconClass, Id } from "@/types";
 import { Card } from "@/components/ui/card";
 import { SocialLoginButtons } from "./SocialLoginButtons";
 import { Button } from "@/components/ui/Button";
+import { Input } from "@/components/ui/form/Input";
+import { REGISTRATION_FIELDS } from "@/lib/constants";
 
 interface SocialProvider extends Id, Icon, IconClass {
   containerClass?: string;
@@ -86,47 +88,32 @@ export const RegistrationFormCard = () => (
         </div>
         <div className="flex-auto p-6">
           <form role="form text-left">
-            <div className="mb-4">
-              <input
-                type="text"
-                className="text-sm focus:shadow-soft-primary-outline leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow"
-                placeholder="Name"
-                aria-label="Name"
-                aria-describedby="email-addon"
-              />
-            </div>
-            <div className="mb-4">
-              <input
-                type="email"
-                className="text-sm focus:shadow-soft-primary-outline leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow"
-                placeholder="Email"
-                aria-label="Email"
-                aria-describedby="email-addon"
-              />
-            </div>
-            <div className="mb-4">
-              <input
-                type="password"
-                className="text-sm focus:shadow-soft-primary-outline leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow"
-                placeholder="Password"
-                aria-label="Password"
-                aria-describedby="password-addon"
-              />
-            </div>
+            {REGISTRATION_FIELDS.map((field) => (
+              <div key={field.id} className="mb-4">
+                <Input
+                  type={field.type}
+                  placeholder={field.placeholder}
+                  ariaLabel={field.id}
+                />
+              </div>
+            ))}
             <div className="min-h-6 pl-6.92 mb-0.5 block">
               <input
                 id="terms"
-                className="w-4.92 h-4.92 ease-soft -ml-6.92 rounded-1.4 checked:bg-gradient-soft-gray900-slate800 after:text-xxs after:font-awesome after:duration-250 after:ease-soft-in-out duration-250 relative float-left mt-1 cursor-pointer appearance-none border border-solid border-slate-200 bg-white bg-contain bg-center bg-no-repeat align-top transition-all after:absolute after:flex after:h-full after:w-full after:items-center after:justify-center after:text-white after:opacity-0 after:transition-all after:content-['\f00c'] checked:border-0 checked:border-transparent checked:bg-transparent checked:after:opacity-100"
+                className="w-4.92 h-4.92 ease-soft -ml-6.92 rounded-1.4 checked:bg-gradient-soft-gray900-slate800 after:text-xxs after:font-awesome after:duration-250 after:ease-soft-in-out duration-250 relative float-left mt-1 cursor-pointer appearance-none border border-solid border-slate-200 bg-white bg-contain bg-center bg-no-repeat align-top transition-all after:absolute after:flex after:h-full after:w-full after:items-center after:justify-center after:text-white after:opacity-0 after:transition-all after:content-['\f00c'] checked:border-0 checked:border-transparent checked:bg-transparent checked:after:opacity-100 peer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fuchsia-400/50 focus-visible:ring-offset-2"
                 type="checkbox"
                 value=""
                 defaultChecked={true}
               />
               <label
-                className="mb-2 ml-1 font-normal cursor-pointer select-none text-sm text-slate-700"
+                className="mb-2 ml-1 font-normal cursor-pointer select-none text-sm text-slate-700transition-colors duration-250 peer-focus-visible:text-slate-900"
                 htmlFor="terms"
               >
                 I agree the&nbsp;
-                <Link href="#" className="font-bold text-slate-700">
+                <Link
+                  href="#"
+                  className="font-bold text-slate-700focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-fuchsia-400 focus-visible:rounded-sm"
+                >
                   Terms and Conditions
                 </Link>
               </label>
@@ -141,7 +128,10 @@ export const RegistrationFormCard = () => (
             </div>
             <p className="mt-4 mb-0 leading-normal text-sm">
               Already have an account?&nbsp;
-              <Link href="/login" className="font-bold text-slate-700">
+              <Link
+                href="/login"
+                className="font-bold text-slate-700 transition-all duration-200 focus-visible:outline-none focus-visible:text-fuchsia-600 focus-visible:ring-2 focus-visible:ring-fuchsia-400/30 focus-visible:rounded-sm px-0.5 -mx-0.5"
+              >
                 Sign in
               </Link>
             </p>
