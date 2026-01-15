@@ -1,4 +1,4 @@
-import { ManagementCard } from "@/components/cards/ManagementCard";
+import { ManagementCard } from "../../cards/ManagementCard";
 
 export const ManagementSection = () => (
   <div className="flex flex-wrap my-6 -mx-3">

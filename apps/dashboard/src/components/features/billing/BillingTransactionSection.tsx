@@ -1,5 +1,5 @@
-import { BillingInfoCard } from "@/components/cards/BillingInfoCard";
-import { TransactionCard } from "@/components/cards/TransactionCard";
+import { BillingInfoCard } from "../../cards/BillingInfoCard";
+import { TransactionCard } from "../../cards/TransactionCard";
 
 export const BillingTransactionSection = () => (
   <div className="flex flex-wrap -mx-3">

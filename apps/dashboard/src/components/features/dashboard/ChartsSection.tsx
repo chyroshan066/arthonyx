@@ -1,5 +1,5 @@
-import { ActiveUsersChart } from "@/components/cards/ActiveUsersChart";
-import { SalesOverviewChart } from "@/components/cards/SalesOverviewChart";
+import { ActiveUsersChart } from "../../cards/ActiveUsersChart";
+import { SalesOverviewChart } from "../../cards/SalesOverviewChart";
 import { memo } from "react";
 
 export const ChartsSection = memo(() => (

@@ -1,7 +1,7 @@
-import { CreditCard } from "@/components/cards/CreditCard";
-import { InvoiceCard } from "@/components/cards/InvoiceCard";
-import { PaymentMethodCard } from "@/components/cards/PaymentMethodCard";
-import { StatMiniCard } from "@/components/cards/StatMiniCard";
+import { CreditCard } from "../../cards/CreditCard";
+import { InvoiceCard } from "../../cards/InvoiceCard";
+import { PaymentMethodCard } from "../../cards/PaymentMethodCard";
+import { StatMiniCard } from "../../cards/StatMiniCard";
 
 export const PaymentOverviewSection = () => (
   <div className="flex flex-wrap -mx-3">
