@@ -6,7 +6,7 @@ import { IconButton } from "../ui/Button";
 export const RecentChatsCard = () => (
   <Card
     outerDivClassName="lg-max:mt-6 xl:w-4/12"
-    innerDivClassName="h-full bg-white shadow-soft-xl"
+    innerDivClassName="h-full bg-surface shadow-soft-xl"
   >
     <CardHeader paddingSize={4}>
       <h6 className="mb-0">Conversations</h6>
@@ -16,9 +16,9 @@ export const RecentChatsCard = () => (
         {CHATS.map((chat) => (
           <li
             key={chat.id}
-            className="relative flex items-center px-0 py-2 not-last:mb-2 bg-white border-0 first:rounded-t-lg not-first:border-t-0 last:rounded-b-lg text-inherit"
+            className="relative flex items-center px-0 py-2 not-last:mb-2 bg-surface border-0 first:rounded-t-lg not-first:border-t-0 last:rounded-b-lg text-inherit"
           >
-            <div className="inline-flex items-center justify-center w-12 h-12 mr-4 text-white transition-all duration-200 text-base ease-soft-in-out rounded-xl">
+            <div className="inline-flex items-center justify-center w-12 h-12 mr-4 text-surface transition-all duration-200 text-base ease-soft-in-out rounded-xl">
               <Image
                 src={chat.img}
                 width={48}
@@ -35,8 +35,8 @@ export const RecentChatsCard = () => (
               className="pl-0 pr-4 ml-auto hover:active:scale-102 hover:shadow-none active:scale-100"
               leading="pro"
               backgroundColor="transparent"
-              focusRingColor="fuchsia-400/50"
-              textColor="text-fuchsia-500 hover:text-fuchsia-800"
+              focusRingColor="focus-visible:ring-primary-ring/50"
+              textColor="text-primary hover:text-fuchsia-800"
               label="Reply"
             />
           </li>

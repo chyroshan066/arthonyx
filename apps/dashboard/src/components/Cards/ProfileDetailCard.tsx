@@ -12,7 +12,7 @@ export const ProfileDetailCard = () => (
   >
     <Card
       outerDivClassName="lg-max:mt-6 xl:w-4/12"
-      innerDivClassName="h-full bg-white shadow-soft-xl"
+      innerDivClassName="h-full bg-surface shadow-soft-xl"
     >
       <CardHeader paddingSize={4}>
         <div className="flex flex-wrap items-center -mx-3">
@@ -27,17 +27,17 @@ export const ProfileDetailCard = () => (
                   data-target="tooltip_trigger"
                   data-placement="top"
                   aria-label="Edit Profile"
-                  className="rounded-full focus-visible:scale-110 outline-none focus-visible:ring-2 focus-visible:ring-slate-400/50 focus-visible:ring-offset-2"
+                  className="rounded-full focus-visible:scale-110 outline-none focus-visible:ring-2 focus-visible:ring-disabled/50 focus-visible:ring-offset-2"
                 >
                   <FontAwesomeIcon
                     icon={faUserEdit}
-                    className="leading-normal text-sm text-slate-400"
+                    className="leading-normal text-sm text-disabled"
                   />
                 </button>
               </Tooltip.Trigger>
               <Tooltip.Portal>
                 <Tooltip.Content
-                  className="z-50 px-2 py-1 text-center text-white bg-black rounded-lg text-sm zoom-in-95"
+                  className="z-50 px-2 py-1 text-center text-surface bg-black rounded-lg text-sm zoom-in-95"
                   sideOffset={5}
                   side="top"
                 >
@@ -61,21 +61,21 @@ export const ProfileDetailCard = () => (
           {PROFILE_DETAILS.map((detail) => (
             <li
               key={detail.id}
-              className="relative block px-4 py-2 first:pt-0 pl-0 leading-normal bg-white border-0 first:rounded-t-lg not-first:border-t-0 text-sm text-inherit"
+              className="relative block px-4 py-2 first:pt-0 pl-0 leading-normal bg-surface border-0 first:rounded-t-lg not-first:border-t-0 text-sm text-inherit"
             >
-              <strong className="text-slate-700">{detail.label}:</strong> &nbsp;{" "}
+              <strong className="text-main">{detail.label}:</strong> &nbsp;{" "}
               {detail.value}
             </li>
           ))}
-          <li className="relative block px-4 py-2 pb-0 pl-0 bg-white border-0 border-t-0 rounded-b-lg text-inherit">
-            <strong className="leading-normal text-sm text-slate-700">
+          <li className="relative block px-4 py-2 pb-0 pl-0 bg-surface border-0 border-t-0 rounded-b-lg text-inherit">
+            <strong className="leading-normal text-sm text-main">
               Social:
             </strong>
             &nbsp;
             {PROFILE_SOCIAL_LINKS.map((link) => (
               <a
                 key={link.id}
-                className={`inline-block py-0 pl-1 pr-2 mb-0 font-bold text-center text-${link.color} align-middle transition-all bg-transparent border-0 rounded-lg shadow-none cursor-pointer leading-pro text-xs ease-soft-in bg-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-slate-400`}
+                className={`inline-block py-0 pl-1 pr-2 mb-0 font-bold text-center text-${link.color} align-middle transition-all bg-transparent border-0 rounded-lg shadow-none cursor-pointer leading-pro text-xs ease-soft-in bg-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-disabled`}
                 href="#"
                 target="_blank"
               >

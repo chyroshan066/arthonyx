@@ -29,7 +29,7 @@ export const STATS: Stat[] = [
     value: "+3,462",
     change: "-2%",
     icon: faScroll,
-    color: "red-600",
+    textColor: "text-red-600",
   },
   {
     id: 4,

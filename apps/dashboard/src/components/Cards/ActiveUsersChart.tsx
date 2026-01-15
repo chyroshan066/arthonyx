@@ -5,10 +5,10 @@ import { CHART_METRICS } from "@/lib/constants";
 export const ActiveUsersChart = () => (
   <Card
     outerDivClassName="mb-6 lg:mb-0 lg:w-5/12 mt-0 lg:flex-none"
-    innerDivClassName="z-20 border-black/12.5 shadow-soft-xl bg-white"
+    innerDivClassName="z-20 border-black/12.5 shadow-soft-xl bg-surface"
   >
     <div className="flex-auto p-4">
-      <div className="py-4 pr-1 mb-4 bg-gradient-soft-gray900-slate800 rounded-xl">
+      <div className="py-4 pr-1 mb-4 bg-gradient-dark rounded-xl">
         <div>
           <canvas id="chart-bars" height="170" />
         </div>
@@ -30,7 +30,7 @@ export const ActiveUsersChart = () => (
                 >
                   <FontAwesomeIcon
                     icon={metric.icon}
-                    className="text-white text-sm"
+                    className="text-surface text-sm"
                   />
                 </div>
                 <p className="mt-1 mb-0 text-xs font-semibold leading-tight">
@@ -38,9 +38,9 @@ export const ActiveUsersChart = () => (
                 </p>
               </div>
               <h4 className="font-bold">{metric.value}</h4>
-              <div className="text-xs h-0.75 flex w-3/4 overflow-visible rounded-lg bg-gray-200">
+              <div className="text-xs h-0.75 flex w-3/4 overflow-visible rounded-lg bg-border">
                 <div
-                  className={`duration-600 ease-soft -mt-0.38 -ml-px flex h-1.5 ${metric.width} flex-col justify-center overflow-hidden whitespace-nowrap rounded-lg bg-slate-700 text-center text-white transition-all`}
+                  className={`duration-600 ease-soft -mt-0.38 -ml-px flex h-1.5 ${metric.width} flex-col justify-center overflow-hidden whitespace-nowrap rounded-lg bg-main text-center text-surface transition-all`}
                   role="progressbar"
                   aria-valuenow={metric.completion}
                   aria-valuemin={0}

@@ -11,13 +11,13 @@ export const StatMiniCard = () => (
           <Card
             key={method.id}
             outerDivClassName={`${method.className} md:w-1/2 md:flex-none`}
-            innerDivClassName="bg-white border-transparent shadow-soft-xl"
+            innerDivClassName="bg-surface border-transparent shadow-soft-xl"
           >
-            <div className="p-4 mx-6 mb-0 text-center bg-white border-b-0 border-b-solid rounded-t-2xl border-b-transparent">
-              <div className="mx-auto w-16 h-16 flex items-center justify-center bg-gradient-soft-purple700-pink500 shadow-soft-2xl rounded-xl">
+            <div className="p-4 mx-6 mb-0 text-center bg-surface border-b-0 border-b-solid rounded-t-2xl border-b-transparent">
+              <div className="mx-auto w-16 h-16 flex items-center justify-center bg-gradient-brand shadow-soft-2xl rounded-xl">
                 <FontAwesomeIcon
                   icon={method.icon}
-                  className="text-white text-xl"
+                  className="text-surface text-xl"
                 />
               </div>
             </div>

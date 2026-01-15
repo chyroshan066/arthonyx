@@ -17,7 +17,7 @@ const SOCIAL_PROVIDERS: SocialProvider[] = [
     id: "facebook",
     icon: faFacebookF,
     containerClass: "bg-[#3C5A9A] rounded-lg",
-    iconClass: "text-white text-[16px]",
+    iconClass: "text-surface text-[16px]",
   },
   {
     id: "apple",
@@ -31,9 +31,9 @@ export const RegistrationFormCard = () => (
     <div className="flex flex-wrap -mx-3 -mt-48 md:-mt-56 lg:-mt-48">
       <Card
         outerDivClassName="mx-auto mt-0 md:flex-0 shrink-0 md:w-7/12 lg:w-5/12 xl:w-4/12"
-        innerDivClassName="z-0 bg-white shadow-soft-xl"
+        innerDivClassName="z-0 bg-surface shadow-soft-xl"
       >
-        <div className="p-6 mb-0 text-center bg-white border-b-0 rounded-t-2xl">
+        <div className="p-6 mb-0 text-center bg-surface border-b-0 rounded-t-2xl">
           <h5>Register with</h5>
         </div>
         <div className="flex flex-wrap px-3 -mx-3 sm:px-6 xl:px-12">
@@ -81,7 +81,7 @@ export const RegistrationFormCard = () => (
             </svg>
           </SocialLoginButtons>
           <div className="relative w-full max-w-full px-3 mt-2 text-center shrink-0">
-            <p className="z-20 inline px-4 mb-2 font-semibold leading-normal bg-white text-sm text-slate-400">
+            <p className="z-20 inline px-4 mb-2 font-semibold leading-normal bg-surface text-sm text-disabled">
               or
             </p>
           </div>
@@ -93,26 +93,27 @@ export const RegistrationFormCard = () => (
                 <Input
                   type={field.type}
                   placeholder={field.placeholder}
-                  ariaLabel={field.id}
+                  aria-label={field.id}
+                  aria-describedby={`${field.id}-addon`}
                 />
               </div>
             ))}
             <div className="min-h-6 pl-6.92 mb-0.5 block">
               <input
                 id="terms"
-                className="w-4.92 h-4.92 ease-soft -ml-6.92 rounded-1.4 checked:bg-gradient-soft-gray900-slate800 after:text-xxs after:font-awesome after:duration-250 after:ease-soft-in-out duration-250 relative float-left mt-1 cursor-pointer appearance-none border border-solid border-slate-200 bg-white bg-contain bg-center bg-no-repeat align-top transition-all after:absolute after:flex after:h-full after:w-full after:items-center after:justify-center after:text-white after:opacity-0 after:transition-all after:content-['\f00c'] checked:border-0 checked:border-transparent checked:bg-transparent checked:after:opacity-100 peer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fuchsia-400/50 focus-visible:ring-offset-2"
+                className="w-4.92 h-4.92 ease-soft -ml-6.92 rounded-1.4 checked:bg-gradient-dark after:text-xxs after:font-awesome after:duration-250 after:ease-soft-in-out duration-250 relative float-left mt-1 cursor-pointer appearance-none border border-solid border-slate-200 bg-surface bg-contain bg-center bg-no-repeat align-top transition-all after:absolute after:flex after:h-full after:w-full after:items-center after:justify-center after:text-surface after:opacity-0 after:transition-all after:content-['\f00c'] checked:border-0 checked:border-transparent checked:bg-transparent checked:after:opacity-100 peer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fuchsia-400/50 focus-visible:ring-offset-2"
                 type="checkbox"
                 value=""
                 defaultChecked={true}
               />
               <label
-                className="mb-2 ml-1 font-normal cursor-pointer select-none text-sm text-slate-700transition-colors duration-250 peer-focus-visible:text-slate-900"
+                className="mb-2 ml-1 font-normal cursor-pointer select-none text-sm text-main transition-colors duration-250 peer-focus-visible:text-slate-900"
                 htmlFor="terms"
               >
                 I agree the&nbsp;
                 <Link
                   href="#"
-                  className="font-bold text-slate-700focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-fuchsia-400 focus-visible:rounded-sm"
+                  className="font-bold text-main focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-fuchsia-400 focus-visible:rounded-sm"
                 >
                   Terms and Conditions
                 </Link>
@@ -121,8 +122,8 @@ export const RegistrationFormCard = () => (
             <div className="text-center">
               <Button
                 variant="gradient"
-                backgroundColor="bg-gradient-soft-gray900-slate800"
-                className="w-full mt-6 mb-2 border-0 hover:border-slate-700 hover:bg-slate-700 hover:text-white"
+                backgroundColor="bg-gradient-dark"
+                className="w-full mt-6 mb-2 border-0 hover:border-main hover:bg-main hover:text-surface"
                 btnText="Sign up"
               />
             </div>
@@ -130,7 +131,7 @@ export const RegistrationFormCard = () => (
               Already have an account?&nbsp;
               <Link
                 href="/login"
-                className="font-bold text-slate-700 transition-all duration-200 focus-visible:outline-none focus-visible:text-fuchsia-600 focus-visible:ring-2 focus-visible:ring-fuchsia-400/30 focus-visible:rounded-sm px-0.5 -mx-0.5"
+                className="font-bold text-main transition-all duration-200 focus-visible:outline-none focus-visible:text-primary-hover focus-visible:ring-2 focus-visible:ring-fuchsia-400/30 focus-visible:rounded-sm px-0.5 -mx-0.5"
               >
                 Sign in
               </Link>

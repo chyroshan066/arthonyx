@@ -14,6 +14,8 @@ export const NavbarFixedToggle = () => {
           id="fixedNav"
           defaultChecked={fixedNavbar}
           marginTop="1"
+          focusRingColor="focus-visible:ring-border-hover"
+          focusRingOffsetColor="focus-visible:ring-offset-surface"
           onChange={(e) => setFixedNavbar(e.target.checked)}
         />
       </div>

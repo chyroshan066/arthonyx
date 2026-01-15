@@ -21,11 +21,11 @@ export const AuthorsTable = () => (
           {AUTHORS_TABLE_HEADERS.map((header) => (
             <th
               key={header.id}
-              className={`table-header text-slate-400 opacity-70 ${
+              className={`table-header text-disabled opacity-70 ${
                 header.id !== AUTHORS_TABLE_HEADERS.length
                   ? `text-${header.textAlign} uppercase text-xxs border-b-solid font-bold`
                   : "font-semibold capitalize border-solid"
-              } border-gray-200 shadow-none tracking-none ${header.className}`}
+              } border-border shadow-none tracking-none ${header.className}`}
             >
               {header.header}
             </th>
@@ -53,7 +53,7 @@ export const AuthorsTable = () => (
               <p className="mb-0 caption font-semibold">
                 {author.function.role}
               </p>
-              <p className="mb-0 caption text-slate-400">
+              <p className="mb-0 caption text-disabled">
                 {author.function.department}
               </p>
             </TableCell>
@@ -64,7 +64,7 @@ export const AuthorsTable = () => (
               <span
                 className={`${
                   statusStyles[author.status]
-                } px-2.5 text-xs rounded-1.8 py-1.4 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white`}
+                } px-2.5 text-xs rounded-1.8 py-1.4 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-surface`}
               >
                 {author.status}
               </span>
@@ -73,9 +73,7 @@ export const AuthorsTable = () => (
               isLastRow={index === AUTHORS_TABLE_DATA.length - 1}
               className="text-center shadow-transparent"
             >
-              <Caption className="text-slate-400">
-                {author.employedDate}
-              </Caption>
+              <Caption className="text-disabled">{author.employedDate}</Caption>
             </TableCell>
             <TableCell
               isLastRow={index === AUTHORS_TABLE_DATA.length - 1}
@@ -83,7 +81,7 @@ export const AuthorsTable = () => (
             >
               <a
                 href="#"
-                className="text-xs font-semibold leading-tight text-slate-400"
+                className="text-xs font-semibold leading-tight text-disabled"
               >
                 {" "}
                 Edit{" "}

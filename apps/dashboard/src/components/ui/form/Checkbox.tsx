@@ -1,23 +1,21 @@
-import { DefaultChecked } from "@/types";
-import { ChangeEvent } from "react";
+import { FocusRingColor } from "@/types";
 
-interface CheckboxProps extends DefaultChecked {
-  id: string;
+interface CheckboxProps
+  extends React.InputHTMLAttributes<HTMLInputElement>,
+    FocusRingColor {
   marginTop?: string;
-  onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
+  focusRingOffsetColor?: string;
 }
 
 export const Checkbox = ({
-  id,
-  defaultChecked,
   marginTop = "0.54",
-  onChange,
+  focusRingColor = "focus-visible:ring-primary-ring/50",
+  focusRingOffsetColor,
+  ...props
 }: CheckboxProps) => (
   <input
-    id={id}
-    className={`mt-${marginTop} peer appearance-none cursor-pointer transition-all duration-250 ease-soft-in-out w-10 h-5 rounded-10 bg-slate-800/10 relative border border-gray-200 border-solid bg-none bg-contain bg-left ml-auto bg-no-repeat align-top after:content-[''] after:absolute after:top-px after:left-px after:bg-white after:rounded-circle after:shadow-soft-2xl after:duration-250 after:h-4 after:w-4 checked:bg-slate-800/95 checked:border-slate-800/95 checked:after:translate-x-[20px] shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fuchsia-400/50 focus-visible:ring-offset-2`}
     type="checkbox"
-    defaultChecked={defaultChecked}
-    onChange={onChange}
+    className={`mt-${marginTop} peer appearance-none cursor-pointer transition-all duration-250 ease-soft-in-out w-10 h-5 rounded-10 bg-secondary/10 relative border border-gray-200 border-solid bg-none bg-contain bg-left ml-auto bg-no-repeat align-top after:content-[''] after:absolute after:top-px after:left-px after:bg-surface after:rounded-circle after:shadow-soft-2xl after:duration-250 after:h-4 after:w-4 checked:bg-secondary/95 checked:border-secondary/95 checked:after:translate-x-[20px] shrink-0 focus-visible:outline-none focus-visible:ring-2 ${focusRingColor} focus-visible:ring-offset-2 ${focusRingOffsetColor} focus-visible:scale-105`}
+    {...props}
   />
 );

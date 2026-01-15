@@ -120,6 +120,14 @@ export interface FocusRingColor {
   focusRingColor?: string;
 }
 
-export interface AriaLabel {
-  ariaLabel: string;
+// export interface AriaLabel {
+//   ariaLabel: string;
+// }
+
+// export interface Type {
+//   type?: string;
+// }
+
+export interface TextColor {
+  textColor?: string;
 }

@@ -11,11 +11,12 @@ import {
   Label,
   Message,
   Name,
+  TextColor,
   Title,
   Value,
 } from "./common";
 
-export interface Stat extends Id, Title, Color, Icon, Value {
+export interface Stat extends Id, Title, TextColor, Icon, Value {
   change: string;
 }
 

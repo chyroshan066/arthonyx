@@ -24,12 +24,12 @@ export const SideNav = memo(() => {
   const sideNavBackgroundClass =
     sidenavType === "transparent"
       ? "xl:bg-transparent shadow-none"
-      : "xl:bg-white shadow-soft-xl";
+      : "xl:bg-surface shadow-soft-xl";
 
   return (
     <aside
       ref={contentRef as React.RefObject<HTMLElement>}
-      className={`max-w-62.5 ease-nav-brand z-990 fixed inset-y-0 my-4 ml-4 block w-full flex-wrap items-center justify-between rounded-2xl border-0 p-0 antialiased transition-transform duration-200 xl:left-0 xl:translate-x-0 bg-white ${sideNavBackgroundClass} ${
+      className={`max-w-62.5 ease-nav-brand z-990 fixed inset-y-0 my-4 ml-4 block w-full flex-wrap items-center justify-between rounded-2xl border-0 p-0 antialiased transition-transform duration-200 xl:left-0 xl:translate-x-0 bg-surface ${sideNavBackgroundClass} ${
         isOpen ? "translate-x-0 shadow-soft-xl" : "-translate-x-full"
       }`}
     >

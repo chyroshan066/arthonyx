@@ -18,7 +18,7 @@ export const AvatarGroup = ({
           <Tooltip.Trigger asChild>
             <Link
               href="#"
-              className="relative z-20 inline-flex items-center justify-center w-6 h-6 not-first:-ml-4 text-white transition-all duration-200 border-2 border-white border-solid ease-soft-in-out text-xs rounded-full hover:z-30"
+              className="relative z-20 inline-flex items-center justify-center w-6 h-6 not-first:-ml-4 text-surface transition-all duration-200 border-2 border-white border-solid ease-soft-in-out text-xs rounded-full hover:z-30 outline-none focus-visible:z-30 focus-visible:ring-2 focus-visible:ring-primary-ring focus-visible:scale-110"
               data-target="tooltip_trigger"
               data-placement="bottom"
             >
@@ -33,7 +33,7 @@ export const AvatarGroup = ({
           </Tooltip.Trigger>
           <Tooltip.Portal>
             <Tooltip.Content
-              className="z-50 px-2 py-1 text-white bg-black rounded-lg text-sm shadow-soft-lg animate-fade-in-up"
+              className="z-50 px-2 py-1 text-surface bg-black rounded-lg text-sm shadow-soft-lg animate-fade-in-up"
               sideOffset={5}
               side="bottom"
             >

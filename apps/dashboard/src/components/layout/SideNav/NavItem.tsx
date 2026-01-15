@@ -8,8 +8,8 @@ interface NavItemProps extends Href, Name, Icon {
 }
 
 // const SIDEBAR_COLORS = [
-//   { name: "purple", background: "bg-gradient-soft-purple700-pink500" },
-//   { name: "gray", background: "bg-gradient-soft-gray900-slate800" },
+//   { name: "purple", background: "bg-gradient-brand" },
+//   { name: "gray", background: "bg-gradient-dark" },
 //   { name: "blue", background: "bg-gradient-soft-blue600-cyan400" },
 //   { name: "green", background: "bg-gradient-soft-green600-lime400" },
 //   { name: "orange", background: "bg-gradient-soft-red500-yellow400" },
@@ -22,22 +22,23 @@ export const NavItem = ({ isActive, href, name, icon }: NavItemProps) => {
   return (
     <li className="mt-0.5 w-full">
       <Link
-        className={`py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors ${
-          isActive &&
-          `rounded-lg bg-white font-semibold text-slate-700 ${
-            sidenavType === "transparent" && "shadow-soft-xl"
-          }`
+        className={`py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors rounded-lg outline-none focus-visible:ring-2 focus-visible:ring-primary-ring/50 ${
+          isActive
+            ? `bg-surface font-semibold text-main ${
+                sidenavType === "transparent" && "shadow-soft-xl"
+              }`
+            : "focus-visible:bg-surface/50"
         }`}
         href={href}
       >
         <div
           className={`shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5 ${
-            isActive ? "bg-gradient-soft-purple700-pink500" : "bg-white"
+            isActive ? "bg-gradient-brand" : "bg-surface"
           }`}
         >
           <FontAwesomeIcon
             icon={icon}
-            className={isActive ? "text-white" : ""}
+            className={isActive ? "text-surface" : ""}
           />
         </div>
         <span className="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">

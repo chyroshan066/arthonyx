@@ -7,10 +7,10 @@ export const SignInLink = ({ isProfile }: IsProfile) => (
   <li className="flex items-center">
     <Link
       href="/login"
-      className={`block px-0 py-2 text-sm font-semibold transition-all ${
+      className={`block px-1 py-2 text-sm font-semibold transition-all rounded-lg outline-none focus-visible:ring-2 focus-visible:ring-primary-ring/50 focus-visible:ring-offset-2 ${
         isProfile
-          ? "text-white ease-soft-in-out"
-          : "text-slate-500 ease-nav-brand"
+          ? "text-surface ease-soft-in-out focus-visible:ring-offset-transparent"
+          : "text-muted ease-nav-brand focus-visible:ring-offset-surface"
       }`}
     >
       <FontAwesomeIcon icon={faUser} className="sm:mr-1" />

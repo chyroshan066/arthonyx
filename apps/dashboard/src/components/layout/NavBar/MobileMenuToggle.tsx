@@ -9,10 +9,10 @@ export const MobileMenuToggle = ({
   <li className="flex items-center pl-4 xl:hidden">
     <button
       onClick={onToggle}
-      className={`block p-0 text-sm transition-all ${
+      className={`block p-0 text-sm transition-all rounded-lg outline-none focus-visible:ring-2 focus-visible:ring-primary-ring/50 focus-visible:ring-offset-5 ${
         isProfile
-          ? "ease-soft-in-out text-white"
-          : "ease-nav-brand text-slate-500 bg-transparent border-0 cursor-pointer"
+          ? "ease-soft-in-out text-surface focus-visible:ring-offset-secondary"
+          : "ease-nav-brand text-muted bg-transparent border-0 cursor-pointer focus-visible:ring-offset-surface"
       }`}
       data-sidenav-trigger
       type="button"
@@ -24,7 +24,7 @@ export const MobileMenuToggle = ({
             key={index}
             className={`ease-soft relative block h-0.5 rounded-sm transition-all ${
               index !== 2 && "mb-0.75"
-            } ${isProfile ? "bg-white" : "bg-slate-500"}`}
+            } ${isProfile ? "bg-surface" : "bg-muted"}`}
           />
         ))}
       </div>

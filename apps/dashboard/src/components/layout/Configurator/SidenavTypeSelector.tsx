@@ -15,29 +15,29 @@ export const SidenavTypeSelector = () => {
       <div className="flex">
         <Button
           variant={sidenavType === "transparent" ? "gradient" : "outline"}
-          paddingX="4"
-          paddingY="3"
+          paddingX="px-6"
+          paddingY="py-3"
           onClick={() => setSidenavType("transparent")}
           className="w-full mb-2"
-          // className="w-full mb-2 border xl-max:cursor-not-allowed xl-max:opacity-65 xl-max:pointer-events-none xl-max:bg-gradient-soft-purple700-pink500 xl-max:text-white xl-max:border-0"
+          focusRingColor="focus-visible:ring-primary-ring/50"
+          // className="w-full mb-2 border xl-max:cursor-not-allowed xl-max:opacity-65 xl-max:pointer-events-none xl-max:bg-gradient-brand xl-max:text-white xl-max:border-0"
           backgroundColor={
             sidenavType === "transparent"
-              ? "bg-gradient-soft-purple700-pink500"
+              ? "bg-gradient-brand"
               : "bg-transparent"
           }
           btnText="Transparent"
         />
         <Button
           variant={sidenavType === "white" ? "gradient" : "outline"}
-          paddingX="4"
-          paddingY="3"
+          paddingX="px-6"
+          paddingY="py-3"
           onClick={() => setSidenavType("white")}
           className="w-full mb-2 ml-2"
-          // className="w-full mb-2 ml-2 xl-max:cursor-not-allowed xl-max:opacity-65 xl-max:pointer-events-none xl-max:bg-gradient-soft-purple700-pink500 xl-max:text-white xl-max:border-0
+          focusRingColor="focus-visible:ring-primary-ring/50"
+          // className="w-full mb-2 ml-2 xl-max:cursor-not-allowed xl-max:opacity-65 xl-max:pointer-events-none xl-max:bg-gradient-brand xl-max:text-white xl-max:border-0
           backgroundColor={
-            sidenavType === "white"
-              ? "bg-gradient-soft-purple700-pink500"
-              : "bg-transparent"
+            sidenavType === "white" ? "bg-gradient-brand" : "bg-transparent"
           }
           btnText="White"
         />

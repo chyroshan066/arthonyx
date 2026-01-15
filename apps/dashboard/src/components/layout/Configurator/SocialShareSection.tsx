@@ -8,8 +8,9 @@ export const SocialShareSection = () => (
       <Button
         key={btn.id}
         variant="gradient"
-        className="mb-0 mr-2 border-0 me-2 border-slate-700"
-        backgroundColor="bg-slate-700"
+        className="mb-0 mr-2 border-0 me-2 border-main"
+        backgroundColor="bg-main"
+        focusRingColor="focus-visible:ring-disabled/50"
         icon={btn.icon}
         btnText={btn.btnText}
       />

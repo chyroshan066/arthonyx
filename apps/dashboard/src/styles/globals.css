@@ -1,5 +1,48 @@
 @import "tailwindcss";
 
+@theme {
+  /* BRANDING */
+  --color-primary: rgb(
+    203 12 159
+  ); /* Main buttons, active links, key borders */
+  --color-primary-ring: var(
+    --color-fuchsia-400
+  ); /* Focus rings, hover states (lighter) */
+  --color-primary-hover: var(--color-fuchsia-600);
+  --color-secondary: rgb(
+    58 65 111
+  ); /* Dark backgrounds, headings, contrast elements */
+
+  /* TYPOGRAPHY */
+  --color-main: rgb(52 71 103); /* Standard body text */
+  --color-muted: rgb(103 116 142); /* Subtitles, captions, metadata */
+  --color-disabled: rgb(131 146 171); /* Placeholders, disabled text */
+
+  /* SURFACE & BORDERS */
+  --color-surface: rgb(255 255 255); /* Cards, modals, main background */
+  --color-surface-ground: rgb(248 249 250); /* Page background behind cards */
+  --color-border: var(--color-gray-200); /* Standard dividing lines */
+  --color-border-hover: var(--color-slate-300);
+
+  /* FEEDBACK */
+  --color-success: rgb(130 214 22); /* Completion status, "up" arrows */
+  --color-danger: rgb(234 6 6); /* Delete buttons, errors */
+  /* --color-warning: var(--color-yellow-400); */
+  /* --color-info: var(--color-blue-600); */
+
+  /* GRADIENTS */
+  --background-image-gradient-dark: linear-gradient(
+    to top left,
+    #141727,
+    #3a416f
+  ); /* CreditCard, ActiveUsers */
+  --background-image-gradient-brand: linear-gradient(
+    to top left,
+    #7e28ca,
+    #ff0080
+  ); /* StatCards, Rockets */
+}
+
 @layer base {
   *,
   ::before,

@@ -6,7 +6,7 @@ import { INVOCIES } from "@/lib/constants";
 export const InvoiceCard = () => (
   <Card
     outerDivClassName="lg:w-1/3 lg:flex-none"
-    innerDivClassName="h-full bg-white border-transparent shadow-soft-xl"
+    innerDivClassName="h-full bg-surface border-transparent shadow-soft-xl"
   >
     <CardHeader className="border-b-solid border-b-transparent" paddingSize={4}>
       <div className="flex flex-wrap -mx-3">
@@ -26,10 +26,10 @@ export const InvoiceCard = () => (
         {INVOCIES.map((invoice) => (
           <li
             key={invoice.id}
-            className="relative flex justify-between px-4 py-2 pl-0 mb-2 last:mb-0 first:rounded-t-inherit last:rounded-b-inherit bg-white border-0 text-inherit rounded-xl"
+            className="relative flex justify-between px-4 py-2 pl-0 mb-2 last:mb-0 first:rounded-t-inherit last:rounded-b-inherit bg-surface border-0 text-inherit rounded-xl"
           >
             <div className="flex flex-col">
-              <h6 className="mb-1 font-semibold leading-normal text-sm text-slate-700">
+              <h6 className="mb-1 font-semibold leading-normal text-sm text-main">
                 {invoice.date}
               </h6>
               <span className="leading-tight text-xs">{invoice.id}</span>
@@ -43,7 +43,7 @@ export const InvoiceCard = () => (
                 icon={faFilePdf}
                 label="PDF"
                 iconClass="text-lg"
-                focusRingColor="red-400/50"
+                focusRingColor="focus-visible:ring-red-400/50"
               />
             </div>
           </li>

@@ -14,7 +14,11 @@ export const Breadcrumb = ({ pageName, isProfile }: BreadcrumbProps) => (
     >
       <li className="text-sm leading-normal">
         <Link
-          className={`opacity-50 ${!isProfile && "text-slate-700"}`}
+          className={`opacity-50 rounded-sm outline-none focus-visible:no-underline focus-visible:ring-2 focus-visible:ring-primary-ring/50 focus-visible:ring-offset-3 ${
+            isProfile
+              ? "focus-visible:ring-offset-secondary"
+              : "text-main focus-visible:ring-offset-surface"
+          }`}
           href="#"
         >
           Pages
@@ -22,7 +26,7 @@ export const Breadcrumb = ({ pageName, isProfile }: BreadcrumbProps) => (
       </li>
       <li
         className={`text-sm pl-2 capitalize leading-normal before:float-left before:pr-2 before:content-['/'] ${
-          !isProfile && "text-slate-700 before:text-gray-600"
+          !isProfile && "text-main before:text-gray-600"
         }`}
         aria-current="page"
       >
@@ -31,7 +35,7 @@ export const Breadcrumb = ({ pageName, isProfile }: BreadcrumbProps) => (
     </ol>
     <h6
       className={`font-bold capitalize ${
-        isProfile ? "mb-2 ml-2 text-white" : "mb-0"
+        isProfile ? "mb-2 ml-2 text-surface" : "mb-0"
       }`}
     >
       {pageName}

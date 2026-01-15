@@ -11,7 +11,6 @@ export * from "./ui";
 // interface isLastRow used once in Table
 // interface SubTitle used once in Tale
 // interface textSize used once in IconButton
-// interface textColor used once in IconButton
 // interface leading used once in IconButton
 // interface containerClass used once in RegistrationFormCard
 // interface isActive used once in NavItem
@@ -24,6 +23,6 @@ export * from "./ui";
 // interface paddingX used once in Configurator
 // interface paddingY used once in Configurator
 // interface borderColor used once in Configurator
-// interface focusRingColor used once in IconButton
-// interface type used once in Input
-// interface placeholder used once in Input
+// interface focusRingOffsetColor used once in Checkbox
+// interface rowCount used once in TableSkeleton
+// interface columnHeaders used once in TableSkeleton

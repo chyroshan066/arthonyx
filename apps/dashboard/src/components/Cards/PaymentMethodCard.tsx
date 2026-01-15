@@ -8,7 +8,7 @@ import * as Tooltip from "@radix-ui/react-tooltip";
 export const PaymentMethodCard = () => (
   <Card
     outerDivClassName="mb-4 lg:mb-0 lg:w-full lg:flex-none"
-    innerDivClassName="mt-6 bg-white border-transparent shadow-soft-xl"
+    innerDivClassName="mt-6 bg-surface border-transparent shadow-soft-xl"
     isWidthFull={false}
   >
     <CardHeader className="border-b-solid border-b-transparent" paddingSize={4}>
@@ -19,10 +19,10 @@ export const PaymentMethodCard = () => (
         <div className="flex-none w-1/2 max-w-full px-3 text-right">
           <Button
             variant="gradient"
-            backgroundColor="bg-gradient-soft-gray900-slate800"
+            backgroundColor="bg-gradient-dark"
             icon={faPlus}
             btnText="Add New Card"
-            focusRingColor="focus-visible:ring-slate-400/50"
+            focusRingColor="focus-visible:ring-disabled/50"
           />
         </div>
       </div>
@@ -49,18 +49,18 @@ export const PaymentMethodCard = () => (
                   <Tooltip.Trigger
                     type="button"
                     aria-label={`Edit card ending in ${method.cardNumber}`}
-                    className="ml-auto flex items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-slate-400/50 rounded-full transition-all"
+                    className="ml-auto flex items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-disabled/50 rounded-full transition-all"
                   >
                     <FontAwesomeIcon
                       icon={faPencilAlt}
-                      className="cursor-pointer text-slate-700"
+                      className="cursor-pointer text-main"
                     />
                   </Tooltip.Trigger>
                   <Tooltip.Portal>
                     <Tooltip.Content
                       sideOffset={5}
                       side="top"
-                      className="z-50 px-2 py-1 text-white bg-black rounded-lg text-sm"
+                      className="z-50 px-2 py-1 text-surface bg-black rounded-lg text-sm"
                     >
                       Edit Card
                       <Tooltip.Arrow className="fill-black" />

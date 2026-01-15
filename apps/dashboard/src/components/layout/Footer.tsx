@@ -20,12 +20,12 @@ export const Footer = () => {
       <div className="w-full px-6 mx-auto">
         <div className="flex flex-wrap items-center -mx-3 lg:justify-between">
           <div className="w-full max-w-full px-3 mt-0 mb-6 shrink-0 lg:mb-0 lg:w-1/2 lg:flex-none">
-            <div className="text-sm leading-normal text-center text-slate-500 lg:text-left">
+            <div className="text-sm leading-normal text-center text-muted lg:text-left">
               © {new Date().getFullYear()}, made with{" "}
               <FontAwesomeIcon icon={faHeart} /> by{" "}
               <a
                 href="#"
-                className="font-semibold text-slate-700"
+                className="font-semibold text-main transition-all rounded outline-none focus-visible:ring-2 focus-visible:ring-primary-ring/50 px-1"
                 target="_blank"
               >
                 Arthonyx
@@ -39,7 +39,7 @@ export const Footer = () => {
                 <li key={index} className="nav-item">
                   <Link
                     href={link.href}
-                    className="block px-4 pt-0 pb-1 text-sm font-normal transition-colors ease-soft-in-out text-slate-500"
+                    className="block px-4 pt-0 pb-1 text-sm font-normal transition-all ease-soft-in-out text-muted rounded-md outline-none focus-visible:ring-2 focus-visible:ring-primary-ring/50 focus-visible:text-main"
                   >
                     {link.name}
                   </Link>
@@ -60,7 +60,7 @@ export const Footer = () => {
                 key={link.id}
                 href={link.href}
                 target="_blank"
-                className="mb-2 mr-4 text-slate-400 sm:mb-0 xl:mr-12"
+                className="mb-2 mr-4 text-disabled sm:mb-0 xl:mr-12 transition-all rounded-md outline-none focus-visible:ring-2 focus-visible:ring-primary-ring/50 focus-visible:text-slate-600 px-2 -mx-2"
               >
                 {link.name}
               </Link>
@@ -72,7 +72,7 @@ export const Footer = () => {
                 key={link.id}
                 href={link.href}
                 target="_blank"
-                className="mr-6 text-slate-400"
+                className="mr-6 text-disabled transition-all rounded-lg outline-none focus-visible:ring-2 focus-visible:ring-primary-ring/50 focus-visible:text-fuchsia-500 p-1 -m-1"
               >
                 <FontAwesomeIcon icon={link.icon} className="text-lg" />
               </Link>
@@ -81,7 +81,7 @@ export const Footer = () => {
         </div>
         <div className="flex flex-wrap -mx-3">
           <div className="w-8/12 max-w-full px-3 mx-auto mt-1 text-center flex-0">
-            <p className="mb-0 text-slate-400">
+            <p className="mb-0 text-disabled">
               Copyright © {new Date().getFullYear()} Software by Arthonyx
             </p>
           </div>

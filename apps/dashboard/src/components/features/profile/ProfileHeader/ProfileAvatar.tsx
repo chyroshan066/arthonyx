@@ -4,7 +4,7 @@ export const ProfileAvatar = () => (
   <>
     {/* Avatar */}
     <div className="flex-none w-auto max-w-full px-3">
-      <div className="text-base ease-soft-in-out h-18.5 w-18.5 relative inline-flex items-center justify-center rounded-xl text-white transition-all duration-200">
+      <div className="text-base ease-soft-in-out h-18.5 w-18.5 relative inline-flex items-center justify-center rounded-xl text-surface transition-all duration-200">
         <Image
           src="/images/random/bruce-mars.jpg"
           width={74}

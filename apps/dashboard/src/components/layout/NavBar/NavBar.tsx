@@ -32,7 +32,7 @@ export const NavBar = memo(() => {
     <nav
       className={`flex flex-wrap items-center justify-between py-2 transition-all shadow-none duration-250 ease-soft-in lg:flex-nowrap lg:justify-start ${
         isProfile
-          ? "absolute z-20 px-6 text-white w-full"
+          ? "absolute z-20 px-6 text-surface w-full"
           : `px-0 mx-6 rounded-2xl ${navbarClasses}`
       }`}
     >

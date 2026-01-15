@@ -31,7 +31,7 @@ export const ProjectsTable = () => {
   return (
     <Card
       outerDivClassName="mb-6 md:mb-0 md:w-1/2 md:flex-none lg:w-2/3 mt-0 lg:flex-none"
-      innerDivClassName="border-black/12.5 shadow-soft-xl bg-white"
+      innerDivClassName="border-black/12.5 shadow-soft-xl bg-surface"
     >
       <CardHeader className="border-black/12.5 border-solid mb-4">
         <div className="flex flex-wrap mt-0 -mx-3">
@@ -53,17 +53,14 @@ export const ProjectsTable = () => {
                 aria-expanded={isDropdownOpen}
                 type="button"
               >
-                <FontAwesomeIcon
-                  icon={faEllipsisV}
-                  className="text-slate-400"
-                />
+                <FontAwesomeIcon icon={faEllipsisV} className="text-disabled" />
               </button>
               <p className="hidden transform-dropdown-show" />
 
               <ul
                 ref={dropdownRef as React.RefObject<HTMLUListElement>}
                 data-dropdown-menu
-                className={`z-100 text-sm transform-dropdown shadow-soft-3xl duration-250 before:duration-350 before:font-awesome before:ease-soft min-w-44 -ml-34 before:text-5.5 absolute top-0 m-0 list-none rounded-lg border-0 border-solid border-transparent bg-white bg-clip-padding px-2 py-4 text-left text-slate-500 opacity-0 transition-all before:absolute before:top-0 before:right-7 before:left-auto before:z-40 before:text-white before:transition-all before:content-['\\f0d8'] ${
+                className={`z-100 text-sm transform-dropdown shadow-soft-3xl duration-250 before:duration-350 before:font-awesome before:ease-soft min-w-44 -ml-34 before:text-5.5 absolute top-0 m-0 list-none rounded-lg border-0 border-solid border-transparent bg-surface bg-clip-padding px-2 py-4 text-left text-muted opacity-0 transition-all before:absolute before:top-0 before:right-7 before:left-auto before:z-40 before:text-surface before:transition-all before:content-['\\f0d8'] ${
                   isDropdownOpen
                     ? "opacity-100 transform-dropdown-show pointer-events-auto"
                     : "opacity-0 pointer-events-none before:-top-5 transform-dropdown"
@@ -72,7 +69,7 @@ export const ProjectsTable = () => {
                 {DROPDOWN_ACTIONS.map((action, index) => (
                   <li key={index} className="relative">
                     <Link
-                      className="py-1.2 lg:ease-soft clear-both block w-full whitespace-nowrap rounded-lg border-0 bg-transparent px-4 text-left font-normal text-slate-500 lg:transition-colors lg:duration-300 outline-none focus-visible:bg-slate-100 focus-visible:text-slate-700 transition-colors"
+                      className="py-1.2 lg:ease-soft clear-both block w-full whitespace-nowrap rounded-lg border-0 bg-transparent px-4 text-left font-normal text-muted lg:transition-colors lg:duration-300 outline-none focus-visible:bg-slate-100 focus-visible:text-main transition-colors"
                       href="#;"
                     >
                       {action}
@@ -99,7 +96,7 @@ export const ProjectsTable = () => {
                   {PROJECT_TABLE_HEADERS.map((header) => (
                     <th
                       key={header.id}
-                      className={`table-header tracking-normal text-${header.textAlign} uppercase letter border-b-solid text-xxs border-b-gray-200 ${header.className}`}
+                      className={`table-header tracking-normal text-${header.textAlign} uppercase letter border-b-solid text-xxs border-b-border ${header.className}`}
                     >
                       {header.header}
                     </th>
@@ -131,9 +128,9 @@ export const ProjectsTable = () => {
                     >
                       <div className="w-3/4 mx-auto">
                         <Caption>{data.completion}%</Caption>
-                        <div className="text-xs h-0.75 w-30 m-0 flex overflow-visible rounded-lg bg-gray-200">
+                        <div className="text-xs h-0.75 w-30 m-0 flex overflow-visible rounded-lg bg-border">
                           <div
-                            className={`duration-600 ease-soft -mt-0.38 -ml-px flex h-1.5 flex-col justify-center overflow-hidden whitespace-nowrap rounded bg-fuchsia-500 text-center text-white transition-all ${
+                            className={`duration-600 ease-soft -mt-0.38 -ml-px flex h-1.5 flex-col justify-center overflow-hidden whitespace-nowrap rounded bg-primary text-center text-surface transition-all ${
                               data.completion === 100
                                 ? "bg-gradient-soft-green600-lime400"
                                 : "bg-gradient-soft-blue600-cyan400"

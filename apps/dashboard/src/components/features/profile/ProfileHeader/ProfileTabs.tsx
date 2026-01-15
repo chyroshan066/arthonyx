@@ -18,7 +18,7 @@ export const ProfileTabs = () => {
         >
           {/* The Moving Pill (Animated Background) */}
           <div
-            className="absolute z-10 bg-white rounded-lg shadow-soft-xxs transition-all duration-300 ease-soft-in-out"
+            className="absolute z-10 bg-surface rounded-lg shadow-soft-xxs transition-all duration-300 ease-soft-in-out"
             style={{
               left: tabStyle.left,
               width: tabStyle.width,
@@ -38,7 +38,7 @@ export const ProfileTabs = () => {
             >
               <button
                 onClick={() => setActiveTab(tab.value)}
-                className="z-30 block w-full px-0 py-1 mb-0 transition-all border-0 rounded-lg ease-soft-in-out bg-transparent text-slate-700 cursor-pointer"
+                className="z-30 block w-full px-0 py-1 mb-0 transition-all border-0 rounded-lg ease-soft-in-out bg-transparent text-slate-700 cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-border-hover focus-visible:ring-offset-2"
                 role="tab"
                 aria-selected={activeTab === tab.value}
               >

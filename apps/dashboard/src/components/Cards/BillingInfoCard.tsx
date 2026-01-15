@@ -6,7 +6,7 @@ import { IconButton } from "../ui/Button";
 export const BillingInfoCard = () => (
   <Card
     outerDivClassName="mt-6 md:w-7/12 md:flex-none"
-    innerDivClassName="bg-white shadow-soft-xl"
+    innerDivClassName="bg-surface shadow-soft-xl"
   >
     <CardHeader className="px-4">
       <h6 className="mb-0">Billing Information</h6>
@@ -16,7 +16,7 @@ export const BillingInfoCard = () => (
         {BILLING_DETAILS.map((profile) => (
           <li
             key={profile.id}
-            className={`relative flex p-6 mb-2 border-0 first:rounded-t-inherit last:rounded-b-inherit mt-4 first:mt-0 rounded-xl bg-gray-50`}
+            className={`relative flex p-6 mb-2 border-0 first:rounded-t-inherit last:rounded-b-inherit mt-4 first:mt-0 rounded-xl bg-surface-ground`}
           >
             <div className="flex flex-col">
               <h6 className="mb-4 leading-normal text-sm">{profile.name}</h6>
@@ -26,7 +26,7 @@ export const BillingInfoCard = () => (
                   className="mb-2 last:mb-0 leading-tight text-xs"
                 >
                   {detail.label}:
-                  <span className="font-semibold text-slate-700 sm:ml-2">
+                  <span className="font-semibold text-main sm:ml-2">
                     {detail.value}
                   </span>
                 </span>
@@ -39,7 +39,7 @@ export const BillingInfoCard = () => (
                 textColor="text-red-500"
                 icon={faTrashAlt}
                 label="Delete"
-                focusRingColor="red-400/50"
+                focusRingColor="focus-visible:ring-red-400/50"
               />
               <IconButton icon={faPencilAlt} label="Edit" />
             </div>

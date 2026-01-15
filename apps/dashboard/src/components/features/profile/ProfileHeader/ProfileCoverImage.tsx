@@ -6,6 +6,6 @@ export const ProfileCoverImage = () => (
       backgroundPositionY: "50%",
     }}
   >
-    <span className="absolute inset-y-0 w-full h-full bg-center bg-cover bg-gradient-soft-purple700-pink500 opacity-60" />
+    <span className="absolute inset-y-0 w-full h-full bg-center bg-cover bg-gradient-brand opacity-60" />
   </div>
 );

@@ -10,10 +10,10 @@ export const CardHeader = ({
   children,
   className,
   paddingSize = 6,
-  backgroundColor = "white",
+  backgroundColor = "bg-surface",
 }: CardHeaderWrapperProps) => (
   <div
-    className={`mb-0 rounded-t-2xl border-b-0 bg-${backgroundColor} p-${paddingSize} pb-0 ${className}`}
+    className={`mb-0 rounded-t-2xl border-b-0 ${backgroundColor} p-${paddingSize} pb-0 ${className}`}
   >
     {children}
   </div>

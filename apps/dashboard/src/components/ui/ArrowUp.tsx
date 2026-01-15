@@ -8,7 +8,7 @@ interface ArrowUpProps extends Time {
 
 export const ArrowUp = ({ percentage, time }: ArrowUpProps) => (
   <p className="text-sm leading-normal">
-    <FontAwesomeIcon icon={faArrowUp} className="text-lime-500" />
+    <FontAwesomeIcon icon={faArrowUp} className="text-success" />
     <span className="font-semibold">{percentage}</span> {time}
   </p>
 );

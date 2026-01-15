@@ -23,9 +23,9 @@ export const ProjectsTable = () => (
               key={header.id}
               className={`table-header ${
                 header.id !== PROJECT_TABLE_HEADERS_ALT.length
-                  ? `font-bold text-${header.textAlign} uppercase text-xxs border-b-solid text-slate-400 opacity-70`
+                  ? `font-bold text-${header.textAlign} uppercase text-xxs border-b-solid text-disabled opacity-70`
                   : "font-semibold capitalize border-solid"
-              } border-gray-200 shadow-none tracking-none ${header.className}`}
+              } border-border shadow-none tracking-none ${header.className}`}
             >
               {header.header}
             </th>
@@ -65,13 +65,13 @@ export const ProjectsTable = () => (
             >
               <div className="flex items-center justify-center">
                 <Caption className="mr-2">{project.completion}%</Caption>
-                <div className="text-xs h-0.75 w-30 m-0 flex overflow-visible rounded-lg bg-gray-200">
+                <div className="text-xs h-0.75 w-30 m-0 flex overflow-visible rounded-lg bg-border">
                   <div
                     className={`duration-600 ease-soft ${
                       project.completion === 100
                         ? "bg-gradient-soft-green600-lime400"
                         : "bg-gradient-soft-blue600-cyan400"
-                    } -mt-0.38 -ml-px flex h-1.5 flex-col justify-center overflow-hidden whitespace-nowrap rounded bg-fuchsia-500 text-center text-white transition-all`}
+                    } -mt-0.38 -ml-px flex h-1.5 flex-col justify-center overflow-hidden whitespace-nowrap rounded bg-primary text-center text-surface transition-all`}
                     style={{ width: `${project.completion}%` }}
                     role="progressbar"
                     aria-valuenow={project.completion}
@@ -86,7 +86,7 @@ export const ProjectsTable = () => (
               className="shadow-transparent"
             >
               <button
-                className="inline-block px-6 py-3 mb-0 text-xs font-bold text-center uppercase align-middle transition-all bg-transparent border-0 rounded-lg shadow-none leading-pro ease-soft-in bg-150 tracking-tight-soft bg-x-25 text-slate-400"
+                className="inline-block px-6 py-3 mb-0 text-xs font-bold text-center uppercase align-middle transition-all bg-transparent border-0 rounded-lg shadow-none leading-pro ease-soft-in bg-150 tracking-tight-soft bg-x-25 text-disabled outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-border-hover focus-visible:bg-slate-50"
                 aria-haspopup="true"
                 aria-expanded="false"
               >

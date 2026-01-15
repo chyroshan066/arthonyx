@@ -23,9 +23,9 @@ const ProjectCardColumn = ({ children, className }: ProjectCardColumnProps) => (
 export const ProjectGalleryCard = () => (
   <Card
     outerDivClassName="flex-none mt-6"
-    innerDivClassName="mb-6 bg-white shadow-soft-xl"
+    innerDivClassName="mb-6 bg-surface shadow-soft-xl"
   >
-    <div className="p-4 pb-0 mb-0 bg-white rounded-t-2xl">
+    <div className="p-4 pb-0 mb-0 bg-surface rounded-t-2xl">
       <h6 className="mb-1">Projects</h6>
       <p className="leading-normal text-sm">Architects design houses</p>
     </div>
@@ -36,7 +36,7 @@ export const ProjectGalleryCard = () => (
             <div className="relative">
               <Link
                 href="#"
-                className="block shadow-xl rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fuchsia-400/50 focus-visible:ring-offset-2"
+                className="block shadow-xl rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-ring/50 focus-visible:ring-offset-2"
               >
                 <Image
                   src={project.img}
@@ -52,12 +52,12 @@ export const ProjectGalleryCard = () => (
               </Link>
             </div>
             <div className="flex flex-col flex-auto px-1 pt-6 h-full">
-              <p className="relative z-10 mb-2 leading-normal text-transparent bg-gradient-soft-gray900-slate800 text-sm bg-clip-text">
+              <p className="relative z-10 mb-2 leading-normal text-transparent bg-gradient-dark text-sm bg-clip-text">
                 {project.category}
               </p>
               <Link
                 href="#"
-                className="rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fuchsia-400/50 focus-visible:ring-offset-2"
+                className="rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-ring/50 focus-visible:ring-offset-2"
               >
                 <h5>{project.title}</h5>
               </Link>
@@ -66,7 +66,7 @@ export const ProjectGalleryCard = () => (
               </p>
               <div className="flex items-center justify-between mt-auto">
                 <Button
-                  className="active:shadow-soft-xs hover:border-fuchsia-500 hover:bg-transparent hover:text-fuchsia-500 hover:shadow-none active:bg-fuchsia-500 active:text-white active:hover:bg-transparent active:hover:text-fuchsia-500"
+                  className="active:shadow-soft-xs hover:border-primary hover:bg-transparent hover:text-primary hover:shadow-none active:bg-primary active:text-surface active:hover:bg-transparent active:hover:text-primary"
                   btnText="View Project"
                 />
                 <AvatarGroup participants={project.participants} />
@@ -77,13 +77,13 @@ export const ProjectGalleryCard = () => (
         <ProjectCardColumn className="h-full border border-solid border-slate-100">
           <Link
             href="#"
-            className="flex flex-col items-center justify-center w-full h-full min-h-[225px] p-6 text-center rounded-2xl transition-all outline-none focus-visible:ring-2 focus-visible:ring-fuchsia-400/50 focus-visible:ring-offset-2 group"
+            className="flex flex-col items-center justify-center w-full h-full min-h-[225px] p-6 text-center rounded-2xl transition-all outline-none focus-visible:ring-2 focus-visible:ring-primary-ring/50 focus-visible:ring-offset-2 group"
           >
             <FontAwesomeIcon
               icon={faPlus}
-              className="mb-4 text-slate-400 transition-colors group-hover:text-fuchsia-500 group-focus-visible:text-fuchsia-500"
+              className="mb-4 text-disabled transition-colors group-hover:text-primary group-focus-visible:text-primary"
             />
-            <h5 className="text-slate-400 transition-colors group-hover:text-fuchsia-500 group-focus-visible:text-fuchsia-500">
+            <h5 className="text-disabled transition-colors group-hover:text-primary group-focus-visible:text-primary">
               New project
             </h5>
           </Link>

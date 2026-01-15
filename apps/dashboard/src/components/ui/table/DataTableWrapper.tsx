@@ -11,7 +11,7 @@ export const DataTableWrapper = ({
   <div className="flex flex-wrap -mx-3">
     <Card
       outerDivClassName="flex-none"
-      innerDivClassName="mb-6 border-transparent shadow-soft-xl bg-white"
+      innerDivClassName="mb-6 border-transparent shadow-soft-xl bg-surface"
     >
       <CardHeader className="border-b-solid border-b-transparent">
         <h6>{title}</h6>

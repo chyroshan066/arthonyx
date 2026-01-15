@@ -12,7 +12,7 @@ export const LoginFormSection = () => (
         <div className="flex flex-wrap mt-0 -mx-3">
           <div className="flex flex-col w-full max-w-full px-3 mx-auto md:flex-0 shrink-0 md:w-6/12 lg:w-5/12 xl:w-4/12">
             <div className="relative flex flex-col min-w-0 mt-32 break-words bg-transparent border-0 shadow-none rounded-2xl bg-clip-border">
-              <CardHeader backgroundColor="transparent">
+              <CardHeader backgroundColor="bg-transparent">
                 <h3 className="relative z-10 font-bold text-transparent bg-gradient-soft-blue600-cyan400 bg-clip-text">
                   Welcome back
                 </h3>
@@ -22,14 +22,15 @@ export const LoginFormSection = () => (
                 <form role="form">
                   {LOGIN_FIELDS.map((field) => (
                     <div key={field.id} className="group flex flex-col my-1">
-                      <label className="mb-2 ml-1 font-bold text-xs text-slate-700 transition-all duration-200 group-focus-within:text-fuchsia-500 capitalize">
+                      <label className="mb-2 ml-1 font-bold text-xs text-main transition-all duration-200 group-focus-within:text-primary capitalize">
                         {field.id}
                       </label>
                       <div className="mb-4">
                         <Input
                           placeholder={field.placeholder}
-                          ariaLabel={field.id}
                           type={field.type}
+                          aria-label={field.id}
+                          aria-describedby={`${field.id}-addon`}
                         />
                       </div>
                     </div>
@@ -37,7 +38,7 @@ export const LoginFormSection = () => (
                   <div className="min-h-6 mb-0.5 block">
                     <Checkbox id="rememberMe" defaultChecked={false} />
                     <label
-                      className="mb-2 ml-2 font-normal cursor-pointer select-none text-sm text-slate-700transition-colors duration-250 peer-focus-visible:text-fuchsia-500"
+                      className="mb-2 ml-2 font-normal cursor-pointer select-none text-sm text-main transition-colors duration-250 peer-focus-visible:text-primary"
                       htmlFor="rememberMe"
                     >
                       Remember me
@@ -58,7 +59,7 @@ export const LoginFormSection = () => (
                   Don't have an account?&nbsp;
                   <Link
                     href="/register"
-                    className="relative z-10 font-semibold text-transparent bg-gradient-soft-blue600-cyan400 bg-clip-text"
+                    className="relative z-10 font-semibold text-transparent bg-gradient-soft-blue600-cyan400 bg-clip-text transition-all duration-200 rounded-sm px-1  focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-ring/50 focus-visible:ring-offset-2"
                   >
                     Sign up
                   </Link>
