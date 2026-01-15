@@ -11,17 +11,17 @@ export const OrdersTimeline = () => {
   return (
     <Card
       outerDivClassName="md:w-1/2 md:flex-none lg:w-1/3 lg:flex-none"
-      innerDivClassName="h-full border-black/12.5 shadow-soft-xl bg-surface"
+      innerDivClassName="h-full border-black/12.5 shadow-soft-xl bg-surface flex flex-col"
     >
       <CardHeader className="border-black/12.5 border-solid">
         <h6>Orders overview</h6>
         <ArrowUp percentage="24%" time="this month" />
       </CardHeader>
-      <div className="flex-auto p-4">
+      <div className="flex-auto p-4 flex items-center justify-center min-h-[300px]">
         {!hasData ? (
           <EmptyState message="No recent orders" icon={faClipboardList} />
         ) : (
-          <div className="before:border-r-solid relative before:absolute before:top-0 before:left-4 before:h-full before:border-r-2 before:border-r-border-hover before:content-[''] before:lg:-ml-px">
+          <div className="before:border-r-solid relative before:absolute before:top-0 before:left-4 before:h-full before:border-r-2 before:border-r-border-hover before:content-[''] before:lg:-ml-px w-full">
             {TIMELINE_ITEMS.map((data) => (
               <div
                 key={data.id}

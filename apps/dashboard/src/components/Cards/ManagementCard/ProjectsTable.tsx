@@ -38,7 +38,7 @@ export const ProjectsTable = () => {
   return (
     <Card
       outerDivClassName="mb-6 md:mb-0 md:w-1/2 md:flex-none lg:w-2/3 mt-0 lg:flex-none"
-      innerDivClassName="border-black/12.5 shadow-soft-xl bg-surface"
+      innerDivClassName="border-black/12.5 shadow-soft-xl bg-surface flex flex-col"
     >
       <CardHeader className="border-black/12.5 border-solid mb-4">
         <div className="flex flex-wrap mt-0 -mx-3">
@@ -88,42 +88,38 @@ export const ProjectsTable = () => {
           </div>
         </div>
       </CardHeader>
-      <div className="flex-auto px-0 pt-0 pb-2">
-        <ScrollArea
-          className="management-table-ps relative overflow-hidden touch-pan-y" // "touch-pan-y" allows the PAGE to scroll vertically when we drag our finger on the table.
-          options={{
-            suppressScrollY: true, // Only horizontal for the table
-            wheelPropagation: true, // Allows the page to scroll when we wheel over the table
-          }}
-        >
-          <div className="p-0">
-            <Table>
-              <TableHead>
-                <tr>
-                  {PROJECT_TABLE_HEADERS.map((header) => (
-                    <th
-                      key={header.id}
-                      className={`table-header tracking-normal text-${header.textAlign} uppercase letter border-b-solid text-xxs border-b-border ${header.className}`}
-                    >
-                      {header.header}
-                    </th>
-                  ))}
-                </tr>
-              </TableHead>
-
-              <tbody>
-                {!hasData ? (
+      <div className="flex-auto px-0 pt-0 pb-2 flex items-center justify-center min-h-[300px]">
+        {!hasData ? (
+          <EmptyState
+            message="No projects assigned"
+            icon={faProjectDiagram}
+            description="New projects will appear here once they are created."
+          />
+        ) : (
+          <ScrollArea
+            className="management-table-ps relative overflow-hidden touch-pan-y w-full" // "touch-pan-y" allows the PAGE to scroll vertically when we drag our finger on the table.
+            options={{
+              suppressScrollY: true, // Only horizontal for the table
+              wheelPropagation: true, // Allows the page to scroll when we wheel over the table
+            }}
+          >
+            <div className="p-0">
+              <Table>
+                <TableHead>
                   <tr>
-                    <td colSpan={PROJECTS_TABLE_DATA.length} className="py-8">
-                      <EmptyState
-                        message="No projects assigned"
-                        icon={faProjectDiagram}
-                        description="New projects will appear here once they are created."
-                      />
-                    </td>
+                    {PROJECT_TABLE_HEADERS.map((header) => (
+                      <th
+                        key={header.id}
+                        className={`table-header tracking-normal text-${header.textAlign} uppercase letter border-b-solid text-xxs border-b-border ${header.className}`}
+                      >
+                        {header.header}
+                      </th>
+                    ))}
                   </tr>
-                ) : (
-                  PROJECTS_TABLE_DATA.map((data, index) => (
+                </TableHead>
+
+                <tbody>
+                  {PROJECTS_TABLE_DATA.map((data, index) => (
                     <tr key={data.id}>
                       <TableCell
                         isLastRow={index === PROJECTS_TABLE_DATA.length - 1}
@@ -163,12 +159,12 @@ export const ProjectsTable = () => {
                         </div>
                       </TableCell>
                     </tr>
-                  ))
-                )}
-              </tbody>
-            </Table>
-          </div>
-        </ScrollArea>
+                  ))}
+                </tbody>
+              </Table>
+            </div>
+          </ScrollArea>
+        )}
       </div>
     </Card>
   );

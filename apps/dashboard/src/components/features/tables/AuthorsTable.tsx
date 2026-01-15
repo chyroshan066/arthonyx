@@ -8,7 +8,7 @@ import {
   TableHead,
 } from "@/components/ui/table";
 import { AUTHORS_TABLE_DATA, AUTHORS_TABLE_HEADERS } from "@/lib/constants";
-import { faProjectDiagram } from "@fortawesome/free-solid-svg-icons";
+import { faUsersSlash } from "@fortawesome/free-solid-svg-icons";
 
 const statusStyles: { [key: string]: string } = {
   Online: "bg-gradient-soft-green600-lime400",
@@ -41,11 +41,11 @@ export const AuthorsTable = () => {
         <tbody>
           {!hasData ? (
             <tr>
-              <td colSpan={AUTHORS_TABLE_DATA.length} className="py-8">
+              <td colSpan={AUTHORS_TABLE_HEADERS.length} className="py-8">
                 <EmptyState
-                  message="No projects assigned"
-                  icon={faProjectDiagram}
-                  description="New projects will appear here once they are created."
+                  message="No authors found"
+                  icon={faUsersSlash}
+                  description="There are currently no authors registered in the system."
                 />
               </td>
             </tr>
