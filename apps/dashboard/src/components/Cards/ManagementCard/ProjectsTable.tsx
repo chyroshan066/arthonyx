@@ -1,5 +1,6 @@
 import { AvatarGroup } from "@/components/ui/AvatarGroup";
 import { Card, CardHeader } from "@/components/ui/card";
+import { EmptyState } from "@/components/ui/EmptyState";
 import { ScrollArea } from "@/components/ui/ScrollArea";
 import {
   Caption,
@@ -10,7 +11,11 @@ import {
 } from "@/components/ui/table";
 import { useDisclosure } from "@/hooks/useDisclosure";
 import { PROJECT_TABLE_HEADERS, PROJECTS_TABLE_DATA } from "@/lib/constants";
-import { faCheck, faEllipsisV } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCheck,
+  faEllipsisV,
+  faProjectDiagram,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 
@@ -27,6 +32,8 @@ export const ProjectsTable = () => {
     contentRef: dropdownRef,
     triggerRef,
   } = useDisclosure();
+
+  const hasData = PROJECTS_TABLE_DATA.length > 0;
 
   return (
     <Card
@@ -105,47 +112,59 @@ export const ProjectsTable = () => {
               </TableHead>
 
               <tbody>
-                {PROJECTS_TABLE_DATA.map((data, index) => (
-                  <tr key={data.id}>
-                    <TableCell
-                      isLastRow={index === PROJECTS_TABLE_DATA.length - 1}
-                    >
-                      <TableAvatarCell img={data.logo} name={data.name} />
-                    </TableCell>
-                    <TableCell
-                      isLastRow={index === PROJECTS_TABLE_DATA.length - 1}
-                    >
-                      <AvatarGroup participants={data.members} />
-                    </TableCell>
-                    <TableCell
-                      isLastRow={index === PROJECTS_TABLE_DATA.length - 1}
-                      className="text-left ps-2 text-sm leading-normal"
-                    >
-                      <Caption>{data.budget}</Caption>
-                    </TableCell>
-                    <TableCell
-                      isLastRow={index === PROJECTS_TABLE_DATA.length - 1}
-                    >
-                      <div className="w-3/4 mx-auto">
-                        <Caption>{data.completion}%</Caption>
-                        <div className="text-xs h-0.75 w-30 m-0 flex overflow-visible rounded-lg bg-border">
-                          <div
-                            className={`duration-600 ease-soft -mt-0.38 -ml-px flex h-1.5 flex-col justify-center overflow-hidden whitespace-nowrap rounded bg-primary text-center text-surface transition-all ${
-                              data.completion === 100
-                                ? "bg-gradient-soft-green600-lime400"
-                                : "bg-gradient-soft-blue600-cyan400"
-                            }`}
-                            style={{ width: `${data.completion}%` }}
-                            role="progressbar"
-                            aria-valuenow={data.completion}
-                            aria-valuemin={0}
-                            aria-valuemax={100}
-                          />
-                        </div>
-                      </div>
-                    </TableCell>
+                {!hasData ? (
+                  <tr>
+                    <td colSpan={PROJECTS_TABLE_DATA.length} className="py-8">
+                      <EmptyState
+                        message="No projects assigned"
+                        icon={faProjectDiagram}
+                        description="New projects will appear here once they are created."
+                      />
+                    </td>
                   </tr>
-                ))}
+                ) : (
+                  PROJECTS_TABLE_DATA.map((data, index) => (
+                    <tr key={data.id}>
+                      <TableCell
+                        isLastRow={index === PROJECTS_TABLE_DATA.length - 1}
+                      >
+                        <TableAvatarCell img={data.logo} name={data.name} />
+                      </TableCell>
+                      <TableCell
+                        isLastRow={index === PROJECTS_TABLE_DATA.length - 1}
+                      >
+                        <AvatarGroup participants={data.members} />
+                      </TableCell>
+                      <TableCell
+                        isLastRow={index === PROJECTS_TABLE_DATA.length - 1}
+                        className="text-left ps-2 text-sm leading-normal"
+                      >
+                        <Caption>{data.budget}</Caption>
+                      </TableCell>
+                      <TableCell
+                        isLastRow={index === PROJECTS_TABLE_DATA.length - 1}
+                      >
+                        <div className="w-3/4 mx-auto">
+                          <Caption>{data.completion}%</Caption>
+                          <div className="text-xs h-0.75 w-30 m-0 flex overflow-visible rounded-lg bg-border">
+                            <div
+                              className={`duration-600 ease-soft -mt-0.38 -ml-px flex h-1.5 flex-col justify-center overflow-hidden whitespace-nowrap rounded bg-primary text-center text-surface transition-all ${
+                                data.completion === 100
+                                  ? "bg-gradient-soft-green600-lime400"
+                                  : "bg-gradient-soft-blue600-cyan400"
+                              }`}
+                              style={{ width: `${data.completion}%` }}
+                              role="progressbar"
+                              aria-valuenow={data.completion}
+                              aria-valuemin={0}
+                              aria-valuemax={100}
+                            />
+                          </div>
+                        </div>
+                      </TableCell>
+                    </tr>
+                  ))
+                )}
               </tbody>
             </Table>
           </div>
