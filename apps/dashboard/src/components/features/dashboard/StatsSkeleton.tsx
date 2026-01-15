@@ -1,4 +1,3 @@
-// src/components/features/dashboard/StatsSkeleton.tsx
 import { Skeleton } from "@/components/ui/Skeleton";
 
 export const StatsSkeleton = () => (
