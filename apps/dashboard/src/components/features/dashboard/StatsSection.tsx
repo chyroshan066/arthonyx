@@ -1,4 +1,4 @@
-import { StatCard } from "../../cards/StatCard";
+import { StatCard } from "@/components/cards/StatCard";
 import { STATS } from "@/lib/constants";
 
 export const StatsSection = () => (
